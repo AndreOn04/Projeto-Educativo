@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (navMenu.classList.contains('is-active')) {
             menuIcon.setAttribute('name', 'close-outline'); // Troca para o X
         } else {
-            menuIcon.setAttribute('name', 'menu-outline');  // Volta para o Hambúrguer
+            menuIcon.setAttribute('name', 'menu-outline');  // Volta para o icon menu
         }
     });
 });
