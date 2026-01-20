@@ -333,8 +333,73 @@ a:hover {
     color: #888;
 }
 
+.mitos-secao {
+    padding: 60px 20px;
+    background-color: #fef6f6;
+    text-align: center;
+}
 
+.subtitulo-secao {
+    margin-bottom: 40px;
+    color: #888;
+    font-style: italic;
+}
 
+.mitos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mito-card {
+    background-color: #ffffff;
+    border-left: 8px solid #d9534f;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.tag-fake {
+    display: inline-block;
+    background-color: #d9534f;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.mito-card h3{
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.dividir {
+    height: 1px;
+    background-color: #eee;
+    margin-bottom: 15px;
+}
+
+.fato {
+    font-size: 15px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.fato strong {
+    color: #28a745;
+}
+
+.mito-card:hover{
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
 
 /* ===================================================================== */
 /* --- RESPONSIVIDADE MOBILE (Max-width 768px) --- */
@@ -388,6 +453,10 @@ a:hover {
         border: none;
         cursor: pointer;
         z-index: 1001;
+    }
+
+    .mitos-container {
+        grid-template-columns: 1fr;
     }
 
     .menu {
