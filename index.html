@@ -21,12 +21,44 @@
       </button>
 
       <div class="menu" id="menuNavegacao">
-        <a href="index.html"> Página Inicial </a>
-        <a href="./pages/page.html"> A Lei </a>
-        <a href="./pages/about.html"> Violência Doméstica </a>
-        <a href="./pages/contact.html"> Contato </a>
+        <div class="menu-item-dropdown">
+           <a href="#" class="dropdown-toogle" data-target="submenu-lei">
+              A Lei
+              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+           </a>
+           <div class="submenu" id="submenu-lei">
+             <a href="./pages/page.html"> tipos de violência </a>
+             <a href="./pages/lei-integra.html"> A Lei na integra </a>
+             <a href="./pages/resumo-lei.html"> Resumo da lei </a>
+           </div>
+        </div>
+
+        <div class="menu-item-dropdown">
+          <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
+              Maria da Penha
+              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+          </a>
+          <div class="submenu" id="submenu-maria-penha">
+            <a href="./pages/biografia.html"> biografia </a>
+          </div>
+        </div>
+
+        <div class="menu-item-dropdown">
+          <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
+              Violência Doméstica
+              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+          </a>
+          <div class="submenu" id="submenu-violencia-domestica">
+            <a href="index.html"> O que é violência doméstica? </a>
+          </div>
+        </div>
+
+        <a href="./pages/contact.html">Contato</a>
+
       </div>
     </div>
+
+    
     <div class="banner">
       <div class="posts">O que é violência doméstica?</div>
       <p class="paragrafo">
@@ -38,109 +70,6 @@
         estabelece medidas para proteger as vítimas e punir os agressores.
       </p>
     </div>
-
-    <section class="violencia-secao">
-      <h2 class="titulo-secao">tipos de violência</h2>
-      <div class="cards-container">
-        <!-- card 01 -->
-        <div class="card">
-          <ion-icon name="woman-outline"></ion-icon>
-          <h3>Violência Física</h3>
-          <p>
-            Qualquer ato que cause dano ou sofrimento físico à mulher, como
-            empurrões, socos, chutes, queimaduras, entre outros.
-          </p>
-        </div>
-
-        <!-- card 02 -->
-        <div class="card">
-          <ion-icon name="sad-outline"></ion-icon>
-          <h3>psicológica</h3>
-          <p>
-            Qualquer ato que cause dano ou sofrimento psicológico à mulher, como
-            ameaças, humilhações, isolamento social, entre outros.
-          </p>
-        </div>
-
-        <!-- card 03 -->
-        <div class="card">
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <h3>sexual</h3>
-          <p>
-            Forçar relações sexuais ou impedir o uso de métodos contraceptivos.
-          </p>
-        </div>
-
-        <!-- card 04 -->
-        <div class="card">
-          <ion-icon name="wallet-outline"></ion-icon>
-          <h3>patrimonial</h3>
-          <p>
-            Impedir o acesso à renda, ao patrimônio ou ao uso de bens comuns.
-          </p>
-        </div>
-
-        <!-- card 05 -->
-        <div class="card">
-          <ion-icon name="megaphone-outline"></ion-icon>
-          <h3>moral</h3>
-          <p>
-            Qualquer ato que cause dano ou sofrimento moral à mulher, como
-            difamação, calúnia, difamação, entre outros.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="linha-do-tempo-secao">
-      <h2 class="titulo-secao">Evolução da Lei</h2>
-      <div class="timeline-container">
-        <div class="timeline-item">
-          <div class="timeline-dot">1</div>
-          <div class="timeline-content">
-            <h3>Criação da Lei Maria da Penha</h3>
-            <p>
-              Em 7 de agosto de 2006, a Lei Maria da Penha (Lei nº 11.340/2006)
-              foi sancionada no Brasil, estabelecendo medidas para combater a
-              violência doméstica e familiar contra a mulher.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot">2</div>
-          <div class="timeline-content">
-            <h3>Estabelecimento de Medidas Protetivas</h3>
-            <p>
-              A lei prevê medidas protetivas de urgência para proteger as
-              vítimas, como o afastamento do agressor do lar, proibição de
-              contato e restrição de aproximação.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot">3</div>
-          <div class="timeline-content">
-            <h3>Assistência Integrada</h3>
-            <p>
-              A lei institui juizados especializados para lidar com casos de
-              violência doméstica, proporcionando um atendimento mais ágil e
-              eficaz às vítimas.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot">4</div>
-          <div class="timeline-content">
-            <h3>Educação e Conscientização</h3>
-            <p>
-              A Lei Maria da Penha também enfatiza a importância de campanhas
-              educativas e programas de conscientização para prevenir a
-              violência contra a mulher.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="mitos-secao">
       <h2 class="titulo-secao">Mito e Realidade</h2>
@@ -203,6 +132,56 @@
           </p>
         </div>
         
+    </section>
+
+    <section class="linha-do-tempo-secao">
+      <h2 class="titulo-secao">Passos da Lei</h2>
+      <div class="timeline-container">
+        <div class="timeline-item">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <h3>Criação da Lei Maria da Penha</h3>
+            <p>
+              Em 7 de agosto de 2006, a Lei Maria da Penha (Lei nº 11.340/2006)
+              foi sancionada no Brasil, estabelecendo medidas para combater a
+              violência doméstica e familiar contra a mulher.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <h3>Estabelecimento de Medidas Protetivas</h3>
+            <p>
+              A lei prevê medidas protetivas de urgência para proteger as
+              vítimas, como o afastamento do agressor do lar, proibição de
+              contato e restrição de aproximação.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <h3>Assistência Integrada</h3>
+            <p>
+              A lei institui juizados especializados para lidar com casos de
+              violência doméstica, proporcionando um atendimento mais ágil e
+              eficaz às vítimas.
+            </p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <h3>Educação e Conscientização</h3>
+            <p>
+              A Lei Maria da Penha também enfatiza a importância de campanhas
+              educativas e programas de conscientização para prevenir a
+              violência contra a mulher.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer class="site-footer">
