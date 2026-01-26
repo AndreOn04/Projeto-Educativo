@@ -22,22 +22,24 @@ body {
 
 .menu-item-dropdown{
     position: relative;
-    width: auto;
+    white-space: nowrap;
 }
 
 .menu {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 40px;
 
     margin: 0 auto;
-    width: auto;
+    width: fit-content;
 }
 
 .menu a, .dropdown-toggle {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    padding: 10px; 
+    padding: 10px;
     display: flex;
     align-items: center;
     border-bottom: none;
@@ -169,7 +171,7 @@ a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.65);
     z-index: 1;
 }
 
@@ -181,6 +183,11 @@ a:hover {
     padding: 0 20px;
     max-width: 800px;
     text-align: center;
+}
+
+.posts {
+    text-transform: uppercase;
+    line-height: 1.4;
 }
 
 .banner .posts {
@@ -199,7 +206,7 @@ a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 250px;
+    height: 450px;
     width: 100%;
 
     /* centralizando o texto com flexbox */
@@ -633,6 +640,7 @@ a:hover {
 .lei-header {
     text-align: center;
     margin-bottom: 60px;
+    text-transform: uppercase;
 }
 
 .lei-header h1 { font-size: 36px; color: #333; margin-bottom: 20px; }
@@ -690,7 +698,7 @@ a:hover {
 .titulo-voce-sabia {
     font-size: 24px;
     font-weight: 700;
-    color: #6a0dad;
+    color: #3d2963;
     line-height: 1.6;
     padding: 5px 0;
 
@@ -819,11 +827,11 @@ a:hover {
     height: 320px;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 15px 15px 0px #4A14BC;
+    box-shadow: 15px 15px 0px #3d2963;
 }
 
 .pergunta {
-    color: #4B0082;
+    color: #3d2963;
     font-size: 3.5rem;
     margin-bottom: 10px;
     text-transform: uppercase;
@@ -831,7 +839,7 @@ a:hover {
 }
 
 .selecionado{
-    background-color: #4B0082;
+    background-color: #3d2963;
     color: white;
     padding: 5px 15px;
     display: inline-block;
@@ -864,7 +872,7 @@ a:hover {
 }
 
 .capitular {
-    color: #4B0082;
+    color: #3d2963;
     font-size: 4.8rem;
     font-weight: bold;
     line-height: 0.9;
@@ -890,11 +898,11 @@ a:hover {
     justify-content: center;
     align-items: center;
     min-height: 500px;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .container-trajetoria {
-    max-width: 900px;
+    max-width: 800px;
     width: 100%;
     margin: 0 auto;
     position: relative;
@@ -920,7 +928,7 @@ a:hover {
 .trajetoria-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 80px;
     align-items: start;
 }
 
@@ -941,15 +949,117 @@ a:hover {
   max-width: 78%;
   width: 100%;
 }
+/* 
+.col-direita {
+    padding-top: 158px;
+} */
 
-.col-direita em {
-    font-style: italic;
+.historia-detalhe {
+    padding: 60px 20px;
+    background-color: #ffffff;
 }
 
-.col-esquerda strong {
-    font-weight: bold;
+.titulo-centralizado {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #3d2963;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-bottom: 50px;
 }
 
+.container-historia {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.texto-historia{
+    flex: 1;
+}
+
+.texto-historia p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 50px;
+    max-width: 100%;
+}
+
+.secao-crime {
+    background-color: #3d2963;
+    padding: 80px 20px;
+}
+
+.container-centralizado {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-sessao-crime {
+    color: #ffffff;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-bottom: 60px;
+    font-weight: 700;
+}
+
+/* Alinhamento paralelo: Ano ao lado do texto superior */
+.bloco-superior-paralelo {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    width: 100%;
+    justify-content: center;
+}
+
+.texto-superior-roxo {
+    max-width: 700px;
+    text-align: left;
+}
+
+.texto-superior-roxo p {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Estilo do BOX (Largo e centralizado abaixo do texto) */
+.secao-crime .bio-box-shadow {
+    background: #ffffff;
+    padding: 50px 60px;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    width: 100%; /* Ocupa a largura total do container (1000px) */
+    box-sizing: border-box;
+}
+
+.conteudo-box-focado p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+}
+
+/* Mantendo sua classe de ano lateral intacta */
+.secao-crime .ano-lateral {
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.1); /* Cor suave conforme o print */
+    font-weight: 800;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    border-right: 2px solid rgba(255, 255, 255, 0.2);
+    padding-right: 20px;
+}
 
 
 /* ===================================================================== */
@@ -963,6 +1073,16 @@ a:hover {
 
     .trajetoria-content {
         gap: 40px;
+    }
+}
+
+@media (min-width: 769px) {
+    .col-direita {
+        margin-top: 155px;
+    }
+
+    .container-trajetoria {
+        max-width: 800px;
     }
 }
 
@@ -1041,6 +1161,9 @@ a:hover {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 100;
         padding: 0;
+
+        align-items: flex-start;
+        gap: 20%;
     }
 
      .menu.is-active {
@@ -1097,6 +1220,8 @@ a:hover {
         position: static !important;
         box-shadow: none;
         background-color: #f9f9f9;
+        position: static;
+        max-width: 100%;
     }
 
      .submenu.is-active-desktop {
@@ -1312,6 +1437,109 @@ a:hover {
         text-align: center;
     }
 
+    .titulo-centralizado {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .container-historia {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .container-historia .ano-lateral {
+        writing-mode: horizontal-tb;
+        transform: rotate(0deg);
+        border-right: none;
+        border-bottom: 2px solid #f0f0f0;
+        padding: 0 0 10px 0;
+        margin-right: 0;
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .texto-historia {
+        width: 100%;
+        text-align: justify;
+    }
+
+    .texto-historia p {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    .col-direita {
+        margin-top: 0;
+    }
+
+    .bio-box-shadow,
+    .bio-box-shadow-escuro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        padding: 20px;
+    }
+
+    .trajetoria-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .col-direita {
+        margin-top: 0 !important;
+    }
+
+    .titulo-bg {
+        font-size: 6rem;
+    }
+
+    .secao-crime {
+        padding: 40px 15px;
+    }
+
+    .container-centralizado {
+        width: 100%;
+    }
+
+    .titulo-secao-crime {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .bloco-superior-paralelo {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .secao-crime .ano-lateral {
+        writing-mode: horizontal-tb;
+        transform: rotate(0deg);
+        border-right: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+        padding-right: 0;
+        padding-bottom: 10px;
+        font-size: 3.5rem;
+    }
+
+    .texto-superior-roxo {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .secao-crime .bio-box-shadow {
+        padding: 30px 20px;
+        margin-top: 30px;
+    }
+
+    .conteudo-box-focado p {
+        font-size: 1rem;
+        text-align: center;
+    }
 
     /* Ajuste no banner para não ficar colado */
     .banner { height: 300px; margin-top: 0; }
