@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #e6e6e6;
+    background-color: #ffffff;
 }
 
 .header{
@@ -173,6 +173,8 @@ a:hover {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.65);
     z-index: 1;
+
+    backdrop-filter: none;
 }
 
 .banner .posts, .banner .paragrafo{
@@ -181,8 +183,27 @@ a:hover {
     color: #ffffff;
     text-shadow: none;
     padding: 0 20px;
-    max-width: 800px;
+    max-width: 600px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caixa-foco {
+    position: relative;
+    z-index: 2;
+    /* background: rgba(255, 255, 255, 0.1); */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .posts {
@@ -316,7 +337,7 @@ a:hover {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: #e0e0e03e;
 }
 
 .timeline-container {
@@ -391,9 +412,11 @@ a:hover {
 .site-footer {
     background-color: #f0f0f0;
     color: #333;
-    padding: 40px 20px 20px 20px;
+    padding: 60px 20px 20px 20px;
     border-top: 2px solid #DDA0DD;
+    position: relative;
 }
+
 
 .footer-container {
     display: grid;
@@ -410,7 +433,7 @@ a:hover {
     text-transform: uppercase;
 }
 
-.foooter-col p {
+.footer-col p {
     font-size: 14px;
     line-height: 1.6;
     color: #666;
@@ -532,10 +555,29 @@ a:hover {
 }
 
 .ligue-secao {
-    padding: 60px 20px;
+    padding: 80px 20px;
     background-color: #ffffff;
-    border-top: 1px #ddd;
     border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.ligue-secao::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 10%; /* Deixa 10% de cada lado para centralizar os 80% */
+    width: 80%;
+    border-top: 1px solid #3d2963;
+    background-color: #ddd; /* Cor da linha conforme seu padrão */
+}
+
+.ligue-logo {
+    flex: 0 0 auto;
+}
+
+.ligue-texto {
+    max-width: 65%;
+    text-align: left;
 }
 
 .ligue-container {
@@ -543,7 +585,8 @@ a:hover {
     margin: 0 auto;
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 0;
+    justify-content: space-between;
 }
 
 .ligue-logo img {
@@ -552,10 +595,10 @@ a:hover {
 }
 
 .ligue-texto p {
-    font-size: 16px;
-    color: #444;
+    font-size: 1.1rem;
+    color: #333;
     line-height: 1.6;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .ligue-texto span {
@@ -563,9 +606,10 @@ a:hover {
 }
 
 .nao-se-cale {
-    color: #6a0dad;
+    color: #000000;
     font-weight: bold;
     margin-top: 15px;
+    font-size: 1.2rem;
 }
 
 .nao-se-cale span {
@@ -597,7 +641,7 @@ a:hover {
     background: #fff;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
     border: 1px solid #eee;
 }
 
@@ -712,7 +756,7 @@ a:hover {
     border-radius: 8px;
     margin-bottom: 80px;
 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.65);
 }
 
 .section-lei h2 {
@@ -1061,6 +1105,76 @@ a:hover {
     padding-right: 20px;
 }
 
+.title-como-pedir-ajuda {
+    background-color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.title-sessao-help {
+    color: #1a0b35; 
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin: 0;
+    margin-bottom: 60px;
+}
+
+.secao-ajuda{
+    background-color: #3d2963;
+    padding: 0 15% 80px 15%; 
+    display: flex;
+    justify-content: center;
+}
+
+.secao-ajuda .center {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 1000px;
+    padding: 60px;
+    margin-top: 0; 
+}
+
+.box p{
+    text-align: left;
+    font-size: 1.1rem;
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: left;
+    
+    margin-bottom: 40px !important;
+    line-height: 1.7;
+}
+
+.box span {
+    font-weight: bold;
+}
+
+.box strong, .box a {
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.secao-referencias{
+    background-color: #ffffff;
+    padding: 60px 25%;
+    text-align: left;
+}
+
+.title-referencias {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.listas-referencias p {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-indent: 0;
+}
+
 
 /* ===================================================================== */
 /* --- RESPONSIVIDADE MOBILE (Max-width 768px) --- */
@@ -1112,6 +1226,11 @@ a:hover {
 
     .site-footer{
         text-align: center;
+    }
+
+    .site-footer::before, .ligue-secao::before {
+        width: 90% !important;
+        left: 5% !important;
     }
 
     .foooter-col h3 {
@@ -1253,6 +1372,10 @@ a:hover {
 
     .ligue-logo img {
         height: 80px;
+    }
+
+    .ligue-texto {
+        max-width: 100% !important;
     }
 
     .ligue-texto p {
@@ -1540,6 +1663,35 @@ a:hover {
         font-size: 1rem;
         text-align: center;
     }
+
+    .secao-ajuda {
+        padding: 0 5% 40px 5% !important;
+    }
+
+    .secao-ajuda .center {
+        width: 100% !important;
+        padding: 30px 20px !important;
+    }
+
+    .title-sessao-help {
+        font-size: 1.8rem !important;
+        margin-bottom: 20px !important;
+    }
+
+    .box {
+        max-width: 100% !important;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .secao-referencias {
+        padding: 40px 5% !important;
+        word-break: break-all;
+    }
+
 
     /* Ajuste no banner para não ficar colado */
     .banner { height: 300px; margin-top: 0; }
