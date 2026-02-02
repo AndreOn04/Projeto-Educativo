@@ -1,30 +1,59 @@
-* {
+/* ==================================================
+   RESET GLOBAL
+================================================== */
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
-    font-family: "Inter", sans-serif;
     box-sizing: border-box;
 }
+
+html,
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================================================
+   BODY
+================================================== */
 
 body {
-    background-color: #ffffff;
-    box-sizing: border-box;
+    background-color: #fff;
+    color: #333;
+    line-height: 1.4;
 }
 
+/* ==================================================
+   HEADER
+================================================== */
 .header{
-    background-color: #ffffff;
+    width: 100%;
     padding: 15px 40px;
+    background-color: #fff;
     border-bottom: 1px solid #ccc;
-
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
-.menu-item-dropdown{
-    position: relative;
-    white-space: nowrap;
+/* ==================================================
+   LOGO
+================================================== */
+
+.logo img {
+    display: block;
+    height: 80px;
+    width: auto;
+    border-radius: 50%;
 }
+
+/* ==================================================
+   MENU - HEADER
+================================================== */
 
 .menu {
     display: flex;
@@ -32,171 +61,209 @@ body {
     justify-content: center;
     gap: 40px;
 
-    margin: 0 auto;
     width: fit-content;
-}
-
-.menu a, .dropdown-toggle {
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    border-bottom: none;
-    width: auto;
-    text-align: center; /* Centraliza o texto dentro do botão */
-    cursor: pointer;
+    margin: 0 auto;
 }
 
 .menu-item-dropdown{
     position: relative;
-    width: auto;
+    white-space: nowrap;
 }
 
-.submenu {
-    display: none !important;
-    position: absolute;
-    top: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-
-    min-width: 300px;
-    
-    padding: 10px 0;
-    flex-direction: column;
-}
-
-.submenu a {
-    padding: 18px 25px;
-    font-size: 14px;
-    color: #333;
-    border-bottom: none;
-   
-    width: 100%;
-    text-align: left;
-    display: block;
-    transition: all 0.3s ease;
-    
-    font-weight: 600;
-    text-transform: capitalize;
-}
-
-.submenu a:hover{
-    text-decoration: underline;
-    padding-left: 30px;
-}
-
-/* Classe JS para mostrar o submenu no clique */
-.submenu.is-active-desktop {
-    display: flex !important;
-}
-
-.dropdown-arrow {
-    display: inline-block;
-    margin-left: 8px;
-    transition: transform 0.3s ease;
-    pointer-events: none; /* Deixa o clique passar para o link pai */
-}
-
-/* Esta classe é adicionada pelo JS no clique */
-.dropdown-arrow.is-open {
-    transform: rotate(180deg);
-}
-
-.submenu.is-active{
-    display: flex;
-    max-height: 400px; /* Valor alto para garantir que todos os links apareçam */
-}
-
-.submenu.is-active-desktop {
-    display: flex !important;
-}
-
-.logo img{
-    width: auto;
-    height: 80px;
-    display: block;
-    border-radius: 50%;
-}
-
-.submenu {
-    display: none !important;
-    position: absolute;
-    top: 100%;
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    min-width: 200px;
-    padding-left: 0;
-}
-
-.dropdown-arrow {
-    float: none;
-    margin-left: 8px;
-    margin-right: 0;
-    transform: rotate(0deg) !important;
-}
-
-a:hover {
+.menu a:hover {
     cursor: pointer;
     font-weight: 400;
     color: black;
     transition: 0.3s;
-    font-weight: 300;
 }
 
+/* ==================================================
+   MENU - LINKS
+================================================== */
+
+.menu a, 
+.dropdown-toggle {
+    display: flex;
+    align-items: center;
+    
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 700;
+
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+
+    cursor: pointer;
+}
+
+/* ==================================================
+   MENU - ITEM COM DROPDNOW
+================================================== */
+
+.menu-item-dropdown{
+    position: relative;
+    width: auto;
+    white-space: nowrap;
+}
+
+/* ==================================================
+   MENU - SETA DO DROPDONW
+================================================== */
+
+.dropdown-arrow {
+   display: inline-block;
+   margin-left: 8px;
+
+   transition: transform 0.3s ease;
+   pointer-events: none;
+
+   transform: rotate(0deg);
+}
+
+/* ==================================================
+   MENU - SUBMENU
+================================================== */
+.submenu {
+    display: none;
+    flex-direction: column;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 300px;
+    padding: 10px 0;
+
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* ==================================================
+   MENU - SUBMENU LINKS
+================================================== */
+
+.submenu a {
+    display: block;
+    width: 100%;
+
+    padding: 18px 25px;
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #333;
+    text-transform: capitalize;
+    text-align: left;
+    text-decoration: none;
+    
+    transition: all 0.3s ease;
+}
+
+.submenu a:hover{
+    padding-left: 30px;
+    text-decoration: underline;
+}
+
+/* ==================================================
+   MENU - SUBMENU ATIVO
+================================================== */
+.submenu.is-active, 
+.submenu.is-active-desktop {
+    display: flex;
+}
+
+/* ==================================================
+   MENU - ESTADO ABERTO
+================================================== */
+
+.dropdown-arrow.is-open {
+    transform: rotate(180deg);
+}
+
+/* ==================================================
+   MENU MOBILE- TOGGLE
+================================================== */
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    font-size: 30px;
+    color: #333;
+
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+/* ==================================================
+   MENU MOBILE- ESTADO ATIVO
+================================================== */
+.menu.is-active {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==================================================
+   BANNER - BASE
+================================================== */
+
 .banner {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 350px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     background-image: url(../imagens/img09.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 350px;
-    width: 100%;
-
-    /* centralizando o texto com flexbox */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    position: relative;
-    overflow: hidden;
 }
+
+/* ==================================================
+   BANNER - OVERLAY
+================================================== */
 
 .banner::before{
-    content: '';
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+
     background-color: rgba(0, 0, 0, 0.65);
     z-index: 1;
-
-    backdrop-filter: none;
 }
 
-.banner .posts, .banner .paragrafo{
+/* ==================================================
+   BANNER - CONTEÚDO
+================================================== */
+
+.banner .posts, 
+.banner .paragrafo{
     position: relative;
     z-index: 2;
-    color: #ffffff;
-    text-shadow: none;
-    padding: 0 20px;
+
     max-width: 600px;
+    padding: 0 20px;
+
+    color: #fff;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
 }
+
+/* ==================================================
+   BANNER - CAIXA DE FOCO
+================================================== */
 
 .caixa-foco {
     position: relative;
     z-index: 2;
-    /* background: rgba(255, 255, 255, 0.1); */
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-
+    
     max-width: 600px;
     padding: 10px;
     border-radius: 5px;
@@ -205,87 +272,123 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 }
+
+/* ==================================================
+   BANNER - TÍTULO
+================================================== */
 
 .posts {
     text-transform: uppercase;
     line-height: 1.4;
 }
 
+
 .banner .posts {
+    margin-bottom: 15px;
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 15px;
 }
+
+/* ==================================================
+   BANNER - PARÁGRAFO
+================================================== */
 
 .banner .paragrafo {
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.7;
 }
 
+/* ==================================================
+   BANNER RESUMO DA LEI - BASE 
+================================================== */
+
 .banner-resumo-lei {
+    position: relative;
+    overflow: hidden;
+
+    width: 100%;
+    height: 450px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     background-image: url(../imagens/img01.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 450px;
-    width: 100%;
-
-    /* centralizando o texto com flexbox */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-
-    position: relative;
-    overflow: hidden;
 }
 
+/* ==================================================
+   BANNER RESUMO DA LEI - OVERLAY
+================================================== */
+
 .banner-resumo-lei::before{
-    content: '';
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+
     background-color: rgba(0, 0, 0, 0.45);
     z-index: 1;
 }
 
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    grid-column: 3;
-    color: #333;
-    padding: 0 10px;
-}
+/* ==================================================
+   TEXTOS / MENSAGENS SIMPLES
+================================================== */
 
-.menu.is-active {
-    display: flex !important;
-    flex-direction: column;
+.construct,
+.information{
+    text-align: center;
+    font-size: 40px;
+    padding: 50px 20px;
 }
 
 .construct {
-    text-align: center;
-    padding: 50px 20px;
     font-size: 50px;
 }
 
-.mensagem {
+.mensagem,
+.inform {
     text-align: center;
     padding: 20px;
-    font-size: 18px;
-    color: #555;
+    font-size: 40px;
+    color: red;
+    font-weight: 600;
 }
 
+.inform {
+    font-size: 20px;
+    color: #666;
+}
+
+/* ==================================================
+   SEÇÃO VIOLENCIA DE CARDS
+================================================== */
+
 .violencia-secao {
-    padding: 60px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 80px 20px;
     text-align: center;
+}
+
+/* ==================================================
+   CONTAINER CARDS
+================================================== */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+
+    width: 100%;
+    max-width: 1200px;
 }
 
 .titulo-secao {
@@ -295,16 +398,15 @@ a:hover {
     text-transform: uppercase;
 }
 
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
+/* ==================================================
+   CARDS INDIVIDUAL
+================================================== */
 
 .card {
-    background-color: #ffffff;
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 10px;
+
+    background-color: #ffffff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-bottom: 5px solid #DDA0DD;
@@ -312,8 +414,12 @@ a:hover {
 
 .card:hover{
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
+
+/* ==================================================
+   ELEMENTOS INTERNOS DO CARD
+================================================== */
 
 .card ion-icon {
     font-size: 50px;
@@ -322,16 +428,21 @@ a:hover {
 }
 
 .card h3 {
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 1.5rem;
+    margin: 15px 0 10px;
     color: #333;
 }
 
 .card p {
-    font-size: 16px;
+    font-size: 1rem;
     color: #666;
     line-height: 1.6;
+    margin-bottom: 15px;
 }
+
+/* ==================================================
+   LINHA DO TEMPO (TIMELINE)
+================================================== */
 
 .linha-do-tempo-secao {
     padding: 60px 20px;
@@ -343,7 +454,7 @@ a:hover {
 
 .timeline-container {
     position: relative;
-    padding: 20px 0;
+    padding: 40px 0;
     margin: 0 auto;
 }
 
@@ -722,7 +833,6 @@ a:hover {
      white-space: pre-line;
      margin-top: -30px;
      line-height: 1.7;
-     text-align: justify;
 }
 
 .fato-lei-secao {
@@ -781,6 +891,15 @@ a:hover {
     margin-top: -40px;
     position: relative;
     z-index: 10;
+}
+
+.separador {
+    width: 1.7px;
+    height: 80px;
+    background-color: #9089f2;
+    margin: 0 auto;
+    margin-top: -30px;
+    position: relative;
 }
 
 .subtitulo-lei-integra {
@@ -926,8 +1045,11 @@ a:hover {
 }
 
 .biografia {
-    padding: 50px 20px;
-    background-color: #fcfcfc;
+    width: 100% !important;
+    background: linear-gradient(to bottom, #ffffff 550px, #3d2963 550px) !important;
+    padding-bottom: 40px !important;
+    margin-bottom: 0 !important;
+    padding: 80px ;
 }
 
 .container-img {
@@ -940,6 +1062,7 @@ a:hover {
     align-items: flex-start;
     gap: 30px;
     margin-bottom: 40px;
+    text-align: right;
 }
 
 .bio-imagem img {
@@ -970,25 +1093,73 @@ a:hover {
 }
 
 .bio-box-shadow {
-    display: flex;
+    width: 1100px !important;
+
+    display: flex !important;
+    position: relative !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    
+    background: #fff !important;
+    padding: 110px 90px !important;
+    margin-bottom: 80px !important;
+    border-radius: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.20) !important;
+
+    box-sizing: border-box !important;
+
     align-items: center;
-    background: #ffffff;
-    padding: 40px;
-    border: 2px solid #f0f0f0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-    border-radius: 4px;
 }
 
-.ano-lateral {
+/* .ano-lateral {
+    position: relative; 
     font-size: 5rem;
     font-weight: bold;
-    color: #d1d1d1;
+    color: rgba(0, 0, 0, 0.2);
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    margin-right: 30px;
-    border-right: 2px solid #eee;
-    padding-left: 20px;
-    border-right: 1px solid #e0e0e0;
+    margin-right: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none !important; 
+} */
+
+/* A linha vertical "em pé" */
+/* .ano-lateral::before {
+    content: "";
+    position: absolute;
+    bottom: 100%; 
+    left: 155%;
+    
+    width: 1px;          
+    height: 70px;    
+    background-color: rgba(0, 0, 0, 0.2); 
+    
+    transform: translateX(-150%) rotate(-90deg); 
+    margin-bottom: -120px;
+} */
+
+.ano-lateral {
+    position: relative;
+    font-size: 5rem;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.1);
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    white-space: nowrap;
+    flex-shrink: 0;
+    margin-top: 10px;
+}
+
+.Bio {
+    color: #3d2963;
+    font-size: 4.8rem;
+    font-weight: bold;
+    line-height: 0.9;
+    margin-right: 5px;
+    margin-top: 5px;
 }
 
 .capitular {
@@ -1006,49 +1177,54 @@ a:hover {
     line-height: 2.0;
     justify-content: center;
     align-items: center;
+    margin-left: 60px;
 }
 
 .trajetoria-secao {
     background-color: #3d2963;
-    padding: 80px 20px;
+    padding: 90px 20px !important;
     position: relative;
     overflow: hidden;
-    color: white;
+    color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 500px;
-    /* width: 100%; */
 }
 
 .container-trajetoria {
-    max-width: 800px;
+    max-width: 1000px;
     width: 100%;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     position: relative;
     z-index: 2;
+    /* padding-top: 0 !important; */
 }
 
 .titulo-bg {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 12rem;
+    left: 49%;
+    top: 36%;
+    transform: translate(-50%, -50%) rotate(180deg); /* Centraliza e rotaciona */
+    
+    /* 1. Efeito Vertical (Igual ao ano lateral) */
+    writing-mode: vertical-rl;
+    
+    /* 2. Estilização (Conforme seu print) */
+    font-size: 4.4rem; /* Ajuste conforme necessário para o layout */
     font-weight: 900;
-    color: rgba(255, 255, 255, 0.04);
-    z-index: 1;
-    letter-spacing: -2px;
-    margin: 0;
+    color: rgba(255, 255, 255, 0.04); /* Opacidade baixa para fundo */
     text-transform: uppercase;
-    pointer-events: none;
     white-space: nowrap;
+    z-index: 2 !important;
+    pointer-events: none;
+    letter-spacing: 10px;
 }
 
 .trajetoria-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    grid-template-columns: 4fr 4fr;
+    gap: 50px;
     align-items: start;
 }
 
@@ -1062,6 +1238,10 @@ a:hover {
     max-width: 80%;
 }
 
+.col-esquerda p, .traject {
+    margin-left: 20%;
+}
+
 .col-esquerda p, .col-direita p {
   font-size: 1.1rem;
   line-height: 1.9;
@@ -1069,14 +1249,10 @@ a:hover {
   max-width: 78%;
   width: 100%;
 }
-/* 
-.col-direita {
-    padding-top: 158px;
-} */
 
 .historia-detalhe {
-    padding: 60px 20px;
-    background-color: #ffffff;
+    padding: 90px 20px;
+    background-color: #fff;
 }
 
 .titulo-centralizado {
@@ -1086,15 +1262,17 @@ a:hover {
     color: #3d2963;
     text-transform: uppercase;
     text-decoration: underline;
-    margin-bottom: 50px;
+    margin-bottom: 80px;
 }
 
 .container-historia {
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 400px;
+    margin-left: 18%;
+    margin-top: -2%;
     display: flex;
     gap: 60px;
     align-items: center;
+    position: relative;
 }
 
 .texto-historia{
@@ -1102,32 +1280,15 @@ a:hover {
 }
 
 .texto-historia p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.8;
     color: #444;
-    margin-bottom: 50px;
-    max-width: 100%;
+    margin-bottom: 35px;
+    /* max-width: 100%; */
 }
 
-.secao-crime {
-    background-color: #3d2963;
-    padding: 80px 20px;
-}
-
-.container-centralizado {
-    max-width: 1000px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.titulo-sessao-crime {
-    color: #ffffff;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    text-decoration: underline;
-    margin-bottom: 60px;
+.texto-historia p strong {
+    color: #333;
     font-weight: 700;
 }
 
@@ -1142,7 +1303,7 @@ a:hover {
 }
 
 .texto-superior-roxo {
-    max-width: 700px;
+    max-width: 900px;
     text-align: left;
 }
 
@@ -1385,11 +1546,11 @@ a:hover {
         left: 5% !important;
     }
 
-    .foooter-col h3 {
+    .footer-col h3 {
         margin-top: 20px;
     }
 
-    .foooter-col ul li a {
+    .footer-col ul li a {
         padding: 5px 0;
     }
 
@@ -1426,30 +1587,34 @@ a:hover {
         line-height: 1.6 !important;  
     } */
 
+    /* ==================================================
+        MENU MOBILE- TOGGLE
+    ================================================== */
     .menu {
         display: flex;
         flex-direction: column;
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
 
         position: absolute;
         top: 80px;
-        right: 0;
         left: 0;
-        background-color: #ffffff;
+        right: 0;
+
+        gap: 1px;
+
         width: 100%;
+        background: #fff;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         z-index: 100;
-        padding: 0;
 
-        align-items: flex-start;
-        gap: 20%;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+
+        transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
     }
 
      .menu.is-active {
-        max-height: 500px; /* Valor alto para garantir que todos os links apareçam */
+        max-height: 500px;
         opacity: 1;
      }
 
