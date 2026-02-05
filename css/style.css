@@ -4,6 +4,7 @@
   --color-primary: #3d2963;
   --color-secondary: #DDA0DD;
   --color-accent: #9089f2;
+  --color-purple: #5e13aa;
   --color-danger: #d9534f;
   --color-success: #28a745;
   --color-cinza: #e0e0e03e;
@@ -866,7 +867,7 @@ body {
    BIOGRAFIA
    Seção com gradiente de fundo e padding.
 ================================================== */
-.biografia {
+.biografia{
     width: 100%;
     background: linear-gradient(to bottom, var(--color-white) 550px, var(--color-primary) 550px);
     padding-bottom: 40px;
@@ -1109,6 +1110,64 @@ body {
   width: 100%;
 }
 
+/* ==================================================
+   HISTÓRIA DETALHE
+   Container com fundo branco e padding.
+================================================== */
+.historia-detalhe {
+    padding: 90px 20px;
+    background-color: #fff;
+}
+
+/* ==================================================
+   TÍTULO CENTRALIZADO
+   Estilo para título em destaque.
+================================================== */
+.titulo-centralizado {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-bottom: 80px;
+}
+
+/* ==================================================
+   CONTAINER HISTÓRIA
+   Flex para imagem e texto.
+================================================== */
+
+.container-historia {
+    max-width: 450px;
+    margin-left: 18%;
+    margin-top: -2%;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+}
+
+/* ==================================================
+   TEXTO HISTÓRIA
+   Estilo para parágrafos.
+================================================== */
+.texto-historia{
+    flex: 1;
+}
+
+.texto-historia p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color:var(--color-black-one);
+    margin-bottom: 35px;
+}
+
+.texto-historia p strong {
+    color: var(--color-black-one);
+    font-weight: 700;
+}
+
 .information {
     text-align: center;
     font-size: 40px;
@@ -1251,12 +1310,16 @@ body {
 }
 
 .separador {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 1.7px;
     height: 80px;
-    background-color: #9089f2;
-    margin: 0 auto;
-    margin-top: -30px;
-    position: relative;
+    background-color: var(--color-accent);
+    z-index: 10000;
+    margin: 0;
+    pointer-events: none;
 }
 
 .subtitulo-lei-integra {
@@ -1353,55 +1416,26 @@ body {
 
 
 
-.historia-detalhe {
-    padding: 90px 20px;
-    background-color: #fff;
-}
 
-.titulo-centralizado {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #3d2963;
-    text-transform: uppercase;
-    text-decoration: underline;
-    margin-bottom: 80px;
-}
 
-.container-historia {
-    max-width: 450px;
-    margin-left: 18%;
-    margin-top: -2%;
-    display: flex;
-    gap: 60px;
-    align-items: center;
-    position: relative;
-}
 
-.texto-historia{
-    flex: 1;
-}
 
-.texto-historia p {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: #444;
-    margin-bottom: 35px;
-    /* max-width: 100%; */
-}
-
-.texto-historia p strong {
-    color: #333;
-    font-weight: 700;
-}
+/* ==================================================
+   SEÇÃO CICLO
+   Container com fundo cinza e padding.
+================================================== */
 
 .secao-ciclo {
-    background-color: #f5f5f5;
+    background-color: var(--color-gray-100);
     padding: 100px 20px;
     display: flex;
     justify-content: center;
 }
 
+/* ==================================================
+   CONTAINER CICLO
+   Grid para colunas.
+================================================== */
 .container-ciclo {
     max-width: 1100px;
     display: grid;
@@ -1409,9 +1443,12 @@ body {
     gap: 80px;
     align-items: start;
 }
-
+/* ==================================================
+   CONTAINER CICLO
+   Grid para colunas.
+================================================== */
 .ciclo-destaque {
-    color: #3d2963;
+    color: var(--color-primary);
     font-size: 1.4rem;
     font-weight: 800;
     line-height: 1.6;
@@ -1420,39 +1457,94 @@ body {
     max-width: 270px;
 }
 
-.texto-complementar {
-    margin-top: 30px;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #444;
-    max-width: 310px;
-}
-
 .ciclo-destaque span {
     display: block;
     margin-bottom: 5px;
     text-decoration: underline;
 }
 
+/* ==================================================
+   TEXTO COMPLEMENTAR
+   Estilo para parágrafos complementares.
+================================================== */
+.texto-complementar {
+    margin-top: 30px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-black-one);
+    max-width: 310px;
+}
+
+/* ==================================================
+   CICLO NARRATIVA
+   Estilo para narrativas.
+================================================== */
 .ciclo-narrativa p{
     font-size: 1.15rem;
     line-height: 1.8;
-    color: #333;
+    color: var(--color-black-one);
     margin-bottom: 40px;
     position: relative;
     max-width: 330px;
 }
 
-/* Alinhamento paralelo: Ano ao lado do texto superior */
+/* ==================================================
+   SEÇÃO CRIME
+   Container com fundo roxo e padding.
+================================================== */
+.secao-crime {
+    background: linear-gradient(to bottom, var(--color-primary) 80%, #fff 30% );
+    padding: 90px 20px 0 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: auto;
+    margin-top: -80px;
+}
+
+/* ==================================================
+   CONTAINER CENTRALIZADO
+   Wrapper para centralização.
+================================================== */
+.container-centralizado {
+    max-width: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==================================================
+   TÍTULO DA SEÇÃO CRIME
+   Estilo para título em destaque.
+================================================== */
+.o-crime {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-white);
+    text-transform: uppercase;
+    text-decoration: underline;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+/* ==================================================
+   BLOCO SUPERIOR PARALELO
+   Flex para alinhamento paralelo.
+================================================== */
 .bloco-superior-paralelo {
     display: flex;
-    align-items: center;
-    gap: 40px;
+    align-items: flex-start;
+    gap: 50px;
     margin-bottom: 50px;
     width: 100%;
     justify-content: center;
 }
-
+/* ==================================================
+   TEXTO SUPERIOR ROXO
+   Estilo para texto em roxo.
+================================================== */
 .texto-superior-roxo {
     max-width: 900px;
     text-align: left;
@@ -1465,18 +1557,37 @@ body {
     margin-bottom: 15px;
 }
 
-/* Estilo do BOX (Largo e centralizado abaixo do texto) */
-.secao-crime .bio-box-shadow {
-    background: #ffffff;
-    padding: 50px 60px;
-    border-radius: 4px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-    width: 100%; /* Ocupa a largura total do container (1000px) */
+/* ==================================================
+  CRIME INFORMAÇÃO 
+================================================== */
+.crime-info {
+    background-color: var(--color-white);
+    background-image: url(../imagens/textura.jpg);
+    background-size: cover;
+    width: 100%;
+    padding: 70px 150px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
     box-sizing: border-box;
+    position: relative;
+    z-index: 5;
+    transform: translate(50px);
 }
 
+.secao-crime .crime-info p {
+    line-height: 1.9;
+    color: var(--color-black-one);
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+/* ==================================================
+   CONTEÚDO BOX FOCADO
+   Estilo para texto focado.
+================================================== */
 .conteudo-box-focado p {
-    color: #333;
+    color: var(--color-black-one);
     font-size: 1rem;
     line-height: 1.8;
     text-align: left;
@@ -1651,21 +1762,6 @@ body {
     color: var(--color-black-one);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==================================================
    NÚMERO DE EMERGÊNCIA
    Destaque para o contato urgente.
@@ -1757,18 +1853,6 @@ body {
     font-size: 12px;
     color: #888;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ===================================================================== */
 /* --- RESPONSIVIDADE MOBILE (Max-width 1150px) --- */
@@ -2105,7 +2189,6 @@ body {
     
     .biografia {
         padding: 40px 20px;
-        /* background: linear-gradient(to bottom, #ffffff 300px, #3d2963 300px);     */
     }
 
     .container-img {
@@ -2269,9 +2352,126 @@ body {
         font-size: 14px;
     }
 
-   
+    .historia-detalhe {
+        padding: 60px 20px;
+    }
 
-   
+    .titulo-centralizado {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .container-historia {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-left: 0;
+        margin-top: 0;
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .texto-historia {
+        width: 100%;
+        text-align: justify;
+    }
+    
+    .texto-historia p {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    .secao-ciclo {
+        padding: 60px 20px;
+    }
+
+    .container-ciclo {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .ciclo-destaque {
+        max-width: 100%;
+        margin: 0 auto;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .texto-complementar {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    
+    .ciclo-narrativa p{
+        margin: 0 auto;
+        max-width: 100%;
+        margin-bottom: 20px;
+        font-size: 1rem;
+    }
+
+    .secao-crime {
+        padding: 60px 20px;
+        min-height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+     .container-centralizado {
+        width: 100%;
+        padding: 0 20px;
+        z-index: 2;
+    }
+
+    .titulo-secao-crime {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+
+    .bloco-superior-paralelo {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .texto-superior-roxo {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .secao-crime {
+        background: linear-gradient(to bottom, var(--color-primary) 85%, #ffffff 15%);
+        padding-top: 60px;
+    }
+
+    .crime-info {
+        padding: 40px 25px;
+        width: 95%;
+        margin: 0 auto;
+        transform: none;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .o-crime {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+
+    .crime-info p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .conteudo-box-focado p {
+        font-size: 1rem;
+        text-align: center;
+    }
+
 
     .fato-container {
         flex-direction: column;
@@ -2321,23 +2521,6 @@ body {
         text-align: center;
     }
 
-    
-
-    
-
-    
-
-    
-
-   
-
-    
-
-  
-
-   
-    
-
     .titulo-centralizado {
         font-size: 1.8rem;
         margin-bottom: 30px;
@@ -2348,17 +2531,6 @@ body {
         flex-direction: column;
         align-items: center;
         gap: 20px;
-    }
-
-    .container-historia .ano-lateral {
-        writing-mode: horizontal-tb;
-        transform: rotate(0deg);
-        border-right: none;
-        border-bottom: 2px solid #f0f0f0;
-        padding: 0 0 10px 0;
-        margin-right: 0;
-        font-size: 3rem;
-        text-align: center;
     }
 
     .texto-historia {
@@ -2392,50 +2564,6 @@ body {
 
     .titulo-trajetoria {
         font-size: 3.5rem;
-    }
-
-    .secao-crime {
-        padding: 40px 15px;
-    }
-
-    .container-centralizado {
-        width: 100%;
-    }
-
-    .titulo-secao-crime {
-        font-size: 1.8rem;
-        margin-bottom: 30px;
-    }
-
-    .bloco-superior-paralelo {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-    .secao-crime .ano-lateral {
-        writing-mode: horizontal-tb;
-        transform: rotate(0deg);
-        border-right: none;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-        padding-right: 0;
-        padding-bottom: 10px;
-        font-size: 3.5rem;
-    }
-
-    .texto-superior-roxo {
-        max-width: 100%;
-        text-align: center;
-    }
-
-    .secao-crime .bio-box-shadow {
-        padding: 30px 20px;
-        margin-top: 30px;
-    }
-
-    .conteudo-box-focado p {
-        font-size: 1rem;
-        text-align: center;
     }
 
     .secao-ajuda {
