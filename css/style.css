@@ -16,7 +16,7 @@
   --color-black-end: #666;
   --color-gray-100: #f0f0f0;
   --color-gray-200: #f1f1f1;
-  --color-gray-300: #cccccc;
+  --color-gray-300: #f5f5f5;
   --color-gray-400: #fef6f6;
   --color-gray-500: #888888;
   --color-gray-600: #666666;
@@ -970,8 +970,10 @@ body {
    white-space: nowrap;
 
    flex-shrink: 0;
-   margin-top: 10px;
    display: inline-block;
+   
+   margin-top: 10px;
+
 }
 
 .ano-lateral::before {
@@ -1232,9 +1234,9 @@ body {
     transform: translateX(-50%);
     width: 1350px;
     height: calc(100% + 180px); /* Mantendo sua medida */
-    border-left: 1px solid var(--color-gray-300); 
-    border-right: 1px solid var(--color-gray-300);
-    border-bottom: 1px solid var(--color-gray-300); /* A linha que será cortada */
+    border-left: 1px solid var(--color-gray-500); 
+    border-right: 1px solid var(--color-gray-500);
+    border-bottom: 1px solid var(--color-gray-500); /* A linha que será cortada */
     z-index: 0;
     pointer-events: none;
 }
@@ -1324,7 +1326,49 @@ body {
     font-size: 1.3rem !important;
 }
 
+/* --- Área da Imagem (Ainda no fundo Branco) --- */
+.container-midia-justica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(to bottom, #ffffff 50%, #f5f5f5 50%);
+    padding-bottom: 80px;
+}
 
+.linha-vertical-curta {
+    width: 1px;
+    height: 60px;
+    background-color: var(--color-accent);
+    margin-bottom: -20px;
+}
+
+.image-jornais {
+    max-width: 600px;
+    width: 90%;
+    z-index: 2;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    margin-bottom: -50px;
+}
+
+.secao-internacional {
+    background-color: var(--color-gray-300);
+    padding: 120px 0 100px;
+    width: 100%;
+}
+
+.conteudo-informativo {
+    max-width: 700px;
+    text-align: left;
+    margin-top: -90px;
+}
+
+.conteudo-informativo p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--color-black-one);
+    margin-bottom: 30px;
+}
 
 
 /* ==================================================
@@ -2103,8 +2147,136 @@ body {
         right: 0 !important;
         padding: 0 15px;
     }
+}
 
+@media (max-width: 1023px) {
+    .container-luta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        gap: 20px;
+        padding: 40px 20px;
+    }
 
+    .ano-lateral {
+        position: relative !important;
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 3.5rem;
+        margin: 0 auto 10px auto;
+        display: block;
+        z-index: 5; 
+        color: rgba(0, 0, 0, 0.1);
+    }
+
+    .conteudo-informativo, 
+    .conteudo-luta {
+        position: relative;
+        z-index: 2;
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .detalhes-investigacao::before {
+        content: none;
+    }
+
+    .titulo-justica {
+        font-size: 1.6rem;
+        padding: 10px 20px;
+        width: 90%;
+    }
+
+    .etalhes-investigacao .container-detalhes {
+        display: flex;
+        flex-direction: column; /* Empilha as colunas */
+        position: relative;
+        height: auto; /* Garante que a altura não esteja travada */
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .container-detalhes .coluna-narrativa,
+    .container-detalhes .coluna-apoio {
+        position: relative;
+        width: 100%;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 0;
+        display: block;
+    }
+
+    .detalhes-investigacao .container-detalhes,
+    .secao-justica .container-luta,
+    .secao-justica .conteudo-luta {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+        gap: 25px;
+        text-align: center;
+    }
+
+    .secao-justica .container-luta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .secao-justica .titulo-justica {
+        font-size: 1.5rem;
+        padding: 10px 25px;
+        width: auto;
+    }
+
+    .container-luta .ano-lateral {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 3.5rem;
+        color: #eeeeee;
+        margin: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: static;
+    }
+
+    .container-luta .ano-lateral::before {
+        content: "";
+        display: block;
+        position: static;
+        width: 1px;
+        height: 40px;
+        background-color: #ddd;
+        margin: 0 auto 15px;
+        transform: none;
+    }
+
+    .container-midia-justica {
+        background: #ffffff;
+        padding: 40px 0;
+    }
+
+    .container-midia-justica .imagem-jornais {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .secao-internacional {
+        background-color: #f5f5f5;
+        padding: 60px 20px;
+    }
+}
+
+@media (max-width: 1350px) {
+    .detalhes-investigacao::before{
+        width: 95%;
+    } 
 }
 
 @media (max-width: 992px) {
@@ -2165,6 +2337,23 @@ body {
         border: none;
         margin-top: 20px;
     }
+}
+
+@media(max-width: 800) {
+    .conteudo-luta {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .container-detalhes {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+
+    .image-jornais {
+        width: 100%;
+        margin-bottom: 20px;
+    } 
 }
 
 @media (max-width: 850px) {
