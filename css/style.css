@@ -15,7 +15,7 @@
   --color-black-one: #333;
   --color-black-end: #666;
   --color-gray-100: #f0f0f0;
-  --color-gray-200: #e0e0e0;
+  --color-gray-200: #f1f1f1;
   --color-gray-300: #cccccc;
   --color-gray-400: #fef6f6;
   --color-gray-500: #888888;
@@ -1220,9 +1220,23 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-
     position: relative;
-    margin-bottom: 50px;
+    margin-bottom: 0;
+}
+
+.detalhes-investigacao::before{
+    content: "";
+    position: absolute;
+    top: -220px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1350px;
+    height: calc(100% + 180px); /* Mantendo sua medida */
+    border-left: 1px solid var(--color-gray-300); 
+    border-right: 1px solid var(--color-gray-300);
+    border-bottom: 1px solid var(--color-gray-300); /* A linha que será cortada */
+    z-index: 0;
+    pointer-events: none;
 }
 
 .container-detalhes {
@@ -1240,17 +1254,21 @@ body {
 }
 
 .secao-justica {
-    padding: 60px 0;
     text-align: center;
     position: relative;
+    z-index: 10;
+    margin-top: -80px;
 }
 
 .titulo-justica {
-    font-size: 2.2rem;
-    font-weight: 700;
-    text-transform: uppercase;
     display: inline-block;
-    position: relative;
+    background-color: var(--color-danger); /* Fundo sólido para cobrir a linha */
+    color: #ffffff;
+    padding: 15px 20px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 /* Estilo dos parágrafos da investigação */
@@ -1259,12 +1277,14 @@ body {
     line-height: 1.9;
     color: var(--color-black-one);
     text-align: left;
+    margin-top: -130px;
 }
 
 .coluna-apoio {
     font-size: 1.1rem;
     line-height: 1.9;
     color: var(--color-black-one);
+    margin-top: -130px;
 }
 
 .coluna-apoio strong {
@@ -1272,8 +1292,37 @@ body {
     font-weight: 800;
 }
 
+/* Container principal da luta */
+.container-luta {
+    max-width: 850px;
+    margin: 60px auto;
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    position: relative;
+    padding: 0 20px;
+}
 
+.conteudo-luta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    text-align: left;
+}
 
+.conteudo-luta p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-black-one);
+    margin-bottom: 25px;
+}
+
+.texto-destaque-red{
+    color: #d1565a !important; 
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 1.3rem !important;
+}
 
 
 
@@ -2055,11 +2104,6 @@ body {
         padding: 0 15px;
     }
 
-    .divisor {
-        margin-top: 20px !important;
-        margin-bottom: 20px !important;
-        height: 60px;
-    }
 
 }
 
