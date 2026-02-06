@@ -1125,6 +1125,7 @@ body {
 ================================================== */
 .titulo-centralizado {
     text-align: center;
+    letter-spacing: 1.2px;
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--color-primary);
@@ -1139,13 +1140,53 @@ body {
 ================================================== */
 
 .container-historia {
-    max-width: 450px;
+    max-width: 450px; /*450px */
     margin-left: 18%;
     margin-top: -2%;
     display: flex;
     gap: 60px;
     align-items: center;
     position: relative;
+}
+/* ==================================================
+   CONTAINER HISTÓRIA
+   Flex para imagem e texto.
+================================================== */
+.galeria-inicio {
+    position: relative;
+    width: 380px;
+    height: 420px;
+    flex-shrink: 0;
+    margin-top: -40%;
+}
+
+.foto-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1px;
+}
+
+.foto-wrapper.principal {
+    width: 280px;
+    height: 350px;
+    z-index: 1;
+    box-shadow: 15px 15px 0px var(--color-primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.foto-wrapper.sobreposta {
+    width: 220px;
+    height: 280px;
+    z-index: 2;
+    position: absolute;
+    /* bottom: -20%; */
+    bottom: 20px;
+    right: 0;
+    border: 5px solid var(--color-white);
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* ==================================================
@@ -1154,19 +1195,93 @@ body {
 ================================================== */
 .texto-historia{
     flex: 1;
+    min-width: 300px;
+    max-width: 600px;
 }
 
 .texto-historia p {
     font-size: 1rem;
     line-height: 1.8;
     color:var(--color-black-one);
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 .texto-historia p strong {
     color: var(--color-black-one);
     font-weight: 700;
 }
+
+/* ==================================================
+   SEÇÃO DETALHES DA INVESTIGAÇÃO
+================================================== */
+.detalhes-investigacao {
+    padding: 60px 20px 100px;
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.container-detalhes {
+    max-width: 650px;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 80px;
+    align-items: start;
+
+    padding: 100px 20px 30px;
+
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+}
+
+.secao-justica {
+    padding: 60px 0;
+    text-align: center;
+    position: relative;
+}
+
+.titulo-justica {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    position: relative;
+}
+
+/* Estilo dos parágrafos da investigação */
+.coluna-narrativa {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--color-black-one);
+    text-align: left;
+}
+
+.coluna-apoio {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--color-black-one);
+}
+
+.coluna-apoio strong {
+    color: var(--color-black-one);
+    font-weight: 800;
+}
+
+
+
+
+
+
+
+/* ==================================================
+   A central de Atendimento - Informações e Ligue-seção
+   Container com fundo branco e padding.
+================================================== */
 
 .information {
     text-align: center;
@@ -1243,14 +1358,10 @@ body {
     color: #d9534f;
 }
 
-
-
-
-
-
-
-
-
+/* ==================================================
+   SEÇÃO FATO E LEI
+   Container com fundo branco e padding.
+================================================== */
 .fato-lei-secao {
     padding: 60px 20px;
     background-color: #ffffff;
@@ -1406,19 +1517,6 @@ body {
 .determinacao strong {
     color: #000000;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==================================================
    SEÇÃO CICLO
@@ -1962,6 +2060,7 @@ body {
         margin-bottom: 20px !important;
         height: 60px;
     }
+
 }
 
 @media (max-width: 992px) {
@@ -1971,6 +2070,68 @@ body {
 
     .trajetoria-content {
         gap: 40px;
+    }
+
+    .container-historia {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .texto-historia {
+        max-width: 100%;
+        padding: 0 10px;
+        text-align: left;
+    }
+
+    .ano-lateral {
+        writing-mode: horizontal-tb;
+        transform: rotate(0deg);
+        font-size: 3rem;
+        margin-bottom: -10px;
+        align-self: flex-start;
+        color: rgba(0, 0, 0, 0.1);
+    }
+
+    .galeria-inicio {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        margin: 40px 0;
+        position: static;
+    }
+
+    .foto-wrapper.principal,
+    .foto-wrapper.sobreposta {
+        position: relative;
+        width: 45%;
+        height: 250px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        box-shadow: 8px 8px 0px var(--color-primary);
+    }
+
+    .foto-wrapper.sobreposta {
+        border: none;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    .container-detalhes {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 0 10px;
+    }
+
+    .coluna-narrativa, .coluna-apoio {
+        font-size: 1.05rem;
     }
 }
 
