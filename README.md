@@ -75,9 +75,11 @@ O site oferece:
 <h2> 🔗 Links Importantes </h2>
 
 🔗 Repositório GitHub:
-➡ https://github.com/AndreOn04/Projeto-Educativo
+➡ https://github.com/AndreOn04/Projeto-Educativo 
 
 🔗 Projeto em produção
 ➡ [https://educapenha.vercel.app](https://educapenha.vercel.app/)
 
-
+<h2> 📝 Licença </h2>
+Este projeto é disponibilizado <b>não open source</b>, o que significa que qualquer pessoa pode <b>apenas</b> visualizar, porém, não pode utilizar e adaptar o código conforme necessário. <br> <br>
+Copyright <b>© 2026.</b> Todos os direitos reservados.
