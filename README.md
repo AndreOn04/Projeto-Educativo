@@ -81,5 +81,5 @@ O site oferece:
 ➡ [https://educapenha.vercel.app](https://educapenha.vercel.app/)
 
 <h2> 📝 Licença </h2>
-Este projeto é disponibilizado <b>não é open source</b>, o que significa que qualquer pessoa pode <b>apenas</b> visualizar, porém, não pode utilizar e adaptar o código conforme necessário. <br> <br>
+Este projeto disponibilizado <b>não é open source</b>, o que significa que qualquer pessoa pode <b>apenas</b> visualizar, porém, não pode utilizar e adaptar o código conforme necessário. <br> <br>
 Copyright <b>© 2026.</b> Todos os direitos reservados.
