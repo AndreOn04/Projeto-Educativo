@@ -9,8 +9,27 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
-  </head>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">  </head>
   <body>
+
+    <aside class="audio-widget" aria-label="Controle de Leitura de Voz">
+      <div class="audio-container">
+        <button id="btn-audio-main" class="audio-toggle" title="Ouvir Conteudo">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            <svg class="icon-stop" viewBox="0 0 24 24" style="display:none;"><path d="M6 6h12v12H6z"/></svg>
+            <span class="audio-text">Ouvir Página</span>
+        </button>
+
+        <div class="audio-status-bar">
+          <div id="audio-progress" class="progress-fill"></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="progress-cont">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
     <div class="header">
       <div class="logo">
         <img src="./imagens/logo02.jpg" class="header__logo" alt="Logo Maria da Penha" />
@@ -43,25 +62,26 @@
           </div>
         </div>
 
+        
         <div class="menu-item-dropdown">
           <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
-              Violência Doméstica
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+            Violência Doméstica
+            <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
           </a>
           <div class="submenu" id="submenu-violencia-domestica">
             <a href="index.html"> O que é violência <br>doméstica? </a>
           </div>
         </div>
-
+        
         <a href="./pages/contact.html">Contato</a>
-
+        
       </div>
     </div>
-   
+  
     <div class="banner">
       <div class="caixa-foco">
-        <h2 class="posts">O que é violência <br> doméstica?</h2>
-        <p class="paragrafo">
+        <h2 class="posts" data-read>O que é violência <br> doméstica?</h2>
+        <p class="paragrafo" data-read>
           De acordo com o <strong>art. 5º da Lei Maria da Penha</strong>,
           violência doméstica e familiar contra a mulher é “qualquer ação ou
           omissão baseada no gênero que lhe cause morte, lesão, sofrimento físico,
@@ -73,18 +93,18 @@
     </div>
 
     <section class="mitos-secao">
-      <h2 class="titulo__tipos--violencia">Mito e Realidade</h2>
-      <p class="subtitulo-secao">
+      <h2 class="titulo__tipos--violencia" data-read>Mito e Realidade</h2>
+      <p class="subtitulo-secao" data-read>
         Desconstruir preconceitos é o primeiro passo para a mudança.
       </p>
 
       <div class="mitos-container">
         <!-- Mito 01 -->
         <div class="mito-card">
-          <div class="tag-fake">mito</div>
-          <h3>Violência doméstica é um problema privado.</h3>
+          <div class="tag-fake" data-read>mito</div>
+          <h3 data-read>Violência doméstica é um problema privado.</h3>
           <div class="dividir"></div>
-          <p class="fato">
+          <p class="fato" data-read>
             <strong>Realidade:</strong> A violência doméstica é uma questão
             social e de saúde pública que afeta toda a sociedade. Envolve
             direitos humanos e deve ser combatida por todos.
@@ -93,10 +113,10 @@
           <!-- Mito 02 -->
         </div>
         <div class="mito-card">
-          <div class="tag-fake">mito</div>
-          <h3>Somente mulheres pobres são vítimas de violência doméstica.</h3>
+          <div class="tag-fake" data-read>mito</div>
+          <h3 data-read>Somente mulheres pobres são vítimas de violência doméstica.</h3>
           <div class="dividir"></div>
-          <p class="fato">
+          <p class="fato" data-read>
             <strong>Realidade:</strong> A violência doméstica pode afetar
             mulheres de todas as classes sociais, raças e idades. É um problema
             que transcende barreiras socioeconômicas.
@@ -104,10 +124,10 @@
           <!-- Mito 03 -->
         </div>
         <div class="mito-card">
-          <div class="tag-fake">mito</div>
-          <h3>Se a mulher não denuncia, a violência não existe.</h3>
+          <div class="tag-fake" data-read>mito</div>
+          <h3 data-read>Se a mulher não denuncia, a violência não existe.</h3>
           <div class="dividir"></div>
-          <p class="fato">
+          <p class="fato" data-read>
             <strong>Realidade:</strong> Muitas mulheres não denunciam por medo,
             vergonha ou dependência econômica. A ausência de denúncia não
             significa que a violência não esteja ocorrendo.
@@ -115,73 +135,70 @@
           <!-- Mito 04 -->
         </div>
         <div class="mito-card">
-          <div class="tag-fake">mito</div>
-          <h3>O agressor pode mudar se a mulher perdoá-lo.</h3>
+          <div class="tag-fake" data-read>mito</div>
+          <h3 data-read>O agressor pode mudar se a mulher perdoá-lo.</h3>
           <div class="dividir"></div>
-          <p class="fato">
+          <p class="fato" data-read>
             <strong>Realidade:</strong> A mudança do agressor depende de sua
             própria vontade e de um processo de reabilitação. O perdão da vítima
             não garante a cessação da violência.
           </p>
         </div>
         <div class="mito-card">
-          <div class="tag-fake">mito</div>
-          <h3>Roupa curta ou comportamento justificam o assédio.</h3>
+          <div class="tag-fake" data-read>mito</div>
+          <h3 data-read>Roupa curta ou comportamento justificam o assédio.</h3>
           <div class="dividir"></div>
-          <p class="fato">
+          <p class="fato" data-read>
             <strong>Realidade:</strong> O respeito é obrigatório. Nenhuma vestimenta ou escolha pessoal dá direito ao abuso ou violência.
           </p>
         </div>
-        
     </section>
 
-    <section class="linha-do-tempo-secao">
-      <h2 class="titulo-sessao">Passos da Lei</h2>
-      <div class="timeline-container">
-        <div class="timeline-item">
-          <div class="timeline-dot">1</div>
-          <div class="timeline-content">
-            <h3>Criação da Lei Maria da Penha</h3>
-            <p>
-              Em 7 de agosto de 2006, a Lei Maria da Penha (Lei nº 11.340/2006)
-              foi sancionada no Brasil, estabelecendo medidas para combater a
-              violência doméstica e familiar contra a mulher.
-            </p>
+    <div class="title-como-pedir-ajuda">
+      <div class="separador"></div>
+      <div class="img-help">
+        <img src="./imagens/img-hepl.png" alt="" class="como-pedir-ajuda-img">
+      </div>
+      <h3 class="title-sessao-help" data-read> como buscar ajuda </h3>
+      <section class="secao-ajuda">
+        <div class="center">
+          <div class="box">
+            <p data-read>As mulheres devem procurar, em primeiro lugar, um <span>Centro de Referência de Atendimento à Mulher (CRM)</span> em sua cidade. No CRM, elas podem receber orientações para entender a situação pela qual estão passando e obter informações sobre a Lei Maria da Penha e como romper o ciclo da violência. Dessa forma, as mulheres vão se empoderar e decidir o melhor momento de fazer a denúncia.</p>
+
+            <p data-read>Nos locais em que não existe esse equipamento ou nenhum serviço especializado, é possível buscar apoio nas <span>Unidades Básicas de Saúde (UBS)</span>, nos <span>Centros de Referência da Assistência Social (CRAS)</span> e nos <span>Centros de Referência Especializados de Assistência Social (CREAS)</span>, assim como nos <span>núcleos da Defensoria Pública</span> e do <span>Ministério Público.</span></p>
+
+            <p data-read>Vale lembrar que o <span>Ligue 180</span> é um serviço do Governo Federal que funciona 24 horas por dia durante todos os dias da semana. Por meio desse canal, a mulher pode registrar denúncias e saber mais sobre os programas ou equipamentos disponíveis para atendê-la – o Ligue 180 também recebe denúncias, inclusive anônimas.</p>
+
+            <p data-read>Além disso, é possível recorrer a uma <span>Delegacia Especializada no Atendimento à Mulher (DEAM)</span> ou a uma <span>Delegacia de Defesa da Mulher (DDM)</span>. Se o município não possui esse serviço, as Delegacias de Polícia podem registrar as ocorrências. Em casos emergenciais, quando a mulher estiver sob ameaça ou risco de morte, recomenda-se <span>ligar para o 190.</span></p>
+
+            <p data-read>Muitos Estados do Brasil passaram a fazer o <span>Boletim de Ocorrência eletrônico</span>, sobretudo a partir do contexto da pandemia, com o objetivo de ampliar o acesso das mulheres a mecanismos de denúncia e facilitar o registro de ocorrências de violência doméstica e familiar. Basta procurar “Delegacia Eletrônica/Virtual/Online” na internet e digitar o nome do Estado em que o fato ocorreu. Quando abrir o Boletim de Ocorrência eletrônico, é só selecionar “Violência Doméstica”.</p>
+
+            <p data-read>A Lei Maria da Penha representa uma conquista para todas as brasileiras e deve ser acionada no enfrentamento à violência. As mulheres precisam saber que têm os seus direitos garantidos por meio da <span>Lei n. 11.340/2006</span>, incluindo o acesso à Justiça, à saúde física e mental, à dignidade e à liberdade, entre outros.</p>
+
+            <p data-read>Todos esses recursos são muito importantes para quem é vítima da violência de gênero. E <span>quando a mulher revela as agressões que sofre, ela dá um passo importante para quebrar o ciclo.</span> Essa atitude, muitas vezes difícil, ajuda a diminuir o seu isolamento e solidão; por isso, deve ser apoiada e incentivada. O primeiro gesto para o <span>acolhimento</span> da mulher em situação de violência é <span>dar crédito aos seus relatos.</span> Mensagens positivas e palavras de apoio vão fortalecer a vítima e melhorar a sua autoestima, podendo ser fundamentais para encorajá-la a sair dessa situação: “Você não está sozinha”, “Eu me preocupo com você, e, juntas, vamos buscar a sua segurança e bem-estar”, “Eu acredito em você”, “A sua vida é importante para nós”, “O que você deseja fazer? Como posso te ajudar?”. </p>
+
           </div>
         </div>
-        <div class="timeline-item">
-          <div class="timeline-dot">2</div>
-          <div class="timeline-content">
-            <h3>Estabelecimento de Medidas Protetivas</h3>
-            <p>
-              A lei prevê medidas protetivas de urgência para proteger as
-              vítimas, como o afastamento do agressor do lar, proibição de
-              contato e restrição de aproximação.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot">3</div>
-          <div class="timeline-content">
-            <h3>Assistência Integrada</h3>
-            <p>
-              A lei institui juizados especializados para lidar com casos de
-              violência doméstica, proporcionando um atendimento mais ágil e
-              eficaz às vítimas.
-            </p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot">4</div>
-          <div class="timeline-content">
-            <h3>Educação e Conscientização</h3>
-            <p>
-              A Lei Maria da Penha também enfatiza a importância de campanhas
-              educativas e programas de conscientização para prevenir a
-              violência contra a mulher.
-            </p>
-          </div>
-        </div>
+      </section>
+    </div>
+
+    <section class="secao-referencias">
+      <h2 class="title-referencias"> Referências </h2>
+
+      <div class="listas-referencias">
+        <p>BRASIL. <strong>Lei n. 11.340, de 7 de agosto de 2006.</strong> Disponível em: http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11340.htm. Acesso em: 27 jul. 2018.</p>
+        
+        <p>DATASENADO. <strong>Violência doméstica e familiar contra a mulher.</strong> Secretaria de Transparência. Mar. 2013.</p>
+        
+        <p>FUNDAÇÃO PERSEU ABRAMO. <strong>Violência doméstica.</strong> 2010. Disponível em: http://csbh.fpabramo.org.br/sites/default/files/cap5.pdf. Acesso em: 18 out. 2010.</p>
+
+        <p>INSTITUTO MARIA DA PENHA. <strong>Cartilha de enfrentamento à violência doméstica e familiar contra a mulher.</strong> Projeto Contexto: Educação, Gênero, Emancipação. Plataforma Educação Marco Zero. Fortaleza, 2018.</p>
+
+        <p>INSTITUTO NACIONAL DO SEGURO SOCIAL. <strong>Quanto custa o machismo?</strong> Parceria com o Instituto Maria da Penha e a Secretaria de Políticas para as Mulheres. 2012. Disponível em: http://www.siemaco.com.br/upload/publicacao/img2-Cartilha-Quanto-custa-o-machismo-2871.pdf. Acesso em: 11 out. 2018..</p>
+
+        <p>WAISELFISZ, Julio Jacobo. <strong>Mapa da violência 2015</strong>. Homicídio de mulheres no Brasil. Brasília (DF), 2015. Disponível em: https://www.mapadaviolencia.org.br/pdf2015/MapaViolencia_2015_mulheres.pdf. Acesso em: 23 out. 2018..</p>
+
+        <p>SECRETARIA DE POLÍTICAS PARA MULHERES. Ministério dos Direitos Humanos. Disponível em: http://www.spm.gov.br/. Acesso em: 14 ago. 2018..</p>
       </div>
     </section>
 
@@ -256,5 +273,6 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="./js/menu.js" defer></script>
+    <script src="./js/acessibilidade.js"></script>
   </body>
 </html>

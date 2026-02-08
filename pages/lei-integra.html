@@ -11,6 +11,24 @@
     />
 </head>
 <body>
+
+  <aside class="audio-widget" aria-label="Controle de Leitura de Voz">
+      <div class="audio-container">
+        <button id="btn-audio-main" class="audio-toggle" title="Ouvir Conteudo">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            <svg class="icon-stop" viewBox="0 0 24 24" style="display:none;"><path d="M6 6h12v12H6z"/></svg>
+            <span class="audio-text">Ouvir Página</span>
+        </button>
+
+        <div class="audio-status-bar">
+          <div id="audio-progress" class="progress-fill"></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="progress-cont">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
     
       <div class="header">
       <div class="logo">
@@ -61,8 +79,8 @@
 
     <main class="lei-container">
         <header class="lei-header">
-            <h1> a lei na íntegra </h1>
-            <p>Conheça os detalhes, o contexto histórico e as proteções garantidas por lei.</p>
+            <h1 data-read> a lei na íntegra </h1>
+            <p data-read>Conheça os detalhes, o contexto histórico e as proteções garantidas por lei.</p>
 
             <!-- Botão para a Letra seca da Lei - Oficial -->
              <div class="cta-externo">
@@ -77,7 +95,7 @@
         <section class="lei-section">
             <div class="lei-fatos">
                 <div class="resumo">
-                    <p>
+                    <p data-read>
                         <span class="capitular">A</span>ntes da vigência da <strong>Lei Maria da Penha</strong>, a violência doméstica e familiar contra a mulher era considerada um crime de menor potencial ofensivo, sendo enquadrada na <strong>Lei nº 9.099/1995</strong>. Na prática, isso resultava na banalização da violência de gênero, com punições que, em geral, se limitavam ao pagamento de cestas básicas ou à prestação de serviços comunitários. Ou seja, não existia um mecanismo legal que permitisse punir o agressor de forma mais severa.
 
                         Para ilustrar essa realidade, após registrar a denúncia, a própria vítima era responsável por entregar a intimação ao agressor para que ele comparecesse à delegacia. Essa situação evidencia o descaso e a falta de sensibilidade com que o problema era tratado.
@@ -94,11 +112,11 @@
             <div class="fato-container">
                 <div class="fato-titulo-col">
                     <img src="../imagens/know02.jpg" alt="" class="img-fato-destaque">
-                    <div class="subtitulo-lei-integra">
+                    <div class="subtitulo-lei-integra" data-read>
                         Você Sabia?
                     </div>
                 </div>
-                <div class="fato-texto-col">
+                <div class="fato-texto-col" data-read>
                     <p>A Lei Maria da Penha é reconhecida pela Organização das Nações Unidas (ONU) como uma das três legislações mais avançadas do mundo. Entre seus principais avanços estão as medidas protetivas de urgência destinadas às vítimas. Além disso, a lei estabelece a implementação de estruturas essenciais para garantir sua eficácia, como as <strong>Delegacias Especializadas de Atendimento à Mulher, Casas-abrigo, Centros de Referência da Mulher e os Juizados de Violência Doméstica e Familiar contra a Mulher, entre outros.</strong></p>
                 </div>
             </div>
@@ -108,11 +126,11 @@
             <div class="fato-container">
                 <div class="fato-titulo-col">
                   <img src="../imagens/inovation_icon_one.png" alt="" class="img-fato-destaque inovation-icon-one">
-                  <div class="subtitulo-lei-integra">
+                  <div class="subtitulo-lei-integra" data-read>
                     inovações da lei n. 11.340/2006
                   </div>
                 </div>
-                <div class="fato-texto-col">
+                <div class="fato-texto-col" data-read>
                   <p>Com a Lei Maria da Penha, a violência doméstica e familiar contra a mulher passa a ser reconhecida como <strong>crime</strong>, deixando de ser classificada como de menor potencial ofensivo. <strong>A legislação também define o conceito de violência doméstica e familiar, além de identificar suas diferentes formas: física, psicológica, sexual, patrimonial e moral.</strong> Ademais, a Lei nº 11.340/2006 institui mecanismos de proteção às vítimas, ao reconhecer que a violência de gênero contra a mulher é uma responsabilidade do Estado brasileiro, e não apenas um problema restrito ao âmbito familiar.</strong></p>
                 </div>
             </div>
@@ -122,11 +140,11 @@
             <div class="fato-container">
               <div class="fato-titulo-col">
                   <img src="../imagens/genero_icon.png" alt="" class="img-fato-destaque genero-icon">
-                    <div class="subtitulo-lei-integra">
+                    <div class="subtitulo-lei-integra" data-read>
                         Gênero e Direitos Humanos
                     </div>
                 </div>
-                <div class="fato-texto-col">
+                <div class="fato-texto-col" data-read>
                     <p>De acordo com o art. 6º da Lei Maria da Penha, a violência doméstica e familiar contra a mulher é reconhecida como uma das formas de violação dos direitos humanos. Esse entendimento foi essencial para afastar esse tipo de crime da aplicação da <strong>Lei nº 9.099/1995</strong>, que o classificava como de menor potencial ofensivo. Ao adotar essa perspectiva, a legislação brasileira passa a estar em consonância com diversos tratados internacionais ratificados pelo Estado brasileiro, como a <strong>Convenção sobre a Eliminação de Todas as Formas de Discriminação contra a Mulher (CEDAW); a Declaração e Plataforma de Ação da IV Conferência Mundial sobre a Mulher; a Convenção Interamericana para Prevenir, Punir e Erradicar a Violência contra a Mulher (Convenção de Belém do Pará);</strong> e a Convenção Americana sobre Direitos Humanos (Pacto de San José da Costa Rica), entre outros instrumentos internacionais.</p>
                 </div>
             </div>
@@ -135,24 +153,24 @@
         <div class="wrapper-lei">
           <section class="section-lei">
             <img src="../imagens/transferir-icon.png" alt="" class="transferir-icon">
-            <h2> Qual a importânca da Lei Maria da Penha Hoje?</h2>
-            <p>A importância da lei transcende a punição. Ela serve como uma ferramenta de <strong>conscientização social</strong>, reafirmando o direito das mulheres a uma vida sem violência e promovendo a igualdade de gênero. A lei empodera as vítimas ao fornecer um caminho jurídico claro e uma rede de apoio estruturada, sendo fundamental para a mudança cultural no Brasil.</p>
+            <h2 data-read> Qual a importância da Lei Maria da Penha Hoje?</h2>
+            <p data-read>A importância da lei transcende a punição. Ela serve como uma ferramenta de <strong>conscientização social</strong>, reafirmando o direito das mulheres a uma vida sem violência e promovendo a igualdade de gênero. A lei empodera as vítimas ao fornecer um caminho jurídico claro e uma rede de apoio estruturada, sendo fundamental para a mudança cultural no Brasil.</p>
           </section>
         </div>
 
 
          <section class="lei-section destaque-protetiva">
-            <h2>O que são Medidas Protetivas?</h2>
-            <p>Trata-se de uma decisão judicial destinada a garantir a proteção da mulher em situação de violência doméstica, familiar ou decorrente de relação afetiva, de acordo com as necessidades da vítima. As medidas protetivas podem ser solicitadas já no momento do atendimento policial, na delegacia, e devem ser analisadas pelo juiz ou juíza no prazo de até <strong>48 horas</strong>, sendo concedidas com caráter de urgência nos casos em que houver risco iminente de morte. Desse modo, conforme dispõe o <strong>art. 22 da Lei Maria da Penha</strong>, o juiz ou a juíza poderá determinar:</p>
+            <h2 data-read>O que são Medidas Protetivas?</h2>
+            <p data-read>Trata-se de uma decisão judicial destinada a garantir a proteção da mulher em situação de violência doméstica, familiar ou decorrente de relação afetiva, de acordo com as necessidades da vítima. As medidas protetivas podem ser solicitadas já no momento do atendimento policial, na delegacia, e devem ser analisadas pelo juiz ou juíza no prazo de até <strong>48 horas</strong>, sendo concedidas com caráter de urgência nos casos em que houver risco iminente de morte. Desse modo, conforme dispõe o <strong>art. 22 da Lei Maria da Penha</strong>, o juiz ou a juíza poderá determinar:</p>
             <ul class="medidas-protetivas-listas">
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A proibição ou restrição do uso de arma por parte do agressor.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>O afastamento do agressor da casa.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A proibição do agressor de se aproximar da mulher agredida.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A restrição ou suspensão de visitas aos dependentes menores.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A obrigatoriedade da prestação de alimentos provisórios.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A restituição de bens indevidamente subtraídos pelo agressor.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A proibição de venda ou aluguel de imóvel da família sem autorização judicial.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>O depósito de valores correspondentes aos danos causados pelo agressor etc.</li>
+                <li data-read><ion-icon name="chevron-forward-outline"></ion-icon>A proibição ou restrição do uso de arma por parte do agressor.</li>
+                <li data-read><ion-icon name="chevron-forward-outline"></ion-icon>O afastamento do agressor da casa.</li>
+                <li data-read><ion-icon name="chevron-forward-outline"></ion-icon>A proibição do agressor de se aproximar da mulher agredida.</li>
+                <li data-read><ion-icon name="chevron-forward-outline"></ion-icon>A restrição ou suspensão de visitas aos dependentes menores.</li>
+                <li data-read><ion-icon name="chevron-forward-outline"></ion-icon>A obrigatoriedade da prestação de alimentos provisórios.</li>
+                <li data-read><ion-icon name="chevron-forward-outline"></ion-icon>A restituição de bens indevidamente subtraídos pelo agressor.</li>
+                <li data-read><ion-icon name="chevron-forward-outline"></ion-icon>A proibição de venda ou aluguel de imóvel da família sem autorização judicial.</li>
+                <li data-read><ion-icon name="chevron-forward-outline"></ion-icon>O depósito de valores correspondentes aos danos causados pelo agressor etc.</li>
             </ul>
         </section>
             <p class="determinacao">
@@ -249,5 +267,6 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="../js/menu.js" defer></script>
+    <script src="../js/acessibilidade.js"></script>
   </body>
 </html>

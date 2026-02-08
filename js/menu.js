@@ -1,52 +1,71 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => { // Garante que o código seja executado após o carregamento do DOM
 
-    function closeAllSubmenus() {
-        document.querySelectorAll('.submenu').forEach(sub => {
-            sub.classList.remove('is-active-desktop');
+    function closeAllSubmenus() { // Função para fechar todos os submenus
+        document.querySelectorAll('.submenu').forEach(sub => { // Seleciona todos os submenus
+            sub.classList.remove('is-active-desktop'); // Fecha todos os submenus
         });
         document.querySelectorAll('.dropdown-arrow').forEach(arrow => {
-            arrow.classList.remove('is-open');
+            arrow.classList.remove('is-open'); // Remove a classe de rotação do ícone
         });
     }
 
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.menu');
-    const menuIcon = document.getElementById('menu-icon');
+    const menuToggle = document.querySelector('.menu-toggle'); // Botão de menu para mobile
+    const navMenu = document.querySelector('.menu'); // Menu de navegação
+    const menuIcon = document.getElementById('menu-icon'); // Ícone do menu
 
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('is-active');
+            navMenu.classList.toggle('is-active'); // Alterna a classe para mostrar/ocultar o menu
             if(navMenu.classList.contains('is-active')) {
-                menuIcon.setAttribute('name', 'close-outline');
+                menuIcon.setAttribute('name', 'close-outline'); // Altera o ícone para "close" quando o menu estiver aberto
             } else {
-                menuIcon.setAttribute('name', 'menu-outline');
-                closeAllSubmenus();
+                menuIcon.setAttribute('name', 'menu-outline'); // Altera o ícone para "menu" quando o menu estiver fechado
+                closeAllSubmenus(); // Fecha todos os submenus quando o menu principal for fechado
             }
         });
     }
 
-    document.querySelectorAll('.dropdown-toogle').forEach(toggle => {
-        toggle.addEventListener('click', (e) => {
-            e.preventDefault();
+    document.querySelectorAll('.dropdown-toogle').forEach(toggle => { // Seleciona todos os elementos com a classe .dropdown-toogle
+        toggle.addEventListener('click', (e) => { // Adiciona um evento de clique a cada toggle
+            e.preventDefault(); // Previne o comportamento padrão do link
             
-            const targetId = toggle.getAttribute('data-target');
-            const targetSubmenu = document.getElementById(targetId);
-            const targetArrow = toggle.querySelector('.dropdown-arrow');
+            const targetId = toggle.getAttribute('data-target'); // Obtém o ID do submenu a partir do atributo data-target
+            const targetSubmenu = document.getElementById(targetId); // Seleciona o submenu correspondente
+            const targetArrow = toggle.querySelector('.dropdown-arrow'); // Seleciona o ícone de seta dentro do toggle
 
-            const isOpen = targetSubmenu.classList.contains('is-active-desktop');
+            const isOpen = targetSubmenu.classList.contains('is-active-desktop'); // Verifica se o submenu já está aberto
 
-            closeAllSubmenus();
+            closeAllSubmenus(); // Fecha todos os submenus antes de abrir o novo
 
             if (!isOpen) {
-                targetSubmenu.classList.add('is-active-desktop');
-                if (targetArrow) targetArrow.classList.add('is-open');
+                targetSubmenu.classList.add('is-active-desktop'); // Abre o submenu clicado
+                if (targetArrow) targetArrow.classList.add('is-open'); // Adiciona a classe para rotacionar o ícone de seta
             }
         });
     });
 
     document.addEventListener('click', (e) => {
         if(!e.target.closest('.menu-item-dropdown') && !e.target.closest('.menu-toggle')) {
-            closeAllSubmenus();
+            closeAllSubmenus(); // Fecha todos os submenus se o clique for fora do menu dropdown e do botão de menu
         }
     });
+});
+
+document.addEventListener("DOMContentLoaded", function() { // Garante que o código seja executado após o carregamento do DOM
+
+    window.onscroll = function() {
+    updateProgressBar(); // Chama a função para atualizar a barra de progresso ao rolar a página
+    };
+
+    function updateProgressBar() { // Função para atualizar a barra de progresso
+
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop; // Quantidade de rolagem
+
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight; // Altura total do documento menos a altura da janela
+
+        const scrolled = (winScroll / height) * 100; // Porcentagem rolada 
+
+        document.getElementById("myBar").style.width = scrolled + "%"; // Atualiza a largura da barra de progresso
+
+    }
 });

@@ -11,6 +11,25 @@
     />
   </head>
   <body>
+
+    <aside class="audio-widget" aria-label="Controle de Leitura de Voz">
+      <div class="audio-container">
+        <button id="btn-audio-main" class="audio-toggle" title="Ouvir Conteudo">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            <svg class="icon-stop" viewBox="0 0 24 24" style="display:none;"><path d="M6 6h12v12H6z"/></svg>
+            <span class="audio-text">Ouvir Página</span>
+        </button>
+
+        <div class="audio-status-bar">
+          <div id="audio-progress" class="progress-fill"></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="progress-cont">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+
     <div class="header">
       <div class="logo">
         <img src="../imagens/logo02.jpg" class="header__logo" alt="Logo Maria da Penha" />
@@ -57,7 +76,7 @@
 
       </div>   
     </div>
-
+    
     <section class="biografia">
       <div class="container-img">
         <div class="bio-content">
@@ -65,19 +84,19 @@
             <img src="../imagens/maria-da-penha.jpg" alt=" Maria da Penha ">
           </div>
           <div class="bio-text">
-              <h2 class="pergunta">quem é</h2>
+              <h2 class="pergunta" data-read>quem é</h2>
               <h2 class="nome-bloco">
-                <span class="selecionado">maria</span>
-                <span class="selecionado">da penha</span>
-                <span class="selecionado">fernandes?</span>
+                <span class="selecionado" data-read>maria</span>
+                <span class="selecionado" data-read>da penha</span>
+                <span class="selecionado" data-read>fernandes?</span>
               </h2>
           </div>
         </div>
 
         <div class="bio-box-shadow">
-          <div class="ano-lateral"> 1945 </div>
+          <div class="ano-lateral" data-read> 1945 </div>
           <div class="conteudo-introdutivo">
-            <p>
+            <p data-read>
               <span class="inicial">M</span>aria da Penha Maia Fernandes nasceu em Fortaleza, Ceará, no dia 1º de fevereiro de <strong>1945</strong>. É farmacêutica bioquímica, formada pela Faculdade de Farmácia e Bioquímica da Universidade Federal do Ceará, onde se graduou em 1966. Posteriormente, obteve seu mestrado em Parasitologia em Análises Clínicas pela Faculdade de Ciências Farmacêuticas da Universidade de São Paulo, em 1977.
             </p>
           </div>
@@ -87,16 +106,16 @@
 
     <section class="trajetoria-secao">
       <div class="container-trajetoria">
-        <h2 class="titulo-trajetoria"> trajetória </h2>
+        <h2 class="titulo-trajetoria" data-read> trajetória </h2>
 
         <div class="trajetoria-content">
           <div class="col-esquerda">
-            <p>O caso de Maria da Penha simboliza a realidade da violência doméstica vivida por milhares de mulheres no Brasil.</p>
-            <h3 class="traject">A sua trajetória em busca de justiça durante 19 anos e 6 meses faz dela um símbolo de luta por uma vida livre de violência.</h3>
+            <p data-read> O caso de Maria da Penha simboliza a realidade da violência doméstica vivida por milhares de mulheres no Brasil.</p>
+            <h3 class="traject" data-read>A sua trajetória em busca de justiça durante 19 anos e 6 meses faz dela um símbolo de luta por uma vida livre de violência.</h3>
           </div>
           
           <div class="col-direita">
-            <p>Autora da obra <em>Sobrevivi…</em> posso contar (1994) e fundadora do Instituto Maria da Penha, criado em 2009, ela segue atuante na conscientização da sociedade e no combate à impunidade dessa violência de raízes sociais, culturais e políticas.</p>
+            <p data-read>Autora da obra <em>Sobrevivi…</em> posso contar (1994) e fundadora do Instituto Maria da Penha, criado em 2009, ela segue atuante na conscientização da sociedade e no combate à impunidade dessa violência de raízes sociais, culturais e políticas.</p>
           </div>
         </div>
       </div>
@@ -105,15 +124,15 @@
     <div class="separador"></div>
 
     <section class="historia-detalhe">
-        <h2 class="titulo-centralizado o-inicio">O início</h2>
+        <h2 class="titulo-centralizado o-inicio" data-read>O início</h2>
          
         <div class="container-historia">
-            <div class="ano-lateral">1974 - 1976</div>
+            <div class="ano-lateral" data-read>1974 - 1976</div>
             <div class="texto-historia">
-              <p>
+              <p data-read>
                 Maria da Penha conheceu Marco Antonio Heredia Viveros, colombiano, quando estava cursando o mestrado na Faculdade de Ciências Farmacêuticas da Universidade de São Paulo em <strong>1974</strong>. À época, ele fazia os seus estudos de pós-graduação em Economia na mesma instituição.
               </p>
-              <p>
+              <p data-read>
                 Naquele ano, eles começaram a namorar, e Marco Antonio demonstrava ser muito amável, educado e solidário com todos à sua volta. O casamento aconteceu em <strong>1976</strong>. Após o nascimento da primeira filha e da finalização do mestrado de Maria da Penha, eles se mudaram para Fortaleza, onde nasceram as outras duas filhas do casal. Foi a partir desse momento que essa história mudou.
               </p>
             </div>
@@ -131,15 +150,15 @@
     <section class="secao-ciclo">
       <div class="container-ciclo">
         <div class="ciclo-narrativa">
-          <p>As agressões começaram a acontecer quando ele conseguiu a cidadania brasileira e se estabilizou profissional e economicamente. Agia sempre com intolerância, exaltava-se com facilidade e tinha comportamentos explosivos não só com a esposa mas também com as próprias filhas.</p>
-          <p>O medo constante, a tensão diária e as atitudes violentas tornaram-se cada vez mais frequentes.</p>
+          <p data-read>As agressões começaram a acontecer quando ele conseguiu a cidadania brasileira e se estabilizou profissional e economicamente. Agia sempre com intolerância, exaltava-se com facilidade e tinha comportamentos explosivos não só com a esposa mas também com as próprias filhas.</p>
+          <p data-read>O medo constante, a tensão diária e as atitudes violentas tornaram-se cada vez mais frequentes.</p>
         </div>
 
         <div class="ciclo-conteudo">
-          <div class="ciclo-destaque">
+          <div class="ciclo-destaque" data-read>
             Formou-se, assim, o <span>ciclo da violência:</span> aumento da tensão, ato de violência, arrependimento e comportamento carinhoso.
           </div>
-          <p class="texto-complementar">
+          <p class="texto-complementar" data-read>
             Foi nessa última fase, também conhecida como “lua de mel”, que, na esperança de uma mudança real por parte do ex-marido, Maria da Penha teve a sua terceira filha.
           </p>
         </div>
@@ -150,18 +169,18 @@
     
     <section class="secao-crime">
       <div class="container-centralizado">
-          <h2 class="titulo-centralizado o-crime">O CRIME</h2>
+          <h2 class="titulo-centralizado o-crime" data-read>O CRIME</h2>
             <div class="bloco-superior-paralelo">
-                <div class="ano-lateral">1983</div>
+                <div class="ano-lateral" data-read>1983</div>
                 <div class="texto-superior-roxo">
-                    <p><strong>NO ANO DE 1983,</strong> Maria da Penha foi vítima de dupla tentativa de feminicídio por parte de Marco Antonio Heredia Viveros.</p>
+                    <p data-read><strong>NO ANO DE 1983,</strong> Maria da Penha foi vítima de dupla tentativa de feminicídio por parte de Marco Antonio Heredia Viveros.</p>
                     <p>Primeiro, ele deu um tiro em suas costas enquanto ela dormia. Como resultado dessa agressão, Maria da Penha ficou paraplégica devido a lesões irreversíveis na terceira e quarta vértebras torácicas, laceração na dura-máter e destruição de um terço da medula à esquerda – constam-se ainda outras complicações físicas e traumas psicológicos.</p>
                 </div>
             </div>
 
             <div class="crime-info">
                 <div class="conteudo-box-focado">
-                    <p>
+                    <p data-read>
                         No entanto, <strong>Marco Antonio</strong> declarou à polícia que tudo não havia passado de uma tentativa de assalto, <strong>versão que foi posteriormente desmentida pela perícia</strong>. 
                         Quatro meses depois, quando Maria da Penha voltou para casa – após duas cirurgias, internações e tratamentos –, ele a manteve em cárcere privado durante 15 dias e tentou eletrocutá-la durante o banho.
                     </p>
@@ -173,12 +192,12 @@
     <section class="detalhes-investigacao">
       <div class="container-detalhes">
         <div class="coluna-narrativa">
-          <p>
+          <p data-read>
             Ao recompor as partes de um verdadeiro quebra-cabeça cruel arquitetado pelo agressor, Maria da Penha passou a entender as estratégias adotadas pelo ex-marido: ele pressionou para que a apuração do suposto assalto não prosseguisse, convenceu-a a assinar uma procuração que lhe concedia plenos poderes para representá-la, criou um relato dramático sobre o desaparecimento do carro do casal, mantinha diversas cópias autenticadas de seus documentos e, além disso, veio à tona a existência de uma amante.
           </p>
         </div>
         <div class="coluna-apoio">
-          <p>
+          <p data-read>
             Conscientes da <strong>gravidade do caso</strong>, familiares e amigos de Maria da Penha mobilizaram-se para oferecer apoio jurídico e organizar sua saída do lar, de modo que não fosse caracterizada como abandono de domicílio; dessa forma, ela não correria o risco de perder a guarda das filhas.
           </p>
         </div>
@@ -186,24 +205,24 @@
     </section>
 
     <section class="secao-justica">
-      <h2 class="titulo-justica">A Luta por Justiça</h2>
+      <h2 class="titulo-justica" data-read>A Luta por Justiça</h2>
 
       <div class="container-luta">
         <div class="ano-lateral">
-          <span>1991 - 1996</span>
+          <span data-read>1991 - 1996</span>
         </div>
 
         <div class="conteudo-luta">
           <div class="coluna-justica-1">
-            <p>A violência seguinte vivenciada por Maria da Penha, após o atentado sofrido, partiu do próprio Poder Judiciário:</p>
-            <p class="texto-destaque-red">
+            <p data-read>A violência seguinte vivenciada por Maria da Penha, após o atentado sofrido, partiu do próprio Poder Judiciário:</p>
+            <p class="texto-destaque-red" data-read>
               O primeiro julgamento de Marco Antonio ocorreu apenas em 1991, isto é, oito anos depois do crime. Embora tenha sido condenado a 15 anos de prisão, o agressor deixou o fórum em liberdade em razão dos recursos apresentados por sua defesa.
             </p>
           </div>
 
           <div class="coluna-justica-2">
-            <p>Mesmo em condição de grande fragilidade, Maria da Penha seguiu firme na busca por justiça. Foi nesse contexto que escreveu o livro <em>Sobrevivi... posso contar</em>, publicado em 1994 e reeditado em 2010, no qual narra sua trajetória e descreve os desdobramentos do processo judicial movido contra Marco Antonio.</p>
-            <p>
+            <p data-read>Mesmo em condição de grande fragilidade, Maria da Penha seguiu firme na busca por justiça. Foi nesse contexto que escreveu o livro <em>Sobrevivi... posso contar</em>, publicado em 1994 e reeditado em 2010, no qual narra sua trajetória e descreve os desdobramentos do processo judicial movido contra Marco Antonio.</p>
+            <p data-read>
               O segundo julgamento ocorreu apenas em 1996, ocasião em que o ex-marido foi condenado a 10 anos e 6 meses de prisão. No entanto, sob a justificativa de supostas irregularidades no processo levantadas pela defesa, a pena novamente não foi executada.
             </p>
           </div>
@@ -218,15 +237,31 @@
     <section class="secao-internacional">
       <div class="container-luta">
         <div class="ano-lateral">
-          <span>1998</span>
+          <span data-read>1998</span>
         </div>
 
         <div class="conteudo-informativo">
-          <p>
+          <p data-read>
             O ano de <strong>1998</strong> marcou um ponto decisivo, quando o caso passou a ter repercussão internacional. Maria da Penha, juntamente com o Centro para a Justiça e o Direito Internacional (CEJIL) e o Comitê Latino-Americano e do Caribe para a Defesa dos Direitos da Mulher (CLADEM), levou a denúncia à Comissão Interamericana de Direitos Humanos da Organização dos Estados Americanos (CIDH/OEA).
           </p>
-          <p>
+          <p data-read>
             Mesmo diante de um litígio internacional que envolvia sérias violações de direitos humanos e o descumprimento de obrigações previstas em tratados assinados pelo próprio Estado — como a Convenção Americana sobre Direitos Humanos (Pacto de San José da Costa Rica), a Declaração Americana dos Direitos e Deveres do Homem, a Convenção Interamericana para Prevenir, Punir e Erradicar a Violência contra a Mulher (Convenção de Belém do Pará) e a Convenção sobre a Eliminação de Todas as Formas de Discriminação contra a Mulher — o Estado brasileiro manteve-se omisso e não se manifestou em nenhum momento ao longo do processo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao-internacional" id="secao-geral">
+      <div class="container-luta">
+        <div class="ano-lateral">
+          <span data-read>2001</span>
+        </div>
+
+        <div class="conteudo-informativo" id="secao-internacional-2001">
+          <p data-read>
+            Em <strong>2001</strong>, após ter recebido quatro ofícios da CIDH/OEA entre 1998 e 2001 — permanecendo 
+            em silêncio diante das denúncias —, o Estado brasileiro foi responsabilizado por negligência, 
+            omissão e convivência diante da violência doméstica sofrida pelas mulheres no país.
           </p>
         </div>
       </div>
@@ -307,5 +342,6 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="../js/menu.js" defer></script>
+    <script src="../js/acessibilidade.js"></script>
   </body>
 </html>
