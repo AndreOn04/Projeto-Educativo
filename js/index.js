@@ -69,3 +69,24 @@ document.addEventListener("DOMContentLoaded", function() { // Garante que o cód
 
     }
 });
+
+const scrollBtn = document.getElementById('scroll-to-top-bottom');
+
+window.addEventListener('scroll', () => { 
+    const isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100;
+
+    if (isAtBottom){
+        scrollBtn.classList.add('is-at-bottom')
+    } else {
+        scrollBtn.classList.remove('is-at-bottom');
+    }
+});
+
+scrollBtn.addEventListener('click', () => {
+    const isAtBottom = scrollBtn.classList.contains('is-at-bottom');
+
+    window.scrollTo({
+        top: isAtBottom ? 0 : document.body.scrollHeight,
+        behavior: 'smooth' // Roda suavemente
+    });
+})
