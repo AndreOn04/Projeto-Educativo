@@ -1,68 +1,83 @@
-class LeitorInteligente{ 
-
-    constructor() { // Inicializa as variáveis e elementos necessários
-
-        this.synth = window.speechSynthesis; // Interface de síntese de fala do navegador
-        this.btn = document.getElementById('btn-audio-main'); // Botão para controlar a leitura
-        this.progressBar = document.getElementById('audio-progress'); // Barra de progresso para mostrar o andamento da leitura
-        this.textBtn = document.querySelector('.audio-text'); // Elemento para mostrar o texto do botão (ex: "Ouvir Página" ou "Parar Leitura")
-        this.iconPlay = document.querySelector('.icon-play'); // Ícone de play
-        this.iconStop = document.querySelector('.icon-stop'); // Ícone de stop
-        this.isReading = false; // Variável para controlar o estado da leitura (se está lendo ou não)
-        this.utterance = null; // Variável para armazenar a instância de SpeechSynthesisUtterance, que representa o texto a ser falado
-
-        this.init(); // Chama o método de inicialização para configurar os eventos
+class LeitorInteligente {
+    constructor() {
+        // Inicializa variáveis e elementos
+        this.synth = window.speechSynthesis;
+        this.btn = document.getElementById('btn-audio-main');
+        this.progressBar = document.getElementById('audio-progress');
+        this.textBtn = document.querySelector('.audio-text');
+        this.iconPlay = document.querySelector('.icon-play');
+        this.iconStop = document.querySelector('.icon-stop');
+        this.btnSpeed = document.querySelector('.speed-toggle');
+        
+        // Variáveis para funcionalidades
+        this.velocidades = [1, 1.25, 1.5, 2]; // Velocidades disponíveis
+        this.indiceVelocidade = 0; // Índice atual da velocidade
+        this.velocidadeAtual = this.velocidades[this.indiceVelocidade]; // Velocidade atual
+        this.posicaoTexto = 0; // Posição atual no texto (índice de caracteres)
+        this.textComplet = ""; // Texto completo do site
+        this.isReading = false; // Estado de leitura
+        this.utterance = null; // Instância da utterance
+        this.totalChars = 0; // Total de caracteres para cálculo de progresso
+        
+        this.init(); // Configura eventos
     }
 
-   init() { 
-    // Evento de clique para alternar leitura
-    this.btn.addEventListener('click', (e) => { 
-        // No mobile, se o widget estiver fechado, abrimos ele primeiro
-        const widget = document.querySelector('.audio-widget');
-        if (window.innerWidth <= 768 && !widget.classList.contains('is-open')) {
-            widget.classList.add('is-open');
-            // Opcional: Impedir a leitura no primeiro toque, apenas abrir
-            // return; 
+    init() {
+        // Verifica suporte à API
+        if (!this.synth) {
+            console.warn("Speech Synthesis não suportada neste navegador.");
+            return;
         }
-        this.toggleLeitura(); 
-    });
 
-    // Fecha o widget se clicar fora dele (opcional, melhora a UX)
-    document.addEventListener('click', (e) => {
-        const widget = document.querySelector('.audio-widget');
-        if (!widget.contains(e.target)) {
-            widget.classList.remove('is-open');
-        }
-    });
+        // Evento para botão principal (toggle leitura)
+        this.btn.addEventListener('click', (e) => {
+            const widget = document.querySelector('.audio-widget');
+            if (window.innerWidth <= 768 && !widget.classList.contains('is-open')) {
+                widget.classList.add('is-open');
+                return; // Apenas abre o widget no mobile
+            }
+            this.toggleLeitura();
+        });
 
-    window.addEventListener('beforeunload', () => { this.synth.cancel(); });
-}
+        // Evento para botão de velocidade
+        this.btnSpeed.addEventListener('click', () => {
+            this.toggleVelocidade();
+        });
+
+        // Fecha widget ao clicar fora (mobile)
+        document.addEventListener('click', (e) => {
+            const widget = document.querySelector('.audio-widget');
+            if (!widget.contains(e.target)) {
+                widget.classList.remove('is-open');
+            }
+        });
+
+        // Cancela fala ao sair da página
+        window.addEventListener('beforeunload', () => {
+            this.synth.cancel();
+        });
+    }
 
     obterTextoSite() {
-    // Busca apenas elementos que tenham o atributo data-read
-    const blocosParaLer = document.querySelectorAll('[data-read]');
-    let textoFinal = '';
+        // Coleta texto de elementos com [data-read]
+        const blocosParaLer = document.querySelectorAll('[data-read]');
+        let textoFinal = '';
 
-    if (blocosParaLer.length === 0) {
-        console.warn("Nenhum elemento com 'data-read' foi encontrado.");
-        // Opcional: Fallback para o main caso esqueça de marcar
-        const main = document.querySelector('main');
-        return main ? main.innerText : "";
+        if (blocosParaLer.length === 0) {
+            console.warn("Nenhum elemento com 'data-read' encontrado. Usando fallback para 'main'.");
+            const main = document.querySelector('main');
+            return main ? main.innerText.trim() : "";
+        }
+
+        blocosParaLer.forEach(bloco => {
+            const clone = bloco.cloneNode(true);
+            const ignorar = clone.querySelectorAll('button, a, .no-read');
+            ignorar.forEach(el => el.remove());
+            textoFinal += clone.innerText.trim() + ". ";
+        });
+
+        return textoFinal.replace(/\s+/g, ' ').trim();
     }
-
-    blocosParaLer.forEach(bloco => {
-        // Clonamos para limpar possíveis lixos internos (como botões de "saiba mais")
-        const clone = bloco.cloneNode(true);
-        const ignorar = clone.querySelectorAll('button, a, .no-read');
-        ignorar.forEach(el => el.remove());
-
-        // trim() remove espaços em branco inúteis nas pontas
-        // Adicionamos um ponto e espaço para o sintetizador dar uma pausa natural entre blocos
-        textoFinal += clone.innerText.trim() + ". ";
-    });
-
-    return textoFinal.replace(/\s+/g, ' ').trim();
-}
 
     toggleLeitura() {
         if (this.synth.speaking) {
@@ -76,14 +91,61 @@ class LeitorInteligente{
         }
     }
 
-    corrigirBugMotores() {
-
-        if(this.synth.paused && !this.isReading) {
-            this.synth.resume();
-            this.synth.pause();
-            this.timeoutBug = setTimeout(()  => this.corrigirBugMotores(), 10000);
+    toggleVelocidade() {
+        // Avança para próxima velocidade
+        this.indiceVelocidade = (this.indiceVelocidade + 1) % this.velocidades.length;
+        this.velocidadeAtual = this.velocidades[this.indiceVelocidade];
+        
+        // Aplica à utterance atual, se estiver falando
+        if (this.utterance && this.isReading) {
+            this.utterance.rate = this.velocidadeAtual;
         }
+        
+        // Atualiza texto do botão (ex.: "1.25x")
+        this.btnSpeed.innerText = `${this.velocidadeAtual}x`;
+    }
 
+    iniciar() {
+        // Obtém texto completo se ainda não tiver
+        if (!this.textComplet) {
+            this.textComplet = this.obterTextoSite();
+            this.totalChars = this.textComplet.length;
+        }
+        
+        if (!this.textComplet) return;
+
+        this.synth.cancel(); // Cancela qualquer fala anterior
+
+        // Cria utterance com texto restante (a partir de posicaoTexto)
+        const textoRestante = this.textComplet.slice(this.posicaoTexto);
+        this.utterance = new SpeechSynthesisUtterance(textoRestante);
+        this.utterance.lang = 'pt-BR';
+        this.utterance.rate = this.velocidadeAtual;
+
+        // Evento ao iniciar
+        this.utterance.onstart = () => {
+            this.isReading = true;
+            this.iconPlay.style.display = 'none';
+            this.iconStop.style.display = 'block';
+            this.textBtn.innerText = "Pausar";
+            this.animarProgresso();
+        };
+
+        // Evento para salvar posição e atualizar progresso
+        this.utterance.onboundary = (event) => {
+            if (event.name === 'word') {
+                this.posicaoTexto += event.charIndex; // Atualiza posição global
+                const progresso = (this.posicaoTexto / this.totalChars) * 100;
+                this.progressBar.style.width = `${Math.min(progresso, 100)}%`;
+            }
+        };
+
+        // Evento ao terminar
+        this.utterance.onend = () => {
+            this.parar();
+        };
+
+        this.synth.speak(this.utterance);
     }
 
     pausar() {
@@ -91,8 +153,7 @@ class LeitorInteligente{
         this.isReading = false;
         this.iconPlay.style.display = 'block';
         this.iconStop.style.display = 'none';
-        this.textBtn.innerText = "Retomar Leitura.";
-
+        this.textBtn.innerText = "Retomar Leitura";
         this.corrigirBugMotores();
     }
 
@@ -112,53 +173,28 @@ class LeitorInteligente{
         this.iconStop.style.display = 'none';
         this.textBtn.innerText = 'Ouvir Página';
         this.progressBar.style.width = '0%';
-}
+        // Reseta posição apenas se terminou completamente
+        if (this.posicaoTexto >= this.totalChars) {
+            this.posicaoTexto = 0;
+        }
+    }
 
-   iniciar() {
-    const texto = this.obterTextoSite();
-    if (!texto) return;
+    corrigirBugMotores() {
+        // Workaround para bugs de pausa em alguns motores
+        if (this.synth.paused && !this.isReading) {
+            this.synth.resume();
+            this.synth.pause();
+            this.timeoutBug = setTimeout(() => this.corrigirBugMotores(), 10000);
+        }
+    }
 
-    this.synth.cancel(); 
-
-    this.utterance = new SpeechSynthesisUtterance(texto);
-    this.utterance.lang = 'pt-BR';
-    this.utterance.rate = 1.0;
-
-    this.utterance.onstart = () => {
-        this.isReading = true;
-        this.iconPlay.style.display = 'none';
-        this.iconStop.style.display = 'block';
-        this.textBtn.innerText = "Pausar";
-        this.animarProgresso();
-    };
-
-    // Quando o texto acabar naturalmente:
-    this.utterance.onend = () => {
-        this.parar(); 
-    };
-
-    this.synth.speak(this.utterance);
-}
-
-    animarProgresso(totalChars) {
-
-        if(!this.isReading) return; 
-
-        let progresso = 0;
-        const intervalo = setInterval(() => {
-            if(!this.isReading) {
-                clearInterval(intervalo);
-                return;
-            }
-            if (progresso < 100) {
-                progresso += 0.5;
-                this.progressBar.style.width = `${progresso}%`;
-            }
-        }, 100);
-
+    animarProgresso() {
+        // Método auxiliar; progresso é atualizado em onboundary
+        // Pode ser usado para fallbacks se onboundary não disparar
     }
 }
 
+// Inicializa ao carregar a página
 document.addEventListener('DOMContentLoaded', () => {
     new LeitorInteligente();
 });
