@@ -74,35 +74,6 @@
 }
 
 /* ==================================================
-   TEXTOS / MENSAGENS SIMPLES
-================================================== */
-
-.construct,
-.information{
-    text-align: center;
-    font-size: 40px;
-    padding: 50px 20px;
-}
-
-.construct {
-    font-size: 50px;
-}
-
-.mensagem,
-.inform {
-    text-align: center;
-    padding: 20px;
-    font-size: 40px;
-    color: var(--color-danger);
-    font-weight: 600;
-}
-
-.inform {
-    font-size: 20px;
-    color: var(--color-black-end);
-}
-
-/* ==================================================
    RESET GLOBAL
 ================================================== */
 *,
@@ -140,109 +111,141 @@ body {
     box-shadow: 0 0 10px rgba(209, 86, 90, 0.7);
 }
 
-.audio-widget {
+
+/* ==================================================
+   TEXTOS / MENSAGENS SIMPLES
+================================================== */
+
+.construct,
+.information{
+    text-align: center;
+    font-size: 40px;
+    padding: 50px 20px;
+}
+
+.construct {
+    font-size: 50px;
+}
+
+.mensagem,
+.inform {
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    color: var(--color-danger);
+    font-weight: 600;
+}
+
+.inform {
+    font-size: 20px;
+    color: var(--color-black-end);
+}
+
+.acc-widget {
     position: fixed;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    bottom: 80px;
+    right: 20px;
     z-index: 9999;
-    background: var(--color-blue);
-    padding: 12px;
-    border-radius: 30px 0 0 30px;
-    box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid #eee;
-    border-right: none;
-
-    width: 50px;
-    overflow: hidden;
-    transition: width 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s;
-    white-space: nowrap;
+    font-family: sans-serif;
 }
 
-.audio-widget:hover {
-    width: 220px;
-}
-
-.audio-text {
-    white-space: nowrap;
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: var(--bg-page);
-    margin-bottom: 15px;
-}
-
-.audio-widget.is-open {
-    width: 220px;
-}
-
-.audio-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-}
-
-.audio-toggle {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    background: none;
+.acc-main-btn {
+    width: 50px; height: 50px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: white;
     border: none;
     cursor: pointer;
-    width: auto;
-    padding: 0;
-    font-family: inherit;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.audio-toggle svg {
-    width: 24px;
-    height: 24px;
-    fill: var(--bg-page);
-    flex-shrink: 0;
+.acc-menu-content {
+    display: none;
+    position: absolute;
+    bottom: 60px;
+    right: 0;
+    width: 250px;
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid #ddd;
+}
+
+.acc-menu-content.active { display: block; }
+
+.acc-section p {
+    margin: 0 0 10px 0;
+    font-size: 12px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.acc-arrow {
+    display: flex;
+    gap: 8px;
+    align-items: center;
     margin-bottom: 15px;
 }
 
-.audio-status-bar {
-    width: 100%;
-    height: 3px;
-    background: #eee;
-    border-radius: 2px;
-    overflow: hidden;
-}
-
-.progress-fill {
-    width: 0%;
-    height: 100%;
-    background: #d1565a;
-    transition: width 0.3s linear;
-}
-
-.audio-controls {
+.acc-action {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    flex: 1;
     display: flex;
     align-items: center;
-    top: 12px;
-    right: 16px;
+    justify-content: center;
+}
+
+.acc-action { background: #e0e0e0; }
+
+.share-popover {
     position: absolute;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background: #333;
+    border-radius: 8px;
+    padding: 5px;
+    display: flex;
+    gap: 5px;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    animation: popIn 0.2s ease-out;
 }
 
-.audio-widget:hover .audio-controls,
-.audio-widget.is-open .audio-controls {
-    opacity: 1;
-}
-
-.speed-toggle {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: var(--bg-page);
-    border-radius: 12px;
-    padding: 2px 8px;
-    font-size: 0.75rem;
-    font-weight: 800;
+.share-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
     cursor: pointer;
-    user-select: none;
-    transition: all 0.2s;
+    padding: 5px;
+    display: flex;
+    transition: transform 0.2s;
+}
+
+.share-btn:hover { transform: scale(1.2); color: var(--color-secondary); }
+
+.popover-arrow {
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; height: 0;
+    border-left: 6px solid transparent; 
+    border-right: 6px solid transparent; 
+    border-top: 6px solid #333; 
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.8) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 /* ==================================================
@@ -1291,7 +1294,7 @@ body {
    Flex para imagem e texto.
 ================================================== */
 .galeria-inicio {
-    position: relative;
+    position: sticky;
     width: 380px;
     height: 420px;
     flex-shrink: 0;

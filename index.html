@@ -13,31 +13,47 @@
   </head>
   <body>
 
-    <script>
-      alert("Leitor de texto ainda não está disponível para celulares... ")
-    </script>
+    <div id="acessibility-widget" class="acc-widget">
+      <button id="toggle-acc-menu" class="acc-main-btn">
+        <ion-icon name="settings-outline"></ion-icon>
+      </button>
 
-      <aside class="audio-widget" aria-label="Controle de Leitura de Voz" role="region">
-        <div class="audio-container">
-            <button id="btn-audio-main" class="audio-toggle" title="Ouvir Conteúdo" aria-label="Iniciar ou pausar leitura de áudio" aria-describedby="audio-status">
-                <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-                </svg>
-                <svg class="icon-stop" viewBox="0 0 24 24" style="display:none;" aria-hidden="true">
-                    <path d="M6 6h12v12H6z"/>
-                </svg>
-                <span class="audio-text" aria-live="polite" id="audio-status">Ouvir Página</span>
-            </button>
-
-            <div class="audio-controls">
-                <button id="btn-speed" class="speed-toggle" aria-label="Ajustar velocidade de leitura" title="Velocidade">1x</button>
-            </div>
-
-            <div class="audio-status-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso da leitura em porcentagem">
-                <div id="audio-progress" class="progress-fill" style="width: 0%;"></div>
-            </div>
+      <div id="acc-menu" class="acc-menu-content">
+        <div class="acc-content">
+          <p>Tamanho da Fonte</p>
+          <div class="acc-arrow">
+              <button class="acc-action" data-type="size" data-value="-10">A-</button>
+              <span id="acc-size-label">100%</span>
+              <button class="acc-action" data-type="size" data-value="10">A+</button>
+          </div>
         </div>
-    </aside>
+
+        <div class="acc-section">
+          <p>Estilos da Fonte (<span id="acc-font-name" >Inter</span>) </p>
+          <div class="acc-arrow">
+            <button class="acc-action" data-type="font" data-value="prev">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="acc-action" data-type="font" data-value="next" style="flex-grow: 1;">
+                    Trocar Fonte
+                </button>
+                <button class="acc-action" data-type="font" data-value="next">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="share-popover" id="share-popover" style="display: none;">
+      <button class="share-btn" id="copy-quote" title="Copiar Citação">
+        <ion-icon name="copy-outline"></ion-icon>
+      </button>
+      <button class="share-btn" id="whatsapp-quote" title="Enviar para WhatsApp">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </button>
+      <div class="popover-arrow"></div>
+    </div>
 
     <div class="progress-cont">
       <div class="progress-bar" id="myBar"></div>
@@ -86,15 +102,14 @@
           </div>
         </div>
         
-        <a href="./pages/contact.html">Contato</a>
-        
+        <a href="./pages/contact.html">Contato</a>  
       </div>
     </div>
   
     <div class="banner">
       <div class="caixa-foco">
-        <h2 class="posts" data-read>O que é violência <br> doméstica?</h2>
-        <p class="paragrafo" data-read>
+        <h2 class="posts">O que é violência <br> doméstica?</h2>
+        <p class="paragrafo">
           De acordo com o <strong>art. 5º da Lei Maria da Penha</strong>,
           violência doméstica e familiar contra a mulher é “qualquer ação ou
           omissão baseada no gênero que lhe cause morte, lesão, sofrimento físico,
@@ -106,18 +121,18 @@
     </div>
 
     <section class="mitos-secao">
-      <h2 class="titulo__tipos--violencia" data-read>Mito e Realidade</h2>
-      <p class="subtitulo-secao" data-read>
+      <h2 class="titulo__tipos--violencia">Mito e Realidade</h2>
+      <p class="subtitulo-secao">
         Desconstruir preconceitos é o primeiro passo para a mudança.
       </p>
 
       <div class="mitos-container">
         <!-- Mito 01 -->
         <div class="mito-card">
-          <div class="tag-fake" data-read>mito</div>
-          <h3 data-read>Violência doméstica é um problema privado.</h3>
+          <div class="tag-fake">mito</div>
+          <h3>Violência doméstica é um problema privado.</h3>
           <div class="dividir"></div>
-          <p class="fato" data-read>
+          <p class="fato">
             <strong>Realidade:</strong> A violência doméstica é uma questão
             social e de saúde pública que afeta toda a sociedade. Envolve
             direitos humanos e deve ser combatida por todos.
@@ -126,10 +141,10 @@
           <!-- Mito 02 -->
         </div>
         <div class="mito-card">
-          <div class="tag-fake" data-read>mito</div>
-          <h3 data-read>Somente mulheres de baixa renda são vítimas de violência doméstica.</h3>
+          <div class="tag-fake">mito</div>
+          <h3 >Somente mulheres de baixa renda são vítimas de violência doméstica.</h3>
           <div class="dividir"></div>
-          <p class="fato" data-read>
+          <p class="fato">
             <strong>Realidade:</strong> A violência doméstica pode afetar
             mulheres de todas as classes sociais, raças e idades. É um problema
             que transcende barreiras socioeconômicas.
@@ -137,10 +152,10 @@
           <!-- Mito 03 -->
         </div>
         <div class="mito-card">
-          <div class="tag-fake" data-read>mito</div>
-          <h3 data-read>Se a mulher não denuncia, a violência não existe.</h3>
+          <div class="tag-fake">mito</div>
+          <h3>Se a mulher não denuncia, a violência não existe.</h3>
           <div class="dividir"></div>
-          <p class="fato" data-read>
+          <p class="fato">
             <strong>Realidade:</strong> Muitas mulheres não denunciam por medo,
             vergonha ou dependência econômica. A ausência de denúncia não
             significa que a violência não esteja ocorrendo.
@@ -148,20 +163,20 @@
           <!-- Mito 04 -->
         </div>
         <div class="mito-card">
-          <div class="tag-fake" data-read>mito</div>
-          <h3 data-read>O agressor pode mudar se a mulher perdoá-lo.</h3>
+          <div class="tag-fake">mito</div>
+          <h3>O agressor pode mudar se a mulher perdoá-lo.</h3>
           <div class="dividir"></div>
-          <p class="fato" data-read>
+          <p class="fato">
             <strong>Realidade:</strong> A mudança do agressor depende de sua
             própria vontade e de um processo de reabilitação. O perdão da vítima
             não garante a cessação da violência.
           </p>
         </div>
         <div class="mito-card">
-          <div class="tag-fake" data-read>mito</div>
-          <h3 data-read>Roupa curta ou comportamento justificam o assédio.</h3>
+          <div class="tag-fake">mito</div>
+          <h3>Roupa curta ou comportamento justificam o assédio.</h3>
           <div class="dividir"></div>
-          <p class="fato" data-read>
+          <p class="fato">
             <strong>Realidade:</strong> O respeito é obrigatório. Nenhuma vestimenta ou escolha pessoal dá direito ao abuso ou violência.
           </p>
         </div>
@@ -172,23 +187,23 @@
       <div class="img-help">
         <img src="./imagens/img-hepl.png" alt="" class="como-pedir-ajuda-img">
       </div>
-      <h3 class="title-sessao-help" data-read> como buscar ajuda </h3>
+      <h3 class="title-sessao-help"> como buscar ajuda </h3>
       <section class="secao-ajuda">
         <div class="center">
           <div class="box">
-            <p data-read>As mulheres devem procurar, em primeiro lugar, um <span>Centro de Referência de Atendimento à Mulher (CRM)</span> em sua cidade. No CRM, elas podem receber orientações para entender a situação pela qual estão passando e obter informações sobre a Lei Maria da Penha e como romper o ciclo da violência. Dessa forma, as mulheres vão se empoderar e decidir o melhor momento de fazer a denúncia.</p>
+            <p>As mulheres devem procurar, em primeiro lugar, um <span>Centro de Referência de Atendimento à Mulher (CRM)</span> em sua cidade. No CRM, elas podem receber orientações para entender a situação pela qual estão passando e obter informações sobre a Lei Maria da Penha e como romper o ciclo da violência. Dessa forma, as mulheres vão se empoderar e decidir o melhor momento de fazer a denúncia.</p>
 
-            <p data-read>Nos locais em que não existe esse equipamento ou nenhum serviço especializado, é possível buscar apoio nas <span>Unidades Básicas de Saúde (UBS)</span>, nos <span>Centros de Referência da Assistência Social (CRAS)</span> e nos <span>Centros de Referência Especializados de Assistência Social (CREAS)</span>, assim como nos <span>núcleos da Defensoria Pública</span> e do <span>Ministério Público.</span></p>
+            <p>Nos locais em que não existe esse equipamento ou nenhum serviço especializado, é possível buscar apoio nas <span>Unidades Básicas de Saúde (UBS)</span>, nos <span>Centros de Referência da Assistência Social (CRAS)</span> e nos <span>Centros de Referência Especializados de Assistência Social (CREAS)</span>, assim como nos <span>núcleos da Defensoria Pública</span> e do <span>Ministério Público.</span></p>
 
-            <p data-read>Vale lembrar que o <span>Ligue 180</span> é um serviço do Governo Federal que funciona 24 horas por dia durante todos os dias da semana. Por meio desse canal, a mulher pode registrar denúncias e saber mais sobre os programas ou equipamentos disponíveis para atendê-la – o Ligue 180 também recebe denúncias, inclusive anônimas.</p>
+            <p>Vale lembrar que o <span>Ligue 180</span> é um serviço do Governo Federal que funciona 24 horas por dia durante todos os dias da semana. Por meio desse canal, a mulher pode registrar denúncias e saber mais sobre os programas ou equipamentos disponíveis para atendê-la – o Ligue 180 também recebe denúncias, inclusive anônimas.</p>
 
-            <p data-read>Além disso, é possível recorrer a uma <span>Delegacia Especializada no Atendimento à Mulher (DEAM)</span> ou a uma <span>Delegacia de Defesa da Mulher (DDM)</span>. Se o município não possui esse serviço, as Delegacias de Polícia podem registrar as ocorrências. Em casos emergenciais, quando a mulher estiver sob ameaça ou risco de morte, recomenda-se <span>ligar para o 190.</span></p>
+            <p>Além disso, é possível recorrer a uma <span>Delegacia Especializada no Atendimento à Mulher (DEAM)</span> ou a uma <span>Delegacia de Defesa da Mulher (DDM)</span>. Se o município não possui esse serviço, as Delegacias de Polícia podem registrar as ocorrências. Em casos emergenciais, quando a mulher estiver sob ameaça ou risco de morte, recomenda-se <span>ligar para o 190.</span></p>
 
-            <p data-read>Muitos Estados do Brasil passaram a fazer o <span>Boletim de Ocorrência eletrônico</span>, sobretudo a partir do contexto da pandemia, com o objetivo de ampliar o acesso das mulheres a mecanismos de denúncia e facilitar o registro de ocorrências de violência doméstica e familiar. Basta procurar “Delegacia Eletrônica/Virtual/Online” na internet e digitar o nome do Estado em que o fato ocorreu. Quando abrir o Boletim de Ocorrência eletrônico, é só selecionar “Violência Doméstica”.</p>
+            <p>Muitos Estados do Brasil passaram a fazer o <span>Boletim de Ocorrência eletrônico</span>, sobretudo a partir do contexto da pandemia, com o objetivo de ampliar o acesso das mulheres a mecanismos de denúncia e facilitar o registro de ocorrências de violência doméstica e familiar. Basta procurar “Delegacia Eletrônica/Virtual/Online” na internet e digitar o nome do Estado em que o fato ocorreu. Quando abrir o Boletim de Ocorrência eletrônico, é só selecionar “Violência Doméstica”.</p>
 
-            <p data-read>A Lei Maria da Penha representa uma conquista para todas as brasileiras e deve ser acionada no enfrentamento à violência. As mulheres precisam saber que têm os seus direitos garantidos por meio da <span>Lei n. 11.340/2006</span>, incluindo o acesso à Justiça, à saúde física e mental, à dignidade e à liberdade, entre outros.</p>
+            <p>A Lei Maria da Penha representa uma conquista para todas as brasileiras e deve ser acionada no enfrentamento à violência. As mulheres precisam saber que têm os seus direitos garantidos por meio da <span>Lei n. 11.340/2006</span>, incluindo o acesso à Justiça, à saúde física e mental, à dignidade e à liberdade, entre outros.</p>
 
-            <p data-read>Todos esses recursos são muito importantes para quem é vítima da violência de gênero. E <span>quando a mulher revela as agressões que sofre, ela dá um passo importante para quebrar o ciclo.</span> Essa atitude, muitas vezes difícil, ajuda a diminuir o seu isolamento e solidão; por isso, deve ser apoiada e incentivada. O primeiro gesto para o <span>acolhimento</span> da mulher em situação de violência é <span>dar crédito aos seus relatos.</span> Mensagens positivas e palavras de apoio vão fortalecer a vítima e melhorar a sua autoestima, podendo ser fundamentais para encorajá-la a sair dessa situação: “Você não está sozinha”, “Eu me preocupo com você, e, juntas, vamos buscar a sua segurança e bem-estar”, “Eu acredito em você”, “A sua vida é importante para nós”, “O que você deseja fazer? Como posso te ajudar?”. </p>
+            <p>Todos esses recursos são muito importantes para quem é vítima da violência de gênero. E <span>quando a mulher revela as agressões que sofre, ela dá um passo importante para quebrar o ciclo.</span> Essa atitude, muitas vezes difícil, ajuda a diminuir o seu isolamento e solidão; por isso, deve ser apoiada e incentivada. O primeiro gesto para o <span>acolhimento</span> da mulher em situação de violência é <span>dar crédito aos seus relatos.</span> Mensagens positivas e palavras de apoio vão fortalecer a vítima e melhorar a sua autoestima, podendo ser fundamentais para encorajá-la a sair dessa situação: “Você não está sozinha”, “Eu me preocupo com você, e, juntas, vamos buscar a sua segurança e bem-estar”, “Eu acredito em você”, “A sua vida é importante para nós”, “O que você deseja fazer? Como posso te ajudar?”. </p>
 
           </div>
         </div>
@@ -290,6 +305,7 @@
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
     <script src="./js/index.js" defer></script>
-    <script src="./js/acessibilidade.js"></script>
+    <script src="./js/Acessibility.js"></script>
+    <script src="./js/Pop-up.js"></script>
   </body>
 </html>

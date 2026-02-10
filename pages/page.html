@@ -12,6 +12,48 @@
 </head>
 <body>
 
+  <div id="acessibility-widget" class="acc-widget">
+      <button id="toggle-acc-menu" class="acc-main-btn">
+        <ion-icon name="settings-outline"></ion-icon>
+      </button>
+
+      <div id="acc-menu" class="acc-menu-content">
+        <div class="acc-content">
+          <p>Tamanho da Fonte</p>
+          <div class="acc-arrow">
+              <button class="acc-action" data-type="size" data-value="-10">A-</button>
+              <span id="acc-size-label">100%</span>
+              <button class="acc-action" data-type="size" data-value="10">A+</button>
+          </div>
+        </div>
+
+        <div class="acc-section">
+          <p>Tipo de Fonte (<span id="acc-font-name" >Inter</span>) </p>
+          <div class="acc-arrow">
+            <button class="acc-action" data-type="font" data-value="prev">
+                    <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <button class="acc-action" data-type="font" data-value="next" style="flex-grow: 1;">
+                    Trocar Fonte
+                </button>
+                <button class="acc-action" data-type="font" data-value="next">
+                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="share-popover" id="share-popover" style="display: none;">
+      <button class="share-btn" id="copy-quote" title="Copiar Citação">
+        <ion-icon name="copy-outline"></ion-icon>
+      </button>
+      <button class="share-btn" id="whatsapp-quote" title="Enviar para WhatsApp">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </button>
+      <div class="popover-arrow"></div>
+    </div>
+
     <div class="progress-cont">
       <div class="progress-bar" id="myBar"></div>
     </div>
@@ -117,7 +159,7 @@
       </div>
     </section>
 
-        <section class="linha-do-tempo-secao">
+    <section class="linha-do-tempo-secao">
       <h2 class="titulo-sessao">Passos da Lei</h2>
       <div class="timeline-container">
         <div class="timeline-item">
@@ -214,6 +256,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../js/index.js" defer></script>
-    <script src="../js/statistic.js"></script>
+    <script src="../js/Acessibility.js"></script>
+    <script src="../js/Pop-up.js"></script>
 </body>
 </html>

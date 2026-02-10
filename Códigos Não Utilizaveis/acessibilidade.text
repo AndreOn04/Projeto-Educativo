@@ -52,7 +52,7 @@ class LeitorInteligente {
             this.btnSpeed.addEventListener('click', (e) => {
                 e.stopPropagation();
                 this.toggleVelocidade();
-            });
+            }); 
         }
 
         // Fecha widget ao clicar fora (mobile)
@@ -166,7 +166,8 @@ class LeitorInteligente {
             }
         };
 
-        setTimeout(() => this.synth.speak(this.utterance), isRestart ? 50 : 0);
+        // setTimeout(() => this.synth.speak(this.utterance), isRestart ? 50 : 0);
+        this.synth.speak(this.utterance)
     }
 
     pausar() {
@@ -217,3 +218,23 @@ class LeitorInteligente {
 document.addEventListener('DOMContentLoaded', () => {
     new LeitorInteligente();
 });
+
+// Estrutura html
+
+<aside class="audio-widget" aria-label="Controle de Leitura de Voz">
+      <div class="audio-container">
+        <button id="btn-audio-main" class="audio-toggle" title="Ouvir Conteudo">
+            <svg class="icon-play" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            <svg class="icon-stop" viewBox="0 0 24 24" style="display:none;"><path d="M6 6h12v12H6z"/></svg>
+            <span class="audio-text">Ouvir Página</span>
+        </button>
+
+        <div class="audio-controls">
+          <button id="btn-speed" class="speed-toggle">1</button>
+        </div>
+
+        <div class="audio-status-bar">
+          <div id="audio-progress" class="progress-fill"></div>
+        </div>
+      </div>
+    </aside>
