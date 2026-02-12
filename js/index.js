@@ -90,3 +90,20 @@ scrollBtn.addEventListener('click', () => {
         behavior: 'smooth' // Roda suavemente
     });
 })
+
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineButtons = document.querySelectorAll('.timeline-toggle');
+    if (!timelineButtons.length) return;
+
+    timelineButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            if(!content || !content.classList.contains('timeline-extra')) return;
+
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', String(!isExpanded));
+            button.textContent = isExpanded ? 'Ver detalhes' : 'Ocultar detalhes';
+            content.hidden = isExpanded;
+        });
+    });
+});
