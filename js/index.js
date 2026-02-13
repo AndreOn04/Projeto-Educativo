@@ -107,3 +107,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.querySelector('.violencia-scroll-cue').addEventListener('click', function(){
+    const citacoesSection = document.querySelector('.violencia-citacoes');
+    const topoSection = document.querySelector('.violencia-top');
+
+    const scrollAtual = window.pageXOffset || document.documentElement.scrollTop;
+    const posicaoCitacoes = citacoesSection.offsetTop - 50;
+
+    if(scrollAtual < posicaoCitacoes ) {
+        window.scrollTo({
+            top: posicaoCitacoes,
+            behavior: 'smooth',
+        });
+    } else {
+        window.scrollTo({
+            top: topoSection.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+
+});

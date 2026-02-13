@@ -113,6 +113,24 @@ body {
 
 
 /* ==================================================
+   INTEGRAÇÃO VLIBRAS (LIBRAS)
+================================================== */
+[vw] {
+    position: fixed;
+    z-index: 9997;
+}
+
+[vw-access-button] {
+    left: 20px !important;
+    bottom: 20px !important;
+    right: auto !important;
+}
+
+.vw-plugin-wrapper {
+    z-index: 9998 !important;
+}
+
+/* ==================================================
    TEXTOS / MENSAGENS SIMPLES
 ================================================== */
 
@@ -152,8 +170,8 @@ body {
 .acc-main-btn {
     width: 50px; height: 50px;
     border-radius: 50%;
-    background: var(--color-primary);
-    color: white;
+    background: var(--color-accent);
+    color: var(--color-black);
     border: none;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -491,10 +509,11 @@ body {
 ================================================== */
 
 .banner-resumo-lei {
+    position: relative;
     overflow: hidden;
     
     width: 100%;
-    height: 450px;
+    height: 500px;
     
     display: flex;
     flex-direction: column;
@@ -505,16 +524,25 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding-bottom: 100px;
 }
 
-/* .banner-resumo-lei::before{
+.banner-resumo-lei::before{
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
     inset: 0;
-
+    width: 100%;
+    height: 100%;
     background-color: rgba(0, 0, 0, 0.45);
     z-index: 1;
-} */
+}
+
+.banner-resumo-lei > * {
+    position: relative;
+    z-index: 2; /* Texto e botões saltam para a frente */
+}
 
 .banner-resumo-lei-content {
     position: relative;
@@ -523,6 +551,7 @@ body {
     text-align: center;
     color: #fff;
     padding: 0 20px;
+    margin-top: -50px;
 }
 
 .banner-resumo-lei-content h1{
@@ -561,16 +590,18 @@ body {
 }
 
 .resumo-lei-secao {
-    /* background: #3f2b67; */
+    background: #3f2b67;
     padding: 0 20px 70px;
 }
 
 .resumo-lei-container {
     max-width: 1100px;
-    margin: -70px auto 0;
+    margin: -150px auto 0;
+    position: relative;
+    z-index: 10;
     background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     padding: 34px;
 }
 
@@ -901,95 +932,354 @@ body {
 
 
 /* ==================================================
-   SEÇÃO VIOLENCIA DE CARDS
-================================================== */
-
-.violencia-secao {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    padding: 80px 20px;
-    text-align: center;
-}
-
-/* ==================================================
-   CONTAINER CARDS
-================================================== */
-.cards-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    
-    gap: 30px;
-
-    width: 100%;
-    max-width: 1200px;
-}
-
-/* ==================================================
    TÍTULO DA SEÇÃO
    Estilo para o título em maiúsculo.
 ================================================== */
+
+.violencia-secao {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 40vh;
+    padding: 65px 20px 120px;
+    background: #f6f6f8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.violencia-secao::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(52% 30% at 50% 8%, rgba(62, 44, 116, 0.07) 0%, rgba(62, 44, 116, 0.04) 50%, rgba(62, 44, 116, 0) 100%),
+      repeating-radial-gradient(ellipse 58% 34% at 50% 9%, rgba(84, 71, 130, 0.09) 0 2px, transparent 2px 26px);
+    opacity: 0.35;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.violencia-topo,
+.violencia-scroll-cue,
+.violencia-citacoes {
+    position: relative;
+    z-index: 1;
+}
+
+.violencia-topo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 40vh;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .titulo__tipos--violencia {
-    font-size: 32px;
-    margin-bottom: 40px;
-    color: #333;
+    color: #3f2c73;
     text-transform: uppercase;
+    font-size: clamp(1.3rem, 3.2vw, 6.6rem);
+    letter-spacing: 0.01em;
+    margin-bottom: 32px;
+    text-align: center;
+    font-weight: 800;
+    line-height: 1.08;
+}
+
+.titulo__tipos--violencia span {
+    display: block;
+    margin-top: 10px;
 }
 
 .subtitulo__tipos--violencia {
-    padding-bottom: 20px;
+    padding-bottom: 0;
     font-size: 1.2rem;
-    align-items: center;
-    max-width: 550px;
-    color: var(--color-black);
-    line-height: 1.5;
+    max-width: 599px;
+    color: #16161b;
+    line-height: 1.52;
+    margin: 0 auto;
 }
 
 .subtitulo__tipos--violencia span {
-    font-weight: bold;
+    font-weight: 800;
 }
 
-/* ==================================================
-   CARDS INDIVIDUAL
-================================================== */
-
-.card {
-    padding: 30px;
-    border-radius: 10px;
-
-    background-color: #ffffff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-bottom: 5px solid var(--color-secondary);
+.violencia-scroll-cue {
+    margin-top: 15vh;
+    color: #8b82f1;
+    font-size: 3.5rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: bounceSeta 2s infinite;
 }
 
-.card:hover{
-    transform: translateY(-10px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+.violencia-scroll-cue ion-icon {
+    --ionicon-stroke-width: 18px;
+    font-size: 3.2rem;
+    font-weight: 100; 
 }
 
-/* ==================================================
-   ELEMENTOS INTERNOS DO CARD
-================================================== */
-
-.card ion-icon {
-    font-size: 50px;
-    color: #DDA0DD;
-    margin-bottom: 20px;
+.violencia-scroll-cue:hover {
+    transform: scale(1.2);
+    color: #3f2c73;
 }
 
-.card h3 {
-    font-size: 1.5rem;
-    margin: 15px 0 10px;
-    color: #333;
+@keyframes bounceSeta {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); opacity: 0.7; }
+    40% { transform: translateY(-15px); opacity: 1; }
+    60% { transform: translateY(-7px); opacity: 1; }
 }
 
-.card p {
+.violencia-citacoes {
+    margin-top: 22vh;
+    width: 100%;
+    max-width: 1560px;
+    padding: 0 60px;
+    display: grid;
+    grid-template-columns: minmax(300px, 560px) minmax(300px, 560px);
+    gap: clamp(40px, 7vw, 120px);
+    align-items: start;
+    justify-content: center;
+}
+
+.violencia-texto-base {
+    font-size: clamp(1.1rem, 1.1vw, 1.1rem);
+    color: #1e1d23;
+    line-height: 1.64;
+    margin: 0;
+    max-width: 460px;
+    justify-self: center;
+}
+
+.violencia-citacao-destaque {
+    margin: 0;
+    padding: 0;
+    color: #3f3274;
+    max-width: 560px;
+    justify-self: center;
+    position: relative;
+}
+
+.citacao-aspas-abre,
+.citacao-aspas-fecha {
+    position: relative;
+    margin: 0;
+    color: #847cf2;
+    font-size: clamp(2rem, 2vw, 2rem);
+    font-family: 'Georgia', serif !important;
+    line-height: 0.6;
+    font-weight: 700;
+    font-family: "Georgia";
+    z-index: 1;
+}
+
+.citacao-aspas-abre {
+    text-align: left;
+    margin-bottom: 14px;
+    left: -25px;
+}
+
+.citacao-conteudo {
+    margin-top: -40px;
+    font-size: clamp(1.1rem, 1.1vw, 1.1rem);
+    line-height: 1.58;
+    font-weight: 500;
+    font-style: italic;
+    max-width: 400px;
+}
+
+.citacao-aspas-fecha {
+    text-align: right;
+    margin-top: 16px;
+    right: 225px;
+    top: -25px;
+}
+
+.violencia-citacao-destaque cite {
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: clamp(1.1rem, 1.1vw, 1.1rem);
+    font-style: italic;
+    color: #3f2f72;
+}
+
+.citacao-linha {
+    display: inline-block;
+    width: 108px;
+    border-top: 3px solid #8d84f3;
+}
+
+.violencia-citacao-destaque cite strong {
+    font-style: italic;
+}
+
+.violencia-citacoes-wrapper {
+    width: 100%;
+    background: #e0e0e0;
+    padding: 100px 20px 120px;
+}
+
+.violencia-citacoes {
+    position: relative;
+    z-index: 1;
+    /* margin: 0 auto; */
+    width: 100%;
+    max-width: 1560px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 560px));
+    gap: clamp(40px, 7vw, 120px);
+    justify-content: center;
+}
+
+.tipos-trilha {
+    position: relative;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 120px;
+}
+
+.tipos-trilha::before{
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    border-left: 4px dotted #4c357f;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+.tipo-etapa {
+    display: grid;
+    grid-template-columns: 1fr 180px 1fr;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+.tipo-etapa-esquerda {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 15px;
+}
+
+.tipo-etapa-esquerda h4 {
+    color: #3f2c73;
+    font-size: clamp(2rem, 2.5vw, 2.8rem);
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 0 15px auto;
+    max-width: 360px;
+    width: 100%;
+}
+
+.tipo-etapa-esquerda p {
+    color: #16161b;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    max-width: 360px;
+    margin-left: auto; 
+}
+
+.tipo-etapa-centro {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.tipo-etapa-numero {
+    width: 100px;
+    height: 100px;
+    background: #452f79;
+    border: 6px solid #f6f6f8;
+    outline: 4px solid #452f79;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 3.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+/* Linha Horizontal e Bolinha (Perninha) */
+.tipo-etapa-centro::before {
+    content: "";
+    position: absolute;
+    right: 50%;
+    top: 50px; /* Exatamente no meio vertical do círculo */
+    width: 130px; 
+    border-top: 3px solid #4c357f;
+    z-index: 1;
+}
+
+.tipo-etapa-centro::after {
+    content: '';
+    position: absolute;
+    left: calc(50% - 130px);
+    top: 44px; /* Alinha com a linha horizontal */
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #4c357f;
+    z-index: 1;
+}
+
+/* --- COLUNA DIREITA (Lista de Itens) --- */
+.tipo-etapa-direita {
+    padding-top: 100px; 
+    padding-left: 30px;
+}
+
+.tipo-etapa-direita ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tipo-etapa-direita li {
+    color: #2e295f;
     font-size: 1rem;
-    color: #666;
-    line-height: 1.6;
+    font-weight: 700;
+    text-transform: uppercase;
     margin-bottom: 15px;
+    padding-left: 35px;
+    position: relative;
+    line-height: 1.2;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+/* O Ícone de Seta (>) antes de cada item */
+.tipo-etapa-direita li::before {
+    content: '›';
+    color: #7f75f0;
+    font-size: 2rem;
+    line-height: 1;
+    margin-right: 12px;
+    margin-top: -8px;
 }
 
 /* ==================================================
@@ -1001,6 +1291,12 @@ body {
     padding: 60px 20px;
     background-color: var(--color-gray-400);
     text-align: center;
+}
+
+.titulo-mitos {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 40px;
 }
 
 /* ==================================================
@@ -1314,6 +1610,32 @@ body {
    CONTAINER DA LEI
    Wrapper para o conteúdo da lei.
 ================================================== */
+.lei-hero-bg {
+    position: relative;
+    width: 100%;
+    height: 58vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../imagens/solidarias-mulheres.png);
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 60px 0;
+}
+
+.lei-hero-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.lei-hero-bg .lei-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
 
 .lei-container {
     max-width: 850px;
@@ -1333,14 +1655,25 @@ body {
 }
 
 .lei-header h1 { 
-    font-size: 36px; 
-    color: var(--color-black-one); 
+    color: var(--bg-page);
+    font-size: clamp(1.5rem, 6vw, 2.5rem); 
+    text-transform: uppercase;
     margin-bottom: 20px; 
 }
 .lei-header p { 
-    color: var(--color-black-one); 
-    margin-bottom: 20px; 
-    text-transform: none;
+    color: var(--bg-page);
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.lei-conteudo-principal {
+    background-color: var(--bg-page);
+    padding: 80px 0;
+}
+
+.lei-section {
+    margin-bottom: 40px;
 }
 
 /* ==================================================
@@ -1351,8 +1684,8 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background-color: var(--color-black-one);
-    color: var(--bg-page);
+    background-color: var(--bg-page);
+    color: var(--color-black);
     padding: 15px 30px;
     text-decoration: none;
     border-radius: 30px;
@@ -1361,7 +1694,21 @@ body {
     transition: 0.3s;
 }
 
-.btn-lei-oficial:hover { background-color: var(--text-muted); }
+.btn-lei-oficial-bottom {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--color-primary);
+    color: var(--bg-page);
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 600;
+    margin-top: 50px;
+    transition: 0.3s;
+}
+
+.btn-lei-oficial:hover { background-color: var(--bg-card); }
 
 
 /* ==================================================
@@ -1409,9 +1756,9 @@ body {
    Texto com linha espaçada.
 ================================================== */
 .resumo {
-     white-space: pre-line;
-     margin-top: -30px;
+     /* white-space: pre-line; */
      line-height: 1.7;
+     margin-top: -10px;
 }
 
 /* ==================================================
@@ -2209,32 +2556,49 @@ main, .secao-internacional{
 
 .fato-texto-col {
     position: relative;
-    right: -10%;
+    right: -19%;
 }
 
 .destaque-protetiva {
-    /* background-color: #f3e5f5; */
     padding: 40px;
     border-radius: 15px;
 }
 
+.lei-referencias h4 {
+    color: var(--color-black);
+    margin-bottom: 40px;
+}
+
 .lei-referencias {
+    border-top: 1px solid #4444;
     margin-top: 100px;
     padding-top: 20px;
-    border-top: 1px solid #4444;
     font-size: 14px;
     color: #777;
+    margin-bottom: 80px;
+}
+
+.lei-referencias li {
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.lei-referencias span {
+    color: var(--color-black);
+    font-weight: bold;
 }
 
 .lei-referencias ul {
     list-style: none;
-    margin-top: 15px;
+    margin-top: 15px; 
 }
 
 .medidas-protetivas-listas {
     list-style: none;
     padding: 0;
-    margin-top: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    text-align: left;
 }
 
 .medidas-protetivas-listas li {
@@ -2247,7 +2611,7 @@ main, .secao-internacional{
 
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .medidas-protetivas-listas li::before {
@@ -3042,6 +3406,138 @@ main, .secao-internacional{
     .estatisticas-grid {
         grid-template-columns: 1fr;
     }
+
+    .violencia-grid-container {
+        grid-template-columns: 1fr; /* Vira uma coluna só no celular */
+        gap: 60px;
+        text-align: center;
+    }
+
+    .violencia-col-texto p, .poesia-conteudo {
+        text-align: center;
+    }
+
+    .assinatura-autor {
+        justify-content: center;
+    }
+
+    .violencia-citacoes {
+        grid-template-columns: 1fr;
+        gap: 80px;
+        padding: 80px 24px;
+        text-align: center;
+    }
+
+    .violencia-citacao-destaque {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .citacao-conteudo {
+        margin-top: 0;
+        text-align: center;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .citacao-aspas-abre {
+        position: static;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .citacao-aspas-fecha {
+        position: static;
+        display: block;
+        text-align: right;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .violencia-citacao-destaque cite {
+        justify-content: center;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .citacao-linha {
+        width: 60px; /* Linha um pouco menor no mobile */
+    }
+
+    .violencia-citacoes-wrapper {
+        background: var(--bg-page);
+    }
+
+    .tipo-etapa {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-left: 80px;
+        position: relative;
+    }
+
+    .tipos-trilha::before{
+        left: 40px;
+        transform: none;
+    }
+
+    .tipo-etapa-centro {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 80px;
+        justify-content: center;
+    }
+
+     .tipo-etapa-numero {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .tipo-etapa-esquerda {
+        text-align: left;
+        align-items: flex-start;
+        padding-top: 0;
+        /* width: 100%; */
+    }
+
+    .tipo-etapa-esquerda h4 {
+        text-align: left;
+        margin: 0 0 10px 0;
+        max-width: 100%; /* Ocupa a largura disponível */
+    }
+
+    .tipo-etapa-esquerda p {
+        text-align: left;
+        margin: 0 0 20px 0;
+        max-width: 100%;
+    }
+
+    /* Ajusta a Lista (Lado Direito no Desktop) */
+    .tipo-etapa-direita {
+        padding-top: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+
+    /* Remove os conectores horizontais (perninhas) que não existem no mobile */
+    .tipo-etapa-centro::before,
+    .tipo-etapa-centro::after {
+        display: none;
+    }
+
+    /* Mantém as setas da lista alinhadas corretamente */
+    .tipo-etapa-direita li {
+        justify-content: flex-start;
+    }
 }
 
 @media (max-width: 640px) {
@@ -3221,8 +3717,40 @@ main, .secao-internacional{
     }
 
     .titulo__tipos--violencia{
-        font-size: 26px;
+        font-size: clamp(2rem, 8vw, 3.5rem);
+        max-width: 90%;
+    }
+
+    .subtitulo__tipos--violencia {
+        font-size: 1.1rem;
+        max-width: 90%;
+        line-height: 1.9;
+    }
+
+    .citacao-aspas-abre {
+        left: -10px;
+        top: -30px;
+        font-size: 4rem;
+    }
+
+    .citacao-aspas-fecha {
+        right: 0;
+        bottom: 10px;
+        font-size: 4rem;
+    }
+
+    .violencia-texto-base, 
+    .citacao-conteudo {
         text-align: center;
+        max-width: 100%;
+    }
+
+    .violencia-citacao-destaque cite {
+        justify-content: center; /* Centraliza autor no mobile */
+    }
+
+    .citacao-linha {
+        width: 60px; /* Linha menor no celular */
     }
 
     .cards-container {
@@ -3291,6 +3819,10 @@ main, .secao-internacional{
         bottom: 150px;
     }
 
+    .banner-resumo-lei-content {
+        margin-top: 50px;   
+    }
+    
     .banner-resumo-lei-content p {
         font-size: 1rem;
     }
@@ -3302,6 +3834,11 @@ main, .secao-internacional{
 
     .resumo-titulo-card {
         padding: 16px;
+    }
+
+    [vw-access-button] {
+        left: 12px !important;
+        bottom: 18px !important;
     }
 
     /* ==================================================

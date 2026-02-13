@@ -1,305 +1,368 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lei na Integra</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lei na Integra</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
 
   <div id="acessibility-widget" class="acc-widget">
-      <button id="toggle-acc-menu" class="acc-main-btn">
-        <ion-icon name="settings-outline"></ion-icon>
-      </button>
-
-      <div id="acc-menu" class="acc-menu-content">
-        <div class="acc-content">
-          <p>Tamanho da Fonte</p>
-          <div class="acc-arrow">
-              <button class="acc-action" data-type="size" data-value="-10">A-</button>
-              <span id="acc-size-label">100%</span>
-              <button class="acc-action" data-type="size" data-value="10">A+</button>
-          </div>
-        </div>
-
-        <div class="acc-section">
-          <p>Tipo de Fonte (<span id="acc-font-name" >Inter</span>) </p>
-          <div class="acc-arrow">
-            <button class="acc-action" data-type="font" data-value="prev">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
-                </button>
-                <button class="acc-action" data-type="font" data-value="next" style="flex-grow: 1;">
-                    Trocar Fonte
-                </button>
-                <button class="acc-action" data-type="font" data-value="next">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="share-popover" id="share-popover" style="display: none;">
-      <button class="share-btn" id="copy-quote" title="Copiar Citação">
-        <ion-icon name="copy-outline"></ion-icon>
-      </button>
-      <button class="share-btn" id="whatsapp-quote" title="Enviar para WhatsApp">
-        <ion-icon name="logo-whatsapp"></ion-icon>
-      </button>
-      <div class="popover-arrow"></div>
-    </div>
-
-    <div class="progress-cont">
-      <div class="progress-bar" id="myBar"></div>
-    </div>
-    
-      <div class="header">
-      <div class="logo">
-         <img src="../imagens/logo02.jpg" class="header__logo" alt="Logo Maria da Penha" href="#home.html"/>
-      </div>
-
-      <button class="menu-toggle" aria-label="Abrir Menu" >
-           <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
-      </button>
-
-       <div class="menu" id="menuNavegacao">
-          <div class="menu-item-dropdown">
-           <a href="#" class="dropdown-toogle" data-target="submenu-lei">
-              A Lei
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-           </a>
-           <div class="submenu" id="submenu-lei">
-             <a href="page.html"> tipos de violência </a>
-             <a href="./lei-integra.html"> A Lei na integra </a>
-             <a href="resumo-lei.html"> Resumo da lei </a>
-           </div>
-        </div>
-
-        <div class="menu-item-dropdown">
-          <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
-              Maria da Penha
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-          </a>
-          <div class="submenu" id="submenu-maria-penha">
-            <a href="./biografia.html"> biografia </a>
-          </div>
-        </div>
-
-        <div class="menu-item-dropdown">
-          <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
-              Violência Doméstica
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-          </a>
-          <div class="submenu" id="submenu-violencia-domestica">
-            <a href="../index.html"> O que é violência doméstica? </a>
-          </div>
-        </div>
-
-        <a href="./contact.html">Contato</a>
-
-      </div>   
-    </div>
-
-    <main class="lei-container">
-        <header class="lei-header">
-            <h1> a lei na íntegra </h1>
-            <p>Conheça os detalhes, o contexto histórico e as proteções garantidas por lei.</p>
-
-            <!-- Botão para a Letra seca da Lei - Oficial -->
-             <div class="cta-externo">
-                <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" class="btn-lei-oficial" target="_blank">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                    Acesse a Lei na Integra
-                </a>
-             </div>
-        </header>
-
-        <!-- Contexto Histórico -->
-        <section class="lei-section">
-            <div class="lei-fatos">
-                <div class="resumo">
-                    <p>
-                        <span class="capitular">A</span>ntes da vigência da <strong>Lei Maria da Penha</strong>, a violência doméstica e familiar contra a mulher era considerada um crime de menor potencial ofensivo, sendo enquadrada na <strong>Lei nº 9.099/1995</strong>. Na prática, isso resultava na banalização da violência de gênero, com punições que, em geral, se limitavam ao pagamento de cestas básicas ou à prestação de serviços comunitários. Ou seja, não existia um mecanismo legal que permitisse punir o agressor de forma mais severa.
-
-                        Para ilustrar essa realidade, após registrar a denúncia, a própria vítima era responsável por entregar a intimação ao agressor para que ele comparecesse à delegacia. Essa situação evidencia o descaso e a falta de sensibilidade com que o problema era tratado.
-
-                        Diante disso, o Consórcio de ONGs envolvido na elaboração da Lei Maria da Penha considerou essencial que a nova legislação não estivesse vinculada à <strong>Lei nº 9.099/1995</strong>. Havia uma necessidade urgente de transformar esse contexto e, após mais de quatro anos de intensos debates com o Poder Executivo, o Legislativo e a sociedade civil, a Lei Maria da Penha foi finalmente <strong>sancionada em 7 de agosto de 2006.</strong>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <div class="divisor"></div>
-
-        <section class="lei-section fato-lei-secao">
-            <div class="fato-container">
-                <div class="fato-titulo-col">
-                    <img src="../imagens/know02.jpg" alt="" class="img-fato-destaque">
-                    <div class="subtitulo-lei-integra">
-                        Você Sabia?
-                    </div>
-                </div>
-                <div class="fato-texto-col">
-                    <p>A Lei Maria da Penha é reconhecida pela Organização das Nações Unidas (ONU) como uma das três legislações mais avançadas do mundo. Entre seus principais avanços estão as medidas protetivas de urgência destinadas às vítimas. Além disso, a lei estabelece a implementação de estruturas essenciais para garantir sua eficácia, como as <strong>Delegacias Especializadas de Atendimento à Mulher, Casas-abrigo, Centros de Referência da Mulher e os Juizados de Violência Doméstica e Familiar contra a Mulher, entre outros.</strong></p>
-                </div>
-            </div>
-        </section>
-
-        <section class="lei-section fato-lei-secao">
-            <div class="fato-container">
-                <div class="fato-titulo-col">
-                  <img src="../imagens/inovation_icon_one.png" alt="" class="img-fato-destaque inovation-icon-one">
-                  <div class="subtitulo-lei-integra">
-                    inovações da lei n. 11.340/2006
-                  </div>
-                </div>
-                <div class="fato-texto-col">
-                  <p>Com a Lei Maria da Penha, a violência doméstica e familiar contra a mulher passa a ser reconhecida como <strong>crime</strong>, deixando de ser classificada como de menor potencial ofensivo. <strong>A legislação também define o conceito de violência doméstica e familiar, além de identificar suas diferentes formas: física, psicológica, sexual, patrimonial e moral.</strong> Ademais, a Lei nº 11.340/2006 institui mecanismos de proteção às vítimas, ao reconhecer que a violência de gênero contra a mulher é uma responsabilidade do Estado brasileiro, e não apenas um problema restrito ao âmbito familiar.</strong></p>
-                </div>
-            </div>
-          </section>
-        
-          <section class="lei-section fato-lei-secao">
-            <div class="fato-container">
-              <div class="fato-titulo-col">
-                  <img src="../imagens/genero_icon.png" alt="" class="img-fato-destaque genero-icon">
-                    <div class="subtitulo-lei-integra">
-                        Gênero e Direitos Humanos
-                    </div>
-                </div>
-                <div class="fato-texto-col">
-                    <p>De acordo com o art. 6º da Lei Maria da Penha, a violência doméstica e familiar contra a mulher é reconhecida como uma das formas de violação dos direitos humanos. Esse entendimento foi essencial para afastar esse tipo de crime da aplicação da <strong>Lei nº 9.099/1995</strong>, que o classificava como de menor potencial ofensivo. Ao adotar essa perspectiva, a legislação brasileira passa a estar em consonância com diversos tratados internacionais ratificados pelo Estado brasileiro, como a <strong>Convenção sobre a Eliminação de Todas as Formas de Discriminação contra a Mulher (CEDAW); a Declaração e Plataforma de Ação da IV Conferência Mundial sobre a Mulher; a Convenção Interamericana para Prevenir, Punir e Erradicar a Violência contra a Mulher (Convenção de Belém do Pará);</strong> e a Convenção Americana sobre Direitos Humanos (Pacto de San José da Costa Rica), entre outros instrumentos internacionais.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="wrapper-lei">
-          <section class="section-lei">
-            <img src="../imagens/transferir-icon.png" alt="" class="transferir-icon">
-            <h2> Qual a importância da Lei Maria da Penha Hoje?</h2>
-            <p>A importância da lei transcende a punição. Ela serve como uma ferramenta de <strong>conscientização social</strong>, reafirmando o direito das mulheres a uma vida sem violência e promovendo a igualdade de gênero. A lei empodera as vítimas ao fornecer um caminho jurídico claro e uma rede de apoio estruturada, sendo fundamental para a mudança cultural no Brasil.</p>
-          </section>
-        </div>
-
-
-         <section class="lei-section destaque-protetiva">
-            <h2>O que são Medidas Protetivas?</h2>
-            <p>Trata-se de uma decisão judicial destinada a garantir a proteção da mulher em situação de violência doméstica, familiar ou decorrente de relação afetiva, de acordo com as necessidades da vítima. As medidas protetivas podem ser solicitadas já no momento do atendimento policial, na delegacia, e devem ser analisadas pelo juiz ou juíza no prazo de até <strong>48 horas</strong>, sendo concedidas com caráter de urgência nos casos em que houver risco iminente de morte. Desse modo, conforme dispõe o <strong>art. 22 da Lei Maria da Penha</strong>, o juiz ou a juíza poderá determinar:</p>
-            <ul class="medidas-protetivas-listas">
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A proibição ou restrição do uso de arma por parte do agressor.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>O afastamento do agressor da casa.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A proibição do agressor de se aproximar da mulher agredida.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A restrição ou suspensão de visitas aos dependentes menores.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A obrigatoriedade da prestação de alimentos provisórios.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A restituição de bens indevidamente subtraídos pelo agressor.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>A proibição de venda ou aluguel de imóvel da família sem autorização judicial.</li>
-                <li><ion-icon name="chevron-forward-outline"></ion-icon>O depósito de valores correspondentes aos danos causados pelo agressor etc.</li>
-            </ul>
-        </section>
-            <p class="determinacao">
-                Além disso, a <strong>Lei nº 13.641/2018</strong> promove alterações na <strong>Lei nº 11.340/2006</strong>, passando a tipificar como crime o descumprimento das medidas protetivas de urgência concedidas em casos de violência doméstica.
-            </p>
-
-            <div class="cta-externo" style="text-align: center;">
-                <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" class="btn-lei-oficial" target="_blank">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                    Acesse a Lei na Integra
-                </a>
-             </div>
-
-            
-            <!-- Referências Bibliográficas -->
-            <footer class="lei-referencias">
-              <h4>Referências e Fontes de Estudo:</h4>
-              <ul>
-                <li>BRASIL. Lei nº 11.340, de 7 de agosto de 2006.</li>
-                <li>Instituto Maria da Penha (IMP).</li>
-                <li>Conselho Nacional de Justiça (CNJ) - Violência contra a Mulher.</li>
-              </ul>
-            </footer>
-          </main>
-
-    <section class="ligue-secao">
-      <div class="ligue-container">
-        <div class="ligue-logo">
-          <img src="../imagens/180.png" alt=" Ligue 180 - Central de Atendimentos à mulher. ">
-        </div>
-        <div class="ligue-texto">
-            <p>
-              A Central de Atendimento à Mulher é um serviço desenvolvido para enfrentar a violência contra as mulheres, oferecendo três modalidades de atendimento: <span>recebimento de denúncias, orientação às vítimas de violência e informações sobre leis e campanhas.</span>
-            </p>
-            <p class="nao-se-cale"> Ligue <span>180</span>. Não se cale, denuncie. </p>
-        </div>
-      </div>
-    </section>
-
-    <button id="scroll-to-top-bottom" class="scroll-btn" aria-label="Navegar na Página">
-      <ion-icon name="arrow-down-outline" class="icon-arrow"></ion-icon>
+    <button id="toggle-acc-menu" class="acc-main-btn">
+      <ion-icon name="settings-outline"></ion-icon>
     </button>
-   
-     <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h3>Projeto Educativo</h3>
-          <p>
-            Iniciativa do
-            <strong>curso de Análise e Desenvolvimento de Sistemas</strong> do
-            Centro Universitário Leonardo da Vinci. Foco na educação e prevenção
-            da violência contra a mulher.
-          </p>
-        </div>
-        <div class="footer-col">
-          <h3>links oficias</h3>
-          <ul>
-            <li>
-              <a href="http://www.planalto.gov.br" target="_blank"
-                >Lei Maria da Penha (Lei 11.340)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.cnj.jus.br" target="_blank"
-                >Justiça Pela Paz em Casa (CNJ)</a
-              >
-            </li>
-            <li>
-              <a href="https://www.gov.br" target="_blank"
-                >Ministério da Mulher, da Família e dos Direitos Humanos</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Contatos de Emergência</h3>
-          <p>Em caso de emergência ou denúncia, ligue:</p>
-          <p class="emergencia-numero">Ligue <span>190</span></p>
-          <p class="emergencia-numero">
-            Disque 180 - Central de Atendimento à Mulher
-          </p>
+
+    <div id="acc-menu" class="acc-menu-content">
+      <div class="acc-content">
+        <p>Tamanho da Fonte</p>
+        <div class="acc-arrow">
+          <button class="acc-action" data-type="size" data-value="-10">A-</button>
+          <span id="acc-size-label">100%</span>
+          <button class="acc-action" data-type="size" data-value="10">A+</button>
         </div>
       </div>
-      <div class="footer-bottom">
+
+      <div class="acc-section">
+        <p>Tipo de Fonte (<span id="acc-font-name">Inter</span>) </p>
+        <div class="acc-arrow">
+          <button class="acc-action" data-type="font" data-value="prev">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </button>
+          <button class="acc-action" data-type="font" data-value="next" style="flex-grow: 1;">
+            Trocar Fonte
+          </button>
+          <button class="acc-action" data-type="font" data-value="next">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="share-popover" id="share-popover" style="display: none;">
+    <button class="share-btn" id="copy-quote" title="Copiar Citação">
+      <ion-icon name="copy-outline"></ion-icon>
+    </button>
+    <button class="share-btn" id="whatsapp-quote" title="Enviar para WhatsApp">
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </button>
+    <div class="popover-arrow"></div>
+  </div>
+
+  <div class="progress-cont">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+
+  <div class="header">
+    <div class="logo">
+      <img src="../imagens/logo02.jpg" class="header__logo" alt="Logo Maria da Penha" href="#home.html" />
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir Menu">
+      <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
+    </button>
+
+    <div class="menu" id="menuNavegacao">
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-lei">
+          A Lei
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-lei">
+          <a href="page.html"> tipos de violência </a>
+          <a href="./lei-integra.html"> A Lei na integra </a>
+          <a href="resumo-lei.html"> Resumo da lei </a>
+        </div>
+      </div>
+
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
+          Maria da Penha
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-maria-penha">
+          <a href="./biografia.html"> biografia </a>
+          <a href="./about.html"> Estatística </a>
+        </div>
+      </div>
+
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
+          Violência Doméstica
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-violencia-domestica">
+          <a href="../index.html"> O que é violência doméstica? </a>
+        </div>
+      </div>
+
+      <a href="./contact.html">Contato</a>
+
+    </div>
+  </div>
+
+  <section class="lei-hero-bg">
+    <div class="lei-container">
+      <header class="lei-header">
+        <h1> a lei na íntegra </h1>
+        <p>Conheça os detalhes, o contexto histórico e as proteções garantidas por lei.</p>
+        <div class="cta-externo">
+          <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" class="btn-lei-oficial"
+            target="_blank">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+            Acesse a Lei na Integra
+          </a>
+        </div>
+      </header>
+    </div>
+  </section>
+
+  <section>
+    <main class="lei-conteudo-principal">
+      <div class="lei-container">
+        <section class="lei-section">
+          <div class="lei-fatos">
+            <div class="resumo">
+              <span class="capitular">
+                A</span>ntes da vigência da <strong>Lei Maria da Penha</strong>, a violência doméstica e familiar contra
+              a mulher era considerada um crime de menor potencial ofensivo, sendo enquadrada na <strong>Lei nº
+                9.099/1995</strong>. Na prática, isso resultava na banalização da violência de gênero, com punições que,
+              em geral, se limitavam ao pagamento de cestas básicas ou à prestação de serviços comunitários. Ou seja,
+              não existia um mecanismo legal que permitisse punir o agressor de forma mais severa. <br> <br>
+
+              Para ilustrar essa realidade, após registrar a denúncia, a própria vítima era responsável por entregar a
+              intimação ao agressor para que ele comparecesse à delegacia. Essa situação evidencia o descaso e a falta
+              de sensibilidade com que o problema era tratado.<br> <br>
+
+              Diante disso, o Consórcio de ONGs envolvido na elaboração da Lei Maria da Penha considerou essencial que a
+              nova legislação não estivesse vinculada à <strong>Lei nº 9.099/1995</strong>. Havia uma necessidade
+              urgente de transformar esse contexto e, após mais de quatro anos de intensos debates com o Poder
+              Executivo, o Legislativo e a sociedade civil, a Lei Maria da Penha foi finalmente <strong>sancionada em 7
+                de agosto de 2006.</strong>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </section>
+
+  <div class="divisor"></div>
+
+  <section class="lei-section fato-lei-secao">
+    <div class="fato-container">
+      <div class="fato-titulo-col">
+        <img src="../imagens/know02.jpg" alt="" class="img-fato-destaque">
+        <div class="subtitulo-lei-integra">
+          Você Sabia?
+        </div>
+      </div>
+      <div class="fato-texto-col">
+        <p>A Lei Maria da Penha é reconhecida pela Organização das Nações Unidas (ONU) como uma das três legislações
+          mais avançadas do mundo. Entre seus principais avanços estão as medidas protetivas de urgência destinadas às
+          vítimas. Além disso, a lei estabelece a implementação de estruturas essenciais para garantir sua eficácia,
+          como as <strong>Delegacias Especializadas de Atendimento à Mulher, Casas-abrigo, Centros de Referência da
+            Mulher e os Juizados de Violência Doméstica e Familiar contra a Mulher, entre outros.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lei-section fato-lei-secao">
+    <div class="fato-container">
+      <div class="fato-titulo-col">
+        <img src="../imagens/inovation_icon_one.png" alt="" class="img-fato-destaque inovation-icon-one">
+        <div class="subtitulo-lei-integra">
+          inovações da lei n. 11.340/2006
+        </div>
+      </div>
+      <div class="fato-texto-col">
+        <p>Com a Lei Maria da Penha, a violência doméstica e familiar contra a mulher passa a ser reconhecida como
+          <strong>crime</strong>, deixando de ser classificada como de menor potencial ofensivo. <strong>A legislação
+            também define o conceito de violência doméstica e familiar, além de identificar suas diferentes formas:
+            física, psicológica, sexual, patrimonial e moral.</strong> Ademais, a Lei nº 11.340/2006 institui mecanismos
+          de proteção às vítimas, ao reconhecer que a violência de gênero contra a mulher é uma responsabilidade do
+          Estado brasileiro, e não apenas um problema restrito ao âmbito familiar.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="lei-section fato-lei-secao">
+    <div class="fato-container">
+      <div class="fato-titulo-col">
+        <img src="../imagens/genero_icon.png" alt="" class="img-fato-destaque genero-icon">
+        <div class="subtitulo-lei-integra">
+          Gênero e Direitos Humanos
+        </div>
+      </div>
+      <div class="fato-texto-col">
+        <p>De acordo com o art. 6º da Lei Maria da Penha, a violência doméstica e familiar contra a mulher é reconhecida
+          como uma das formas de violação dos direitos humanos. Esse entendimento foi essencial para afastar esse tipo
+          de crime da aplicação da <strong>Lei nº 9.099/1995</strong>, que o classificava como de menor potencial
+          ofensivo. Ao adotar essa perspectiva, a legislação brasileira passa a estar em consonância com diversos
+          tratados internacionais ratificados pelo Estado brasileiro, como a <strong>Convenção sobre a Eliminação de
+            Todas as Formas de Discriminação contra a Mulher (CEDAW); a Declaração e Plataforma de Ação da IV
+            Conferência Mundial sobre a Mulher; a Convenção Interamericana para Prevenir, Punir e Erradicar a Violência
+            contra a Mulher (Convenção de Belém do Pará);</strong> e a Convenção Americana sobre Direitos Humanos (Pacto
+          de San José da Costa Rica), entre outros instrumentos internacionais.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrapper-lei">
+    <section class="section-lei">
+      <img src="../imagens/transferir-icon.png" alt="" class="transferir-icon">
+      <h2> Qual a importância da Lei Maria da Penha Hoje?</h2>
+      <p>A importância da lei transcende a punição. Ela serve como uma ferramenta de <strong>conscientização
+          social</strong>, reafirmando o direito das mulheres a uma vida sem violência e promovendo a igualdade de
+        gênero. A lei empodera as vítimas ao fornecer um caminho jurídico claro e uma rede de apoio estruturada, sendo
+        fundamental para a mudança cultural no Brasil.</p>
+    </section>
+  </div>
+
+  <section class="lei-section destaque-protetiva">
+    <h2>O que são Medidas Protetivas?</h2>
+    <p>Trata-se de uma decisão judicial destinada a garantir a proteção da mulher em situação de violência doméstica,
+      familiar ou decorrente de relação afetiva, de acordo com as necessidades da vítima. As medidas protetivas podem
+      ser solicitadas já no momento do atendimento policial, na delegacia, e devem ser analisadas pelo juiz ou juíza no
+      prazo de até <strong>48 horas</strong>, sendo concedidas com caráter de urgência nos casos em que houver risco
+      iminente de morte. Desse modo, conforme dispõe o <strong>art. 22 da Lei Maria da Penha</strong>, o juiz ou a juíza
+      poderá determinar:</p>
+    <ul class="medidas-protetivas-listas">
+      <li><ion-icon name="chevron-forward-outline"></ion-icon>A proibição ou restrição do uso de arma por parte do
+        agressor.</li>
+      <li><ion-icon name="chevron-forward-outline"></ion-icon>O afastamento do agressor da casa.</li>
+      <li><ion-icon name="chevron-forward-outline"></ion-icon>A proibição do agressor de se aproximar da mulher
+        agredida.</li>
+      <li><ion-icon name="chevron-forward-outline"></ion-icon>A restrição ou suspensão de visitas aos dependentes
+        menores.</li>
+      <li><ion-icon name="chevron-forward-outline"></ion-icon>A obrigatoriedade da prestação de alimentos provisórios.
+      </li>
+      <li><ion-icon name="chevron-forward-outline"></ion-icon>A restituição de bens indevidamente subtraídos pelo
+        agressor.</li>
+      <li><ion-icon name="chevron-forward-outline"></ion-icon>A proibição de venda ou aluguel de imóvel da família sem
+        autorização judicial.</li>
+      <li><ion-icon name="chevron-forward-outline"></ion-icon>O depósito de valores correspondentes aos danos causados
+        pelo agressor etc.</li>
+    </ul>
+    <p class="determinacao">
+      Além disso, a <strong>Lei nº 13.641/2018</strong> promove alterações na <strong>Lei nº 11.340/2006</strong>,
+      passando a tipificar como crime o descumprimento das medidas protetivas de urgência concedidas em casos de
+      violência doméstica.
+    </p>
+    <div class="cta-externo" style="text-align: center;">
+      <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" class="btn-lei-oficial-bottom"
+        target="_blank">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+        Acesse a Lei na Integra
+      </a>
+    </div>
+    <!-- Referências Bibliográficas -->
+    <footer class="lei-referencias">
+      <h4>Referências e Fontes de Estudo:</h4>
+      <ul>
+        <li>BRASIL. <span>Lei n. 11.340, de 7 de agosto de 2006.</span> Disponível em: http://www.planalto.gov.br/ccivil_03/_Ato2004-2006/2006/Lei/L11340.htm. Acesso em: 27 jul. 2018.</li>
+        
+        <li>BRASIL. <span>Lei n. 13.641, de 3 de abril de 2018.</span> Disponível em: http://www.planalto.gov.br/ccivil_03/_Ato2015-2018/2018/Lei/L13641.htm. Acesso em: 10 nov. 2018.</li>
+        
+        <li>CALAZANS, Myllena; CORTES, Iáris. O processo de criação, aprovação e implementação da Lei Maria da Penha. In: CAMPOS, C. H. (Org.). <span>Lei Maria da Penha comentada em uma perspectiva jurídico-feminista.</span> Rio de Janeiro: Lumen Juris, 2011.<li>
+        
+        <li>COMISSÃO INTERAMERICANA DE DIREITOS HUMANOS/ORGANIZAÇÃO DOS ESTADOS AMERICANOS. <span>Convenção Americana Sobre Direitos Humanos.</span> San José, Costa Rica, 22 nov. 1969. Disponível em: https://www.cidh.oas.org/basicos/portugues/c.convencao_americana.htm. Acesso em: 10 nov. 2018.</li>
+        
+        <li>COMISSÃO INTERAMERICANA DE DIREITOS HUMANOS/ORGANIZAÇÃO DOS ESTADOS AMERICANOS. <span>Relatório n. 54/01,</span> Caso 12.051, Maria da Penha Maia Fernandes, 4 abr. 2001, Brasil. Disponível em: http://www.sbdp.org.br/arquivos/material 299_Relat%20n.pdf. Acesso em: 27 set. 2018.</li>
+        
+        <li>CONVENÇÃO SOBRE A ELIMINAÇÃO DE TODAS AS FORMAS DE DISCRIMINAÇÃO CONTRA AS MULHERES (CEDAW). 1979. Disponível em: http://www.compromissoeatitude.org.br/wp-content/uploads/2012/11/SPM2006_CEDAW_portugues.pdf. Acesso em: 10 nov. 2018.</li>
+        
+        <li>DECLARAÇÃO E PLATAFORMA DE AÇÃO DA IV CONFERÊNCIA MUNDIAL SOBRE A MULHER. Pequim, 1995. Disponível em: http://www.onumulheres.org.br/wp-content/uploads/2014/02/declaracao_pequim.pdf. Acesso em: 10 nov. 2018.</li>
+        
+        <li>SECRETARIA DE POLÍTICAS PARA MULHERES. Ministério dos Direitos Humanos. Disponível em: http://www.spm.gov.br/. Acesso em: 14 ago. 2018.</li>
+      </ul>
+    </footer>
+  </section>
+
+  <section class="ligue-secao">
+    <div class="ligue-container">
+      <div class="ligue-logo">
+        <img src="../imagens/180.png" alt=" Ligue 180 - Central de Atendimentos à mulher. ">
+      </div>
+      <div class="ligue-texto">
         <p>
-          &copy; 2026 Projeto Educativo Lei Maria da Penha. Todos os direitos
-          reservados.
+          A Central de Atendimento à Mulher é um serviço desenvolvido para enfrentar a violência contra as mulheres,
+          oferecendo três modalidades de atendimento: <span>recebimento de denúncias, orientação às vítimas de violência
+            e informações sobre leis e campanhas.</span>
+        </p>
+        <p class="nao-se-cale"> Ligue <span>180</span>. Não se cale, denuncie. </p>
+      </div>
+    </div>
+  </section>
+
+  <button id="scroll-to-top-bottom" class="scroll-btn" aria-label="Navegar na Página">
+    <ion-icon name="arrow-down-outline" class="icon-arrow"></ion-icon>
+  </button>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Projeto Educativo</h3>
+        <p>
+          Iniciativa do
+          <strong>curso de Análise e Desenvolvimento de Sistemas</strong> do
+          Centro Universitário Leonardo da Vinci. Foco na educação e prevenção
+          da violência contra a mulher.
         </p>
       </div>
-    </footer>
+      <div class="footer-col">
+        <h3>links oficias</h3>
+        <ul>
+          <li>
+            <a href="http://www.planalto.gov.br" target="_blank">Lei Maria da Penha (Lei 11.340)</a>
+          </li>
+          <li>
+            <a href="https://www.cnj.jus.br" target="_blank">Justiça Pela Paz em Casa (CNJ)</a>
+          </li>
+          <li>
+            <a href="https://www.gov.br" target="_blank">Ministério da Mulher, da Família e dos Direitos Humanos</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Contatos de Emergência</h3>
+        <p>Em caso de emergência ou denúncia, ligue:</p>
+        <p class="emergencia-numero">Ligue <span>190</span></p>
+        <p class="emergencia-numero">
+          Disque 180 - Central de Atendimento à Mulher
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 Projeto Educativo Lei Maria da Penha. Todos os direitos
+        reservados.
+      </p>
+    </div>
+  </footer>
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="../js/index.js" defer></script>
-    <script src="../js/Acessibility.js"></script>
-    <script src="../js/Pop-up.js"></script>
-  </body>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../js/index.js" defer></script>
+  <script src="../js/Acessibility.js"></script>
+  <script src="../js/Pop-up.js"></script>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+</body>
+
 </html>
