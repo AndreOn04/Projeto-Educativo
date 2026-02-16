@@ -1,223 +1,274 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resumo da Lei</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resumo da Lei</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
 
   <div id="acessibility-widget" class="acc-widget">
-      <button id="toggle-acc-menu" class="acc-main-btn">
-        <ion-icon name="settings-outline"></ion-icon>
-      </button>
+    <button id="toggle-acc-menu" class="acc-main-btn">
+      <ion-icon name="settings-outline"></ion-icon>
+    </button>
 
-      <div id="acc-menu" class="acc-menu-content">
-        <div class="acc-content">
-          <p>Tamanho da Fonte</p>
-          <div class="acc-arrow">
-              <button class="acc-action" data-type="size" data-value="-10">A-</button>
-              <span id="acc-size-label">100%</span>
-              <button class="acc-action" data-type="size" data-value="10">A+</button>
-          </div>
+    <div id="acc-menu" class="acc-menu-content">
+      <div class="acc-content">
+        <p>Tamanho da Fonte</p>
+        <div class="acc-arrow">
+          <button class="acc-action" data-type="size" data-value="-10">A-</button>
+          <span id="acc-size-label">100%</span>
+          <button class="acc-action" data-type="size" data-value="10">A+</button>
         </div>
+      </div>
 
-        <div class="acc-section">
-          <p>Tipo de Fonte (<span id="acc-font-name" >Inter</span>) </p>
-          <div class="acc-arrow">
-            <button class="acc-action" data-type="font" data-value="prev">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
-                </button>
-                <button class="acc-action" data-type="font" data-value="next" style="flex-grow: 1;">
-                    Trocar Fonte
-                </button>
-                <button class="acc-action" data-type="font" data-value="next">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-          </div>
+      <div class="acc-section">
+        <p>Tipo de Fonte (<span id="acc-font-name">Inter</span>) </p>
+        <div class="acc-arrow">
+          <button class="acc-action" data-type="font" data-value="prev">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </button>
+          <button class="acc-action" data-type="font" data-value="next" style="flex-grow: 1;">
+            Trocar Fonte
+          </button>
+          <button class="acc-action" data-type="font" data-value="next">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="progress-cont">
-      <div class="progress-bar" id="myBar"></div>
+  <div class="progress-cont">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+
+  <!-- header Principal -->
+  <header class="header">
+    <div class="logo">
+      <img src="../imagens/new--logo.png" class="header__logo" alt="Iniciativa ADS - Projeto Educativo." href="#home.html" />
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir Menu">
+      <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
+    </button>
+
+    <div class="menu" id="menuNavegacao">
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-lei">
+          A Lei
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-lei">
+          <a href="page.html"> tipos de violência </a>
+          <a href="lei-integra.html"> A Lei na integra </a>
+          <a href="resumo-lei.html"> Resumo da lei </a>
+        </div>
+      </div>
+
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
+          Maria da Penha
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-maria-penha">
+          <a href="../pages/biografia.html"> biografia </a>
+          <a href="./about.html"> Estatística </a>
+        </div>
+      </div>
+
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
+          Violência Doméstica
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-violencia-domestica">
+          <a href="../index.html"> O que é violência doméstica? </a>
+        </div>
+      </div>
+
+      <a href="./contact.html">Contato</a>
+
+    </div>
+  </header>
+  <!-- header Principal -->
+
+  <section class="banner-resumo-lei">
+    <div class="banner-resumo-lei-content" data-read>
+      <h1> Resumo da Lei </h1>
+      <p>Saiba quais são os principais dispositivos da Lei n. 11.340/2006 e os direitos garantidos pela legislação que
+        protege as mulheres contra a violência doméstica e familiar..</p>
+
+      <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" target="_blank"
+        rel="nooper noreferrer" class="btn-lei-resumo"> <ion-icon name="chevron-forward-outline"></ion-icon>
+        Acessar Lei na Integra
+      </a>
+  </section>
+
+  <section class="resumo-lei-secao">
+    <div class="resumo-lei-container">
+      <header class="resumo-lei-header-card">
+        <img src="../imagens/justice-img02.png" alt="Imagen Balaça - Justiça">
+        <p>A Lei Maria da Penha foi sancionada em 7 de agosto de 2006 pelo presidente Luiz Inácio Lula da Silva. Com 46
+          artigos distribuídos em sete títulos, ela cria mecanismos para prevenir e coibir a violência doméstica e
+          familiar contra a mulher em conformidade com a Constituição Federal (art. 226, § 8°) e os tratados
+          internacionais ratificados pelo Estado brasileiro (Convenção de Belém do Pará, Pacto de San José da Costa
+          Rica, Declaração Americana dos Direitos e Deveres do Homem e Convenção sobre a Eliminação de Todas as Formas
+          de Discriminação contra a Mulher).</p>
+      </header>
+
+      <div class="resumo-titulo-lista">
+        <article class="resumo-titulo-card resumo-titulo-card--roxo">
+          <span class="resumo-tag">Título I</span>
+          <p>
+            O Título I determina em quatro artigos a quem a lei é direcionada, ressaltando ainda a responsabilidade da
+            família, da sociedade e do poder público para que todas as mulheres possam ter o exercício pleno dos seus
+            direitos.
+          </p>
+        </article>
+
+        <article class="resumo-titulo-card resumo-titulo-card--branco">
+          <span class="resumo-tag">Título II</span>
+          <p>
+            Já o Título II vem dividido em dois capítulos e três artigos: além de configurar os espaços em que as
+            agressões são qualificadas como violência doméstica, traz as definições de todas as suas formas (física,
+            psicológica, sexual, patrimonial e moral).
+          </p>
+        </article>
+
+        <article class="resumo-titulo-card resumo-titulo-card--roxo">
+          <span class="resumo-tag">Título III</span>
+          <p>
+            Quanto ao Título III, composto de três capítulos e sete artigos, tem-se a questão da assistência à mulher em
+            situação de violência doméstica e familiar, com destaque para as medidas integradas de prevenção,
+            atendimento pela autoridade policial e assistência social às vítimas.
+          </p>
+        </article>
+
+        <article class="resumo-titulo-card resumo-titulo-card--branco">
+          <span class="resumo-tag">Título IV</span>
+          <p>
+            O Título IV, por sua vez, possui quatro capítulos e 17 artigos, tratando dos procedimentos processuais,
+            assistência judiciária, atuação do Ministério Público e, em quatro seções (Capítulo II), se dedica às
+            medidas protetivas de urgência, que estão entre as disposições mais inovadoras da Lei n. 11.340/2006.
+          </p>
+        </article>
+
+        <article class="resumo-titulo-card resumo-titulo-card--roxo">
+          <span class="resumo-tag">Título V</span>
+          <p>
+            No Título V e seus quatro artigos, está prevista a criação de Juizados de Violência Doméstica e Familiar
+            contra a Mulher, podendo estes contar com uma equipe de atendimento multidisciplinar composta de
+            profissionais especializados nas áreas psicossocial, jurídica e da saúde, incluindo-se também destinação de
+            verba orçamentária ao Judiciário para a criação e manutenção dessa equipe.
+          </p>
+        </article>
+      </div>
+      <footer class="resumo-lei-footer-card">
+        <h3>Conheça a lei na íntegra</h3>
+        <p>Para leitura completa e atualizada, consulte o texto oficial da Lei n.º 11.340/2006 no portal do Planalto.
+        </p>
+        <div class="resumo-acoes">
+          <a class="btn-lei-resumo btn-lei-resumo--roxo"
+            href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" target="_blank"
+            rel="noopener noreferrer">Lei Maria da Penha</a>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+  <section class="ligue-secao">
+    <div class="ligue-container">
+      <div class="ligue-logo">
+        <img src="../imagens/180.png" alt=" Ligue 180 - Central de Atendimentos à mulher. ">
+      </div>
+      <div class="ligue-texto">
+        <p>
+          A Central de Atendimento à Mulher é um serviço desenvolvido para enfrentar a violência contra as mulheres,
+          oferecendo três modalidades de atendimento: <span>recebimento de denúncias, orientação às vítimas de violência
+            e informações sobre leis e campanhas.</span>
+        </p>
+        <p class="nao-se-cale"> Ligue <span>180</span>. Não se cale, denuncie. </p>
+      </div>
+    </div>
+  </section>
+
+  <button id="scroll-to-top-bottom" class="scroll-btn" aria-label="Navegar na Página">
+    <ion-icon name="arrow-down-outline" class="icon-arrow"></ion-icon>
+  </button>
+
+   <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Projeto Educativo</h3>
+        <p>
+          Iniciativa do
+          <strong>curso de Análise e Desenvolvimento de Sistemas</strong> do
+          Centro Universitário Leonardo da Vinci. Foco na educação e prevenção
+          da violência contra a mulher.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>links oficias</h3>
+        <ul>
+          <li>
+            <a href="http://www.planalto.gov.br" target="_blank">Lei Maria da Penha (Lei 11.340)</a>
+          </li>
+          <li>
+            <a href="https://www.cnj.jus.br" target="_blank">Justiça Pela Paz em Casa (CNJ)</a>
+          </li>
+          <li>
+            <a href="https://www.gov.br" target="_blank">Ministério da Mulher, da Família e dos Direitos Humanos</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contatos de Emergência</h3>
+        <p>Em caso de emergência ou denúncia, ligue:</p>
+        <p class="emergencia-numero">Ligue <span>190</span></p>
+        <p class="emergencia-numero">
+          Disque 180 - Central de Atendimento à Mulher
+        </p>
+      </div>
+
+      <div class="footer-logo-central">
+        <img src="../imagens/new--logo.png" alt="">
+
+        <img src="../imagens/selo-amigo-do-surdo-roxo-redondo.png" alt="" class="logo-libras">
+      </div>
     </div>
     
-      <div class="header">
-      <div class="logo">
-         <img src="../imagens/logo02.jpg" class="header__logo" alt="Logo Maria da Penha" href="#home.html"/>
-      </div>
-
-      <button class="menu-toggle" aria-label="Abrir Menu" >
-           <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
-      </button>
-
-       <div class="menu" id="menuNavegacao">
-          <div class="menu-item-dropdown">
-           <a href="#" class="dropdown-toogle" data-target="submenu-lei">
-              A Lei
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-           </a>
-           <div class="submenu" id="submenu-lei">
-             <a href="page.html"> tipos de violência </a>
-             <a href="lei-integra.html"> A Lei na integra </a>
-             <a href="resumo-lei.html"> Resumo da lei </a>
-           </div>
-        </div>
-
-        <div class="menu-item-dropdown">
-          <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
-              Maria da Penha
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-          </a>
-          <div class="submenu" id="submenu-maria-penha">
-            <a href="../pages/biografia.html"> biografia </a>
-            <a href="./about.html"> Estatística </a>
-          </div>
-        </div>
-
-        <div class="menu-item-dropdown">
-          <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
-              Violência Doméstica
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-          </a>
-          <div class="submenu" id="submenu-violencia-domestica">
-            <a href="../index.html"> O que é violência doméstica? </a>
-          </div>
-        </div>
-
-        <a href="./contact.html">Contato</a>
-
-      </div>   
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 Projeto Educativo Lei Maria da Penha. Todos os direitos
+        reservados.
+      </p>
     </div>
+  </footer>
 
-    <section class="banner-resumo-lei">
-      <div class="banner-resumo-lei-content" data-read>
-        <h1> Resumo da Lei </h1>
-        <p>Saiba quais são os principais dispositivos da Lei n. 11.340/2006 e os direitos garantidos pela legislação que protege as mulheres contra a violência doméstica e familiar..</p>
-        
-        <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" target="_blank" rel="nooper noreferrer" class="btn-lei-resumo"> <ion-icon name="chevron-forward-outline"></ion-icon>
-          Acessar Lei na Integra
-        </a>
-    </section>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../js/index.js" defer></script>
+  <script src="../js/Acessibility.js" defer></script>
 
-    <section class="resumo-lei-secao">
-      <div class="resumo-lei-container">
-        <header class="resumo-lei-header-card">
-          <img src="../imagens/justice-img02.png" alt="Imagen Balaça - Justiça">
-          <p>A Lei Maria da Penha foi sancionada em 7 de agosto de 2006 pelo presidente Luiz Inácio Lula da Silva. Com 46 artigos distribuídos em sete títulos, ela cria mecanismos para prevenir e coibir a violência doméstica e familiar contra a mulher em conformidade com a Constituição Federal (art. 226, § 8°) e os tratados internacionais ratificados pelo Estado brasileiro (Convenção de Belém do Pará, Pacto de San José da Costa Rica, Declaração Americana dos Direitos e Deveres do Homem e Convenção sobre a Eliminação de Todas as Formas de Discriminação contra a Mulher).</p>
-        </header>
-
-        <div class="resumo-titulo-lista">
-          <article class="resumo-titulo-card resumo-titulo-card--roxo">
-            <span class="resumo-tag">Título I</span>
-            <p>
-              O Título I determina em quatro artigos a quem a lei é direcionada, ressaltando ainda a responsabilidade da família, da sociedade e do poder público para que todas as mulheres possam ter o exercício pleno dos seus direitos.
-            </p>
-          </article>
-
-          <article class="resumo-titulo-card resumo-titulo-card--branco">
-            <span class="resumo-tag">Título II</span>
-            <p>
-              Já o Título II vem dividido em dois capítulos e três artigos: além de configurar os espaços em que as agressões são qualificadas como violência doméstica, traz as definições de todas as suas formas (física, psicológica, sexual, patrimonial e moral).
-            </p>
-          </article>
-
-          <article class="resumo-titulo-card resumo-titulo-card--roxo">
-            <span class="resumo-tag">Título III</span>
-            <p>
-              Quanto ao Título III, composto de três capítulos e sete artigos, tem-se a questão da assistência à mulher em situação de violência doméstica e familiar, com destaque para as medidas integradas de prevenção, atendimento pela autoridade policial e assistência social às vítimas.
-            </p>
-          </article>
-
-          <article class="resumo-titulo-card resumo-titulo-card--branco">
-            <span class="resumo-tag">Título IV</span>
-            <p>
-              O Título IV, por sua vez, possui quatro capítulos e 17 artigos, tratando dos procedimentos processuais, assistência judiciária, atuação do Ministério Público e, em quatro seções (Capítulo II), se dedica às medidas protetivas de urgência, que estão entre as disposições mais inovadoras da Lei n. 11.340/2006.
-            </p>
-          </article>
-
-          <article class="resumo-titulo-card resumo-titulo-card--roxo">
-            <span class="resumo-tag">Título V</span>
-            <p>
-              No Título V e seus quatro artigos, está prevista a criação de Juizados de Violência Doméstica e Familiar contra a Mulher, podendo estes contar com uma equipe de atendimento multidisciplinar composta de profissionais especializados nas áreas psicossocial, jurídica e da saúde, incluindo-se também destinação de verba orçamentária ao Judiciário para a criação e manutenção dessa equipe.
-            </p>
-          </article>
-        </div>
-         <footer class="resumo-lei-footer-card">
-          <h3>Conheça a lei na íntegra</h3>
-          <p>Para leitura completa e atualizada, consulte o texto oficial da Lei n.º 11.340/2006 no portal do Planalto.</p>
-          <div class="resumo-acoes">
-            <a class="btn-lei-resumo btn-lei-resumo--roxo" href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" target="_blank" rel="noopener noreferrer">Lei Maria da Penha</a>
-          </div>
-        </footer>
-      </div>
-    </section>
-
-    <section class="ligue-secao">
-      <div class="ligue-container">
-        <div class="ligue-logo">
-          <img src="../imagens/180.png" alt=" Ligue 180 - Central de Atendimentos à mulher. ">
-        </div>
-        <div class="ligue-texto">
-            <p>
-              A Central de Atendimento à Mulher é um serviço desenvolvido para enfrentar a violência contra as mulheres, oferecendo três modalidades de atendimento: <span>recebimento de denúncias, orientação às vítimas de violência e informações sobre leis e campanhas.</span>
-            </p>
-            <p class="nao-se-cale"> Ligue <span>180</span>. Não se cale, denuncie. </p>
-        </div>
-      </div>
-    </section>
-
-    <button id="scroll-to-top-bottom" class="scroll-btn" aria-label="Navegar na Página">
-      <ion-icon name="arrow-down-outline" class="icon-arrow"></ion-icon>
-    </button>
-  
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h3> Projeto Educativo </h3>
-          <p>Iniciativa do <strong>curso de Análise e Desenvolvimento de Sistemas</strong> do Centro Universitário Leonardo da Vinci. Foco na educação e prevenção da violência contra a mulher.</p>
-        </div>
-        <div class="footer-col">
-          <h3>links oficias</h3>
-          <ul>
-              <li><a href="http://www.planalto.gov.br" target="_blank">Lei Maria da Penha (Lei 11.340)</a></li>
-              <li><a href="https://www.cnj.jus.br" target="_blank">Justiça Pela Paz em Casa (CNJ)</a></li>
-              <li><a href="https://www.gov.br" target="_blank">Ministério da Mulher, da Família e dos Direitos Humanos</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Contatos de Emergência</h3>
-          <p>Em caso de emergência ou denúncia, ligue:</p>
-          <p class="emergencia-numero">Ligue <span>190</span></p>
-          <p class="emergencia-numero">Disque 180 - Central de Atendimento à Mulher</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Projeto Educativo Lei Maria da Penha. Todos os direitos reservados.</p>
-      </div>
-    </footer>
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../js/index.js" defer></script>
-    <script src="../js/Acessibility.js" defer></script>
-
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
-      </div>
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 
 </body>
+
 </html>

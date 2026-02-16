@@ -1,203 +1,236 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de Contato</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Contato</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
 
   <div id="acessibility-widget" class="acc-widget">
-      <button id="toggle-acc-menu" class="acc-main-btn">
-        <ion-icon name="settings-outline"></ion-icon>
-      </button>
+    <button id="toggle-acc-menu" class="acc-main-btn">
+      <ion-icon name="settings-outline"></ion-icon>
+    </button>
 
-      <div id="acc-menu" class="acc-menu-content">
-        <div class="acc-content">
-          <p>Tamanho da Fonte</p>
-          <div class="acc-arrow">
-              <button class="acc-action" data-type="size" data-value="-10">A-</button>
-              <span id="acc-size-label">100%</span>
-              <button class="acc-action" data-type="size" data-value="10">A+</button>
-          </div>
+    <div id="acc-menu" class="acc-menu-content">
+      <div class="acc-content">
+        <p>Tamanho da Fonte</p>
+        <div class="acc-arrow">
+          <button class="acc-action" data-type="size" data-value="-10">A-</button>
+          <span id="acc-size-label">100%</span>
+          <button class="acc-action" data-type="size" data-value="10">A+</button>
         </div>
+      </div>
 
-        <div class="acc-section">
-          <p>Tipo de Fonte (<span id="acc-font-name" >Inter</span>) </p>
-          <div class="acc-arrow">
-            <button class="acc-action" data-type="font" data-value="prev">
-                    <ion-icon name="chevron-back-outline"></ion-icon>
-                </button>
-                <button class="acc-action" data-type="font" data-value="next" style="flex-grow: 1;">
-                    Trocar Fonte
-                </button>
-                <button class="acc-action" data-type="font" data-value="next">
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
-                </button>
-          </div>
+      <div class="acc-section">
+        <p>Tipo de Fonte (<span id="acc-font-name">Inter</span>) </p>
+        <div class="acc-arrow">
+          <button class="acc-action" data-type="font" data-value="prev">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+          </button>
+          <button class="acc-action" data-type="font" data-value="next" style="flex-grow: 1;">
+            Trocar Fonte
+          </button>
+          <button class="acc-action" data-type="font" data-value="next">
+            <ion-icon name="chevron-forward-outline"></ion-icon>
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="progress-cont">
-      <div class="progress-bar" id="myBar"></div>
+  <div class="progress-cont">
+    <div class="progress-bar" id="myBar"></div>
+  </div>
+
+  <!-- Header Principal -->
+  <header class="header">
+    <div class="logo">
+      <img src="../imagens/new--logo.png" class="header__logo" alt="Iniciativa ADS - Projeto Educativo." href="#home.html" />
     </div>
-    
-      <div class="header">
-      <div class="logo">
-         <img src="../imagens/logo02.jpg" class="header__logo" alt="Logo Maria da Penha" href="#home.html"/>
+
+    <button class="menu-toggle" aria-label="Abrir Menu">
+      <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
+    </button>
+
+    <div class="menu" id="menuNavegacao">
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-lei">
+          A Lei
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-lei">
+          <a href="./page.html"> tipos de violência </a>
+          <a href="./lei-integra.html"> A Lei na integra </a>
+          <a href="./resumo-lei.html"> Resumo da lei </a>
+        </div>
       </div>
 
-      <button class="menu-toggle" aria-label="Abrir Menu" >
-           <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
-      </button>
-
-       <div class="menu" id="menuNavegacao">
-          <div class="menu-item-dropdown">
-           <a href="#" class="dropdown-toogle" data-target="submenu-lei">
-              A Lei
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-           </a>
-           <div class="submenu" id="submenu-lei">
-             <a href="./page.html"> tipos de violência </a>
-             <a href="./lei-integra.html"> A Lei na integra </a>
-             <a href="./resumo-lei.html"> Resumo da lei </a>
-           </div>
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
+          Maria da Penha
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-maria-penha">
+          <a href="../pages/biografia.html"> biografia </a>
+          <a href="./about.html"> Estatística </a>
         </div>
+      </div>
 
-        <div class="menu-item-dropdown">
-          <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
-              Maria da Penha
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-          </a>
-          <div class="submenu" id="submenu-maria-penha">
-            <a href="../pages/biografia.html"> biografia </a>
-            <a href="./about.html"> Estatística </a>
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
+          Violência Doméstica
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-violencia-domestica">
+          <a href="../index.html"> O que é violência doméstica? </a>
+        </div>
+      </div>
+
+      <a href="./contact.html">Contato</a>
+
+    </div>
+  </header>
+  <!-- Header Principal -->
+
+  <main class="contato-secao">
+    <div class="contato-container">
+      <h1 class="titulo-center"> Canais oficiais de atendimentos </h1>
+      <p class="intro-educativa">Esta seção lista os <strong>canais públicos mantidos pelo Governo Federal e órgãos de
+          segurança</strong> para fins de estudo e conhecimento da rede de proteção à mulher no Brasil.</p>
+
+      <div class="contato-lista">
+
+        <!-- Item 1: 180 -->
+        <div class="contato-item">
+          <div class="contato-header">
+            <ion-icon name="information-circle-outline"></ion-icon>
+            <h3>Central de Atendimento à Mulher – Ligue 180</h3>
+          </div>
+          <div class="contato-info">
+            <p><strong>O que é:</strong> Canal gratuito e confidencial que fornece orientações sobre direitos e serviços
+              públicos.</p>
+            <p><strong>Disponibilidade:</strong> 24 horas por dia, em todo o território nacional.</p>
           </div>
         </div>
 
-        <div class="menu-item-dropdown">
-          <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
-              Violência Doméstica
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-          </a>
-          <div class="submenu" id="submenu-violencia-domestica">
-            <a href="../index.html"> O que é violência doméstica? </a>
+        <!-- Item 2: 190 -->
+        <div class="contato-item">
+          <div class="contato-header">
+            <ion-icon name="shield-checkmark-outline"></ion-icon>
+            <h3>Polícia Militar – 190</h3>
+          </div>
+          <div class="contato-info">
+            <p><strong>O que é:</strong> Número para situações de emergência e flagrantes. É o canal de acionamento
+              imediato da força pública.</p>
           </div>
         </div>
 
-        <a href="./contact.html">Contato</a>
-
-      </div>
-    </div>  
-
-    <main class="contato-secao">
-      <div class="contato-container">
-        <h1 class="titulo-center"> Canais oficiais de atendimentos </h1>
-        <p class="intro-educativa">Esta seção lista os <strong>canais públicos mantidos pelo Governo Federal e órgãos de segurança</strong> para fins de estudo e conhecimento da rede de proteção à mulher no Brasil.</p>
-      
-        <div class="contato-lista">
-            
-            <!-- Item 1: 180 -->
-            <div class="contato-item">
-                <div class="contato-header">
-                    <ion-icon name="information-circle-outline"></ion-icon>
-                    <h3>Central de Atendimento à Mulher – Ligue 180</h3>
-                </div>
-                <div class="contato-info">
-                    <p><strong>O que é:</strong> Canal gratuito e confidencial que fornece orientações sobre direitos e serviços públicos.</p>
-                    <p><strong>Disponibilidade:</strong> 24 horas por dia, em todo o território nacional.</p>
-                </div>
-            </div>
-
-            <!-- Item 2: 190 -->
-            <div class="contato-item">
-                <div class="contato-header">
-                    <ion-icon name="shield-checkmark-outline"></ion-icon>
-                    <h3>Polícia Militar – 190</h3>
-                </div>
-                <div class="contato-info">
-                    <p><strong>O que é:</strong> Número para situações de emergência e flagrantes. É o canal de acionamento imediato da força pública.</p>
-                </div>
-            </div>
-
-            <!-- Item 3: Ministério Público e Defensoria -->
-            <div class="contato-item">
-                <div class="contato-header">
-                    <ion-icon name="business-outline"></ion-icon>
-                    <h3>Delegacias Especializadas (DEAM)</h3>
-                </div>
-                <div class="contato-info">
-                    <p><strong>O que é:</strong> Unidades da Polícia Civil especializadas no atendimento humanizado e registro de ocorrências baseadas na Lei Maria da Penha.</p>
-                    <p><strong>Email Institucional de Informação:</strong> deam.contato@policiacivil.gov.br</p>
-                </div>
-            </div>
-
+        <!-- Item 3: Ministério Público e Defensoria -->
+        <div class="contato-item">
+          <div class="contato-header">
+            <ion-icon name="business-outline"></ion-icon>
+            <h3>Delegacias Especializadas (DEAM)</h3>
+          </div>
+          <div class="contato-info">
+            <p><strong>O que é:</strong> Unidades da Polícia Civil especializadas no atendimento humanizado e registro
+              de ocorrências baseadas na Lei Maria da Penha.</p>
+            <p><strong>Email Institucional de Informação:</strong> deam.contato@policiacivil.gov.br</p>
+          </div>
         </div>
-      </div>
-    </main>
 
-    <section class="ligue-secao">
-      <div class="ligue-container">
-        <div class="ligue-logo">
-          <img src="../imagens/180.png" alt=" Ligue 180 - Central de Atendimentos à mulher. ">
-        </div>
-        <div class="ligue-texto">
-            <p>
-              A Central de Atendimento à Mulher é um serviço desenvolvido para enfrentar a violência contra as mulheres, oferecendo três modalidades de atendimento: <span>recebimento de denúncias, orientação às vítimas de violência e informações sobre leis e campanhas.</span>
-            </p>
-            <p class="nao-se-cale"> Ligue <span>180</span>. Não se cale, denuncie. </p>
-        </div>
-      </div>
-    </section>
-    
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h3> Projeto Educativo </h3>
-          <p>Iniciativa do <strong>curso de Análise e Desenvolvimento de Sistemas</strong> do Centro Universitário Leonardo da Vinci. Foco na educação e prevenção da violência contra a mulher.</p>
-        </div>
-        <div class="footer-col">
-          <h3>links oficias</h3>
-          <ul>
-              <li><a href="http://www.planalto.gov.br" target="_blank">Lei Maria da Penha (Lei 11.340)</a></li>
-              <li><a href="https://www.cnj.jus.br" target="_blank">Justiça Pela Paz em Casa (CNJ)</a></li>
-              <li><a href="https://www.gov.br" target="_blank">Ministério da Mulher, da Família e dos Direitos Humanos</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Contatos de Emergência</h3>
-          <p>Em caso de emergência ou denúncia, ligue:</p>
-          <p class="emergencia-numero">Ligue <span>190</span></p>
-          <p class="emergencia-numero">Disque 180 - Central de Atendimento à Mulher</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Projeto Educativo Lei Maria da Penha. Todos os direitos reservados.</p>
-      </div>
-    </footer>
-    
-    
-      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../js/index.js" defer></script>
-    <script src="../js/Acessibility.js" defer></script>
-
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
       </div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
+  </main>
+
+  <section class="ligue-secao">
+    <div class="ligue-container">
+      <div class="ligue-logo">
+        <img src="../imagens/180.png" alt=" Ligue 180 - Central de Atendimentos à mulher. ">
+      </div>
+      <div class="ligue-texto">
+        <p>
+          A Central de Atendimento à Mulher é um serviço desenvolvido para enfrentar a violência contra as mulheres,
+          oferecendo três modalidades de atendimento: <span>recebimento de denúncias, orientação às vítimas de violência
+            e informações sobre leis e campanhas.</span>
+        </p>
+        <p class="nao-se-cale"> Ligue <span>180</span>. Não se cale, denuncie. </p>
+      </div>
+    </div>
+  </section>
+
+   <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Projeto Educativo</h3>
+        <p>
+          Iniciativa do
+          <strong>curso de Análise e Desenvolvimento de Sistemas</strong> do
+          Centro Universitário Leonardo da Vinci. Foco na educação e prevenção
+          da violência contra a mulher.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>links oficias</h3>
+        <ul>
+          <li>
+            <a href="http://www.planalto.gov.br" target="_blank">Lei Maria da Penha (Lei 11.340)</a>
+          </li>
+          <li>
+            <a href="https://www.cnj.jus.br" target="_blank">Justiça Pela Paz em Casa (CNJ)</a>
+          </li>
+          <li>
+            <a href="https://www.gov.br" target="_blank">Ministério da Mulher, da Família e dos Direitos Humanos</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Contatos de Emergência</h3>
+        <p>Em caso de emergência ou denúncia, ligue:</p>
+        <p class="emergencia-numero">Ligue <span>190</span></p>
+        <p class="emergencia-numero">
+          Disque 180 - Central de Atendimento à Mulher
+        </p>
+      </div>
+
+      <div class="footer-logo-central">
+        <img src="../imagens/new--logo.png" alt="">
+        <img src="../imagens/selo-amigo-do-surdo-roxo-redondo.png" alt="" class="logo-libras">
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 Projeto Educativo Lei Maria da Penha. Todos os direitos
+        reservados.
+      </p>
+    </div>
+  </footer>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../js/index.js" defer></script>
+  <script src="../js/Acessibility.js" defer></script>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
 
 </body>
+
 </html>

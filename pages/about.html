@@ -1,158 +1,181 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estatistica</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
-</head>
-<body>
-    
-      <div class="header">
-      <div class="logo">
-         <img src="../imagens/logo02.jpg" class="header__logo" alt="Logo Maria da Penha" href="#home.html"/>
-      </div>
 
-      <button class="menu-toggle" aria-label="Abrir Menu" >
-           <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
-      </button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estatistica</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Header Principal -->
+  <header class="header">
+    <div class="logo">
+      <img src="../imagens/new--logo.png" class="header__logo" alt="Iniciativa ADS - Projeto Educativo." />
+    </div>
+
+    <button class="menu-toggle" aria-label="Abrir Menu">
+      <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
+    </button>
 
     <div class="menu" id="menuNavegacao">
-        <div class="menu-item-dropdown">
-           <a href="#" class="dropdown-toogle" data-target="submenu-lei">
-              A Lei
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-           </a>
-           <div class="submenu" id="submenu-lei">
-             <a href="../pages/page.html"> tipos de violência </a>
-             <a href="../pages/lei-integra.html"> A Lei na integra </a>
-             <a href="../pages/resumo-lei.html"> Resumo da lei </a>
-           </div>
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-lei">
+          A Lei
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-lei">
+          <a href="../pages/page.html"> tipos de violência </a>
+          <a href="../pages/lei-integra.html"> A Lei na integra </a>
+          <a href="../pages/resumo-lei.html"> Resumo da lei </a>
         </div>
-
-        <div class="menu-item-dropdown">
-          <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
-              Maria da Penha
-              <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-          </a>
-          <div class="submenu" id="submenu-maria-penha">
-            <a href="../pages/biografia.html"> biografia </a>
-            <a href="./about.html"> Estatisticas </a>
-          </div>
-        </div>
-        
-        <div class="menu-item-dropdown">
-          <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
-            Violência Doméstica
-            <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
-          </a>
-          <div class="submenu" id="submenu-violencia-domestica">
-            <a href="../index.html"> O que é violência <br>doméstica? </a>
-          </div>
-        </div>
-        
-        <a href="./pages/contact.html">Contato</a>  
       </div>
+
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
+          Maria da Penha
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-maria-penha">
+          <a href="../pages/biografia.html"> biografia </a>
+          <a href="./about.html"> Estatisticas </a>
+        </div>
+      </div>
+
+      <div class="menu-item-dropdown">
+        <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
+          Violência Doméstica
+          <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+        </a>
+        <div class="submenu" id="submenu-violencia-domestica">
+          <a href="../index.html"> O que é violência <br>doméstica? </a>
+        </div>
+      </div>
+
+      <a href="./pages/contact.html">Contato</a>
+    </div>
+  </header>
+  <!-- Header Principal -->
+
+  <!-- Estatísticas - Teste -->
+
+  <section class="estatisticas-secao" id="secao-estatisticas" aria-labelledby="titulo-estatisticas">
+    <div class="estatisticas-header">
+      <h2 id="titulo-estatisticas" class="titulo-sessao">Painel de Estatísticas</h2>
+      <p class="timeline-subtitulo">Consulta dinâmica de indicadores por ano, estado, cidade, município e tipo de
+        violência. Todos os filtros atuam em conjunto e atualizam automaticamente os resultados.</p>
     </div>
 
-    <!-- Estatísticas - Teste -->
+    <div class="filtros-estatisticas" id="filtros-estatisticas"></div>
 
-    <section class="estatisticas-secao" id="secao-estatisticas" aria-labelledby="titulo-estatisticas">
-      <div class="estatisticas-header">
-        <h2 id="titulo-estatisticas" class="titulo-sessao">Painel de Estatísticas</h2>
-        <p class="timeline-subtitulo">Consulta dinâmica de indicadores por ano, estado, cidade, município e tipo de violência. Todos os filtros atuam em conjunto e atualizam automaticamente os resultados.</p>
+    <div class="kpis-estatisticas" id="kpis-estatisticas"></div>
+
+    <div class="estatisticas-grid">
+      <article class="estatisticas-card">
+        <h3>Tipos de Violência (casos)</h3>
+        <div id="ranking-tipos" class="ranking-lista"></div>
+      </article>
+      <article class="estatisticas-card">
+        <h3>Estados com mais registros</h3>
+        <div id="ranking-estados" class="ranking-lista"></div>
+      </article>
+      <article class="estatisticas-card">
+        <h3>Cidades com mais denúncias</h3>
+        <div id="ranking-cidades" class="ranking-lista"></div>
+      </article>
+    </div>
+
+    <div class="tabela-estatisticas-wrap">
+      <h3>Detalhamento por Registros</h3>
+      <div class="tabela-resumo" id="tabela-resumo"></div>
+      <div class="tabela-scroll">
+        <table class="tabela-estatisticas" aria-describedby="tabela-resumo">
+          <thead id="tabela-estatisticas-head"></thead>
+          <tbody id="tabela-estatisticas-body"></tbody>
+        </table>
+      </div>
+      <div class="tabela-paginacao" id="tabela-paginacao"></div>
+    </div>
+  </section>
+  <!-- Estatísticas - Teste -->
+
+ <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3>Projeto Educativo</h3>
+        <p>
+          Iniciativa do
+          <strong>curso de Análise e Desenvolvimento de Sistemas</strong> do
+          Centro Universitário Leonardo da Vinci. Foco na educação e prevenção
+          da violência contra a mulher.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h3>links oficias</h3>
+        <ul>
+          <li>
+            <a href="http://www.planalto.gov.br" target="_blank">Lei Maria da Penha (Lei 11.340)</a>
+          </li>
+          <li>
+            <a href="https://www.cnj.jus.br" target="_blank">Justiça Pela Paz em Casa (CNJ)</a>
+          </li>
+          <li>
+            <a href="https://www.gov.br" target="_blank">Ministério da Mulher, da Família e dos Direitos Humanos</a>
+          </li>
+        </ul>
       </div>
 
-      <div class="filtros-estatisticas" id="filtros-estatisticas"></div>
-
-      <div class="kpis-estatisticas" id="kpis-estatisticas"></div>
-
-      <div class="estatisticas-grid">
-        <article class="estatisticas-card">
-          <h3>Tipos de Violência (casos)</h3>
-          <div id="ranking-tipos" class="ranking-lista"></div>
-        </article>
-        <article class="estatisticas-card">
-          <h3>Estados com mais registros</h3>
-          <div id="ranking-estados" class="ranking-lista"></div>
-        </article>
-        <article class="estatisticas-card">
-          <h3>Cidades com mais denúncias</h3>
-          <div id="ranking-cidades" class="ranking-lista"></div>
-        </article>
+      <div class="footer-col">
+        <h3>Contatos de Emergência</h3>
+        <p>Em caso de emergência ou denúncia, ligue:</p>
+        <p class="emergencia-numero">Ligue <span>190</span></p>
+        <p class="emergencia-numero">
+          Disque 180 - Central de Atendimento à Mulher
+        </p>
       </div>
 
-      <div class="tabela-estatisticas-wrap">
-        <h3>Detalhamento por Registros</h3>
-        <div class="tabela-resumo" id="tabela-resumo"></div>
-        <div class="tabela-scroll">
-          <table class="tabela-estatisticas" aria-describedby="tabela-resumo">
-            <thead id="tabela-estatisticas-head"></thead>
-            <tbody id="tabela-estatisticas-body"></tbody>
-          </table>
-        </div>
-        <div class="tabela-paginacao" id="tabela-paginacao"></div>
-      </div>
-    </section>
-    <!-- Estatísticas - Teste -->
-
-    <footer class="site-footer">
-      <div class="footer-container">
-        <div class="footer-col">
-          <h3> Projeto Educativo </h3>
-          <p>Iniciativa do <strong>curso de Análise e Desenvolvimento de Sistemas</strong> do Centro Universitário Leonardo da Vinci. Foco na educação e prevenção da violência contra a mulher.</p>
-        </div>
-        <div class="footer-col">
-          <h3>links oficias</h3>
-          <ul>
-              <li><a href="http://www.planalto.gov.br" target="_blank">Lei Maria da Penha (Lei 11.340)</a></li>
-              <li><a href="https://www.cnj.jus.br" target="_blank">Justiça Pela Paz em Casa (CNJ)</a></li>
-              <li><a href="https://www.gov.br" target="_blank">Ministério da Mulher, da Família e dos Direitos Humanos</a></li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h3>Contatos de Emergência</h3>
-          <p>Em caso de emergência ou denúncia, ligue:</p>
-          <p class="emergencia-numero">Ligue <span>190</span></p>
-          <p class="emergencia-numero">Disque 180 - Central de Atendimento à Mulher</p>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Projeto Educativo Lei Maria da Penha. Todos os direitos reservados.</p>
-      </div>
-    </footer>
-   
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="../js/index.js" defer></script>
-    <script src="../js/Acessibility.js"></script>
-    <script src="../js/Pop-up.js"></script>
-    <script src="../js/dados-analiticos.js"></script>
-
-    <div vw class="enabled">
-      <div vw-access-button class="active"></div>
-      <div vw-plugin-wrapper>
-        <div class="vw-plugin-top-wrapper"></div>
+      <div class="footer-logo-central">
+        <img src="../imagens/new--logo.png" alt="">
+        
+        <img src="../imagens/selo-amigo-do-surdo-roxo-redondo.png" alt="" class="logo-libras">
       </div>
     </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-      new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script>
-   
-      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="../js/index.js" defer></script>
+    
+    <div class="footer-bottom">
+      <p>
+        &copy; 2026 Projeto Educativo Lei Maria da Penha. Todos os direitos
+        reservados.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../js/index.js" defer></script>
+  <script src="../js/Acessibility.js"></script>
+  <script src="../js/Pop-up.js"></script>
+  <script src="../js/dados-analiticos.js"></script>
+
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="../js/index.js" defer></script>
 
 </body>
+
 </html>
