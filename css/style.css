@@ -10,6 +10,9 @@
     --color-blue: #003087;
     --accent-color: #ffd700;
 
+    --marker-color: rgba(217, 83, 79, 0.3); 
+    --marker-speed: 0.9s;
+
     /* Cores neutras */
     --bg-page: #ffffff;
     --bg-card: #f5f5f5;
@@ -86,7 +89,7 @@
 
 html,
 body {
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--bg-page);
@@ -285,7 +288,7 @@ body {
 ================================================== */
 .header {
     width: 100%;
-    padding: 10px 40px;
+    padding: 5px 20px;
     background-color: var(--color-gray-100);
     display: flex;
     justify-content: space-between;
@@ -322,12 +325,15 @@ body {
     display: flex;
     align-items: center;
     padding: 10px;
+    
     font-size: 15px;
     font-weight: 700;
     color: #333;
+    
     text-decoration: none;
     text-align: center;
     cursor: pointer;
+    
     transition: color 0.3s ease;
 }
 
@@ -351,7 +357,7 @@ body {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 170%; 
+    top: 160%; 
     left: 50%;
     transform: translateX(-50%); 
     min-width: 280px;
@@ -1332,111 +1338,109 @@ body {
 ================================================== */
 
 .mitos-secao {
-    padding: 60px 20px;
-    background-color: var(--bg-page);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    margin-top: 150px;
 }
 
 .titulo-mitos {
     font-size: 2rem;
     text-transform: uppercase;
     margin-bottom: 40px;
+    text-align: center;
 }
 
-/* ==================================================
-   SUBTÍTULO DA SEÇÃO
-   Texto em itálico para introdução.
-================================================== */
-.subtitulo-secao {
-    margin-bottom: 40px;
-    color: var(--color-black-one);
-    font-style: italic;
-}
-
-/* ==================================================
-   CONTAINER DOS MITOS
-   Grid para organizar os cards de mito.
-================================================== */
-
-.mitos-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+.content-center {
+    display: flex;
+    align-items: flex-start;
     gap: 25px;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-bottom: 60px;
 }
 
-/* ==================================================
-   CARD DE MITO
-   Estilo base para cada card com borda esquerda.
-================================================== */
-.mito-card {
-    background-color: var(--bg-page);
-    border-left: 8px solid var(--color-danger);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: left;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    position: relative;
+.text-reveal-marker {
+    display: inline;
+    background-image: linear-gradient(var(--marker-color), var(--marker-color,));
+    background-repeat: no-repeat;
+
+    background-size: 0% 100%;
+    background-position: left center;
+
+    transition: background-size 15s cubic-bezier(0.30, 1, 0.22, 2);
+
+    padding: 0 2px;
 }
 
-/* ==================================================
-   TAG "FAKE" NO CARD
-   Destaque vermelho para indicar falsidade.
-================================================== */
-.tag-fake {
-    display: inline-block;
-    background-color: var(--color-danger);
+.text-reveal-marker.is-visible {
+    background-size: 100% 100%;
+}
+
+.numbers {
+    flex-shrink: 0;
+    width: 65px;
+    height: 65px;
+    background-color: #9089f2;
     color: var(--bg-page);
-    padding: 3px 10px;
-    border-radius: 5px;
-    font-size: 12px;
+    font-size: 24px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
-    margin-bottom: 15px;
+    box-shadow: 0 4px 15px rgba(144, 137, 242, 0.4);
+
+    border: 2px solid #9089f2;
+    outline: 2px solid #9089f2;
+    outline-offset: 4px;
+
 }
 
-/* ==================================================
-   TÍTULO DO MITO
-   Estilo para o h3 do card.
-================================================== */
-.mito-card h3 {
+.title-content-main strong {
+    color: #d9534f;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.title-content-main{
+    display: flex;
+    align-items: center;
     font-size: 18px;
-    color: var(--color-black-one);
-    margin-bottom: 15px;
-    line-height: 1.4;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    color: var(--color-primary);
 }
 
-/* ==================================================
-   DIVISOR NO CARD
-   Linha horizontal para separar seções.
-================================================== */
-.dividir {
-    height: 1px;
-    background-color: var(--color-gray-500);
-    margin-bottom: 15px;
+.content-off-start {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    /* text-align: justify; */
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
-/* ==================================================
-   TEXTO "FATO" NO CARD
-   Estilo para a correção, com destaque em verde.
-================================================== */
-.fato {
-    font-size: 15px;
-    color: var(--color-black-one);
-    line-height: 1.5;
+.content-off-start strong {
+    color: #28a745;
 }
 
-.fato strong {
-    color: var(--color-success);
+.btn-ler-mais-text {
+    display: none;
+    background: none;
+    border: 1px solid #9089f2;
+    color: #9089f2;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: 0.3s;
 }
 
-/* ==================================================
-   HOVER NO CARD
-   Elevação suave ao passar o mouse.
-================================================== */
-
-.mito-card:hover {
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+.btn-ler-mais-text:hover {
+    background-color: #9089f2;
+    color: white;
 }
 
 /* ==================================================
@@ -3101,10 +3105,6 @@ main,
     list-style: none;
 }
 
-.footer-col strong {
-    color: #d9534f;
-}
-
 .footer-col ul li a:hover {
     color: #ffffff;
     text-decoration: underline;
@@ -3376,6 +3376,13 @@ main,
 @media (max-width: 1350px) {
     .detalhes-investigacao::before {
         width: 95%;
+    }
+}
+
+@media (max-width: 600px){
+    .footer-logo-central {
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -3683,22 +3690,6 @@ main,
         opacity: 0;
         overflow: hidden;
         transition: max-height 0.4s ease, opacity 0.3s ease;
-        /* position: absolute;
-        top: 80px;
-        left: 0;
-        right: 0;
-        flex-direction: column;
-        gap: 1px;
-        width: 100%;
-        background: #fff;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        z-index: 1000;
-        max-height: 0;
-        opacity: 0;
-        overflow: hidden;
-        transition:
-            max-height 0.5s ease-in-out,
-            opacity 0.3s ease; */
     }
 
     .menu.is-active {
@@ -3710,8 +3701,6 @@ main,
     .menu-item-dropdown {
         width: 100%;
         border-bottom: 1px solid #eee;
-        /* position: static;
-        margin: 0; */
     }
 
     main,
@@ -3887,7 +3876,11 @@ main,
     }
 
     .acc-widget {
-        bottom: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        margin-top: 20px;
     }
 
     .banner-resumo-lei-content {
@@ -3917,8 +3910,48 @@ main,
     Ajustes para mobile, empilhando cards.
     ================================================== */
 
-    .mitos-container {
-        grid-template-columns: 1fr;
+    .content-center {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .title-content-main,
+    .content-off-start {
+        margin-left: 0;
+        padding-right: 10px;
+    }
+
+    .content-off-start::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(transparent, rgba(255,255,255,0.9));
+        pointer-events: none;
+    }
+
+    .content-off-start {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .content-off-start.expandido {
+        -webkit-line-clamp: unset;
+        display: block;
+    }
+
+    .content-off-start.expandido::after {
+        display: none;
+    }
+
+    .btn-ler-mais-text {
+        display: inline-block;
+        margin-top: 10px;
     }
 
     .wrapper-lei {

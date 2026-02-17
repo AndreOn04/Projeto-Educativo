@@ -1,3 +1,29 @@
+document.addEventListener('DOMContentLoaded', function() {
+  const btn = document.querySelectorAll('.btn-ler-mais-text');
+
+  btn.forEach(botao => {
+    botao.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const containerMito = this.closest('.content-body-violence');
+
+      const textoParaExpandir = containerMito.querySelector('.content-off-start');
+
+      if(textoParaExpandir) {
+        textoParaExpandir.classList.toggle('expandido');
+
+        if(textoParaExpandir.classList.contains('expandido')){
+          this.textContent = "Ler menos";
+        } else {
+          this.textContent = "Ler mais";
+        }
+      } else {
+        console.error("Erro: Não encontrei a div .content-off-start dentro deste bloco. ");
+      }
+    })
+  })
+})
+
 document.addEventListener("DOMContentLoaded", () => {
   // Garante que o código seja executado após o carregamento do DOM
 
@@ -121,25 +147,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document
-  .querySelector(".violencia-scroll-cue")
-  .addEventListener("click", function () {
-    const citacoesSection = document.querySelector(".violencia-citacoes");
-    const topoSection = document.querySelector(".violencia-top");
+document.addEventListener('DOMContentLoaded', function() {
+  const verificarElemento = setInterval(() => {
+    const violenciaScrollCue = document.querySelector(".violencia-scroll-cue");
 
-    const scrollAtual =
-      window.pageYOffset || document.documentElement.scrollTop;
-    const posicaoCitacoes = citacoesSection.offsetTop - 50;
+    if (violenciaScrollCue) {
+      violenciaScrollCue.addEventListener("click", function () {
+        const citacoesSection = document.querySelector(".violencia-citacoes");
+        const topoSection = document.querySelector(".violencia-top");
 
-    if (scrollAtual < posicaoCitacoes) {
-      window.scrollTo({
-        top: posicaoCitacoes,
-        behavior: "smooth",
+        const scrollAtual = window.pageYOffset || document.documentElement.scrollTop;
+        const posicaoCitacoes = citacoesSection.offsetTop - 50;
+
+        if (scrollAtual < posicaoCitacoes) {
+          window.scrollTo({
+            top: posicaoCitacoes,
+            behavior: "smooth",
+          });
+        } else {
+          window.scrollTo({
+            top: topoSection.offsetTop,
+            behavior: "smooth",
+          });
+        }
       });
-    } else {
-      window.scrollTo({
-        top: topoSection.offsetTop,
-        behavior: "smooth",
-      });
+      // Para a verificação após encontrar o elemento
+      clearInterval(verificarElemento);
     }
-  });
+  }, 100); // Verifica a cada 100ms
+});
+
