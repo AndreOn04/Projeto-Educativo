@@ -310,7 +310,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
+    gap: 120px;
     width: fit-content;
     margin: 0 auto;
 }
@@ -1349,8 +1349,10 @@ body {
 .titulo-mitos {
     font-size: 2rem;
     text-transform: uppercase;
-    margin-bottom: 40px;
+
+    margin-bottom: 90px;
     text-align: center;
+    color: var(--color-primary);
 }
 
 .content-center {
@@ -1368,7 +1370,7 @@ body {
     background-size: 0% 100%;
     background-position: left center;
 
-    transition: background-size 15s cubic-bezier(0.30, 1, 0.22, 2);
+    transition: background-size 15s cubic-bezier(0.1, 2, 0.22, 03);
 
     padding: 0 2px;
 }
@@ -1415,8 +1417,10 @@ body {
 .content-off-start {
     display: flex;
     align-items: center;
-    font-size: 16px;
+    font-size: 1.0rem;
+
     /* text-align: justify; */
+    
     margin-left: 50px;
     margin-top: 20px;
 }
@@ -3952,6 +3956,10 @@ main,
     .btn-ler-mais-text {
         display: inline-block;
         margin-top: 10px;
+    }
+
+    .text-reveal-marker {
+        padding: 0 3px;
     }
 
     .wrapper-lei {

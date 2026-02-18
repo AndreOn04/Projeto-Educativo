@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-visible');
                 // Para animar só uma vez, desconecta o observer desse elemento
-                observer.unobserve(entry.target);
+                // observer.unobserve(entry.target);
+            } else {
+                entry.target.classList.remove('is-visible');
             }
         });
     }, observerOptions);

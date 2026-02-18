@@ -176,4 +176,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 100); // Verifica a cada 100ms
 });
-
