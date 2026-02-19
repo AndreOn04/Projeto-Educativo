@@ -104,31 +104,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const scrolled = (winScroll / height) * 100; // Porcentagem rolada
 
-    document.getElementById("myBar").style.width = scrolled + "%"; // Atualiza a largura da barra de progresso
+    const bar = document.getElementById("myBar");
+    if (bar) {
+      bar.style.width = scrolled + "%";
+    }
   }
 });
 
-const scrollBtn = document.getElementById("scroll-to-top-bottom");
+document.addEventListener("DOMContentLoaded", () => {
+  const scrollBtn = document.getElementById("scroll-to-top-bottom");
+  if (!scrollBtn) return;
 
-window.addEventListener("scroll", () => {
-  const isAtBottom =
-    window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+  window.addEventListener("scroll", () => {
+    const isAtBottom =
+      window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
 
-  if (isAtBottom) {
-    scrollBtn.classList.add("is-at-bottom");
-  } else {
-    scrollBtn.classList.remove("is-at-bottom");
-  }
-});
+    scrollBtn.classList.toggle("is-at-bottom", isAtBottom);
+  });
 
-scrollBtn.addEventListener("click", () => {
-  const isAtBottom = scrollBtn.classList.contains("is-at-bottom");
+  scrollBtn.addEventListener("click", () => {
+    const isAtBottom = scrollBtn.classList.contains("is-at-bottom");
 
-  window.scrollTo({
-    top: isAtBottom ? 0 : document.body.scrollHeight,
-    behavior: "smooth", // Roda suavemente
+    window.scrollTo({
+      top: isAtBottom ? 0 : document.body.scrollHeight,
+      behavior: "smooth",
+    });
   });
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const timelineButtons = document.querySelectorAll(".timeline-toggle");
