@@ -45,6 +45,7 @@
       </div>
     </div>
 
+
     <div class="share-popover" id="share-popover" style="display: none;">
       <button class="share-btn" id="copy-quote" title="Copiar Citação">
         <ion-icon name="copy-outline"></ion-icon>
@@ -107,7 +108,7 @@
     </div>
   
     <div class="banner">
-      <div class="caixa-foco">
+      <div class="caixa-foco" data-read>
         <h2 class="posts">O que é violência <br> doméstica?</h2>
         <p class="paragrafo">
           De acordo com o <strong>art. 5º da Lei Maria da Penha</strong>,
@@ -120,7 +121,7 @@
       </div>
     </div>
 
-    <section class="mitos-secao">
+    <section class="mitos-secao" data-read>
       <h2 class="titulo__tipos--violencia">Mito e Realidade</h2>
       <p class="subtitulo-secao">
         Desconstruir preconceitos é o primeiro passo para a mudança.
@@ -190,7 +191,7 @@
       <h3 class="title-sessao-help"> como buscar ajuda </h3>
       <section class="secao-ajuda">
         <div class="center">
-          <div class="box">
+          <div class="box" data-read>
             <p>As mulheres devem procurar, em primeiro lugar, um <span>Centro de Referência de Atendimento à Mulher (CRM)</span> em sua cidade. No CRM, elas podem receber orientações para entender a situação pela qual estão passando e obter informações sobre a Lei Maria da Penha e como romper o ciclo da violência. Dessa forma, as mulheres vão se empoderar e decidir o melhor momento de fazer a denúncia.</p>
 
             <p>Nos locais em que não existe esse equipamento ou nenhum serviço especializado, é possível buscar apoio nas <span>Unidades Básicas de Saúde (UBS)</span>, nos <span>Centros de Referência da Assistência Social (CRAS)</span> e nos <span>Centros de Referência Especializados de Assistência Social (CREAS)</span>, assim como nos <span>núcleos da Defensoria Pública</span> e do <span>Ministério Público.</span></p>
@@ -230,7 +231,7 @@
       </div>
     </section>
 
-    <section class="ligue-secao">
+    <section class="ligue-secao" data-read>
       <div class="ligue-container">
         <div class="ligue-logo">
           <img src="./imagens/180.png" alt=" Ligue 180 - Central de Atendimentos à mulher. ">
@@ -307,5 +308,17 @@
     <script src="./js/index.js" defer></script>
     <script src="./js/Acessibility.js"></script>
     <script src="./js/Pop-up.js"></script>
-  </body>
+  
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
 </html>

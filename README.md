@@ -83,3 +83,103 @@ O site oferece:
 <h2> 📝 Licença </h2>
 Este projeto disponibilizado <b>não é open source</b>, o que significa que qualquer pessoa pode <b>apenas</b> visualizar, porém, não pode utilizar e adaptar o código conforme necessário. <br> <br>
 Copyright <b>© 2026.</b> Todos os direitos reservados.
+
+<h2>🔊 Nota técnica: Web Speech API em celulares (Android/iOS)</h2>
+
+Se você implementar leitor de texto com <code>speechSynthesis</code>, é comum funcionar no desktop e falhar no mobile.
+Os principais motivos são:
+
+- O motor de voz no celular exige execução direta após gesto do usuário (click/touch).
+- Em alguns navegadores móveis (especialmente iOS Safari), eventos como <code>onboundary</code> podem não disparar de forma confiável.
+- Textos muito longos em uma única <code>SpeechSynthesisUtterance</code> podem não ser lidos corretamente.
+- A lista de vozes pode carregar de forma assíncrona (exige <code>onvoiceschanged</code>).
+
+### Recomendações práticas
+
+1. Iniciar a fala apenas dentro do clique do botão (sem depender de “desbloqueio” global em <code>touchstart</code>).
+2. Não depender exclusivamente de <code>onboundary</code> para progresso no mobile.
+3. Dividir o texto em blocos menores (frases/parágrafos) e enfileirar.
+4. Tratar <code>visibilitychange</code>/<code>pagehide</code> para pausar ou cancelar com segurança.
+5. Ouvir tanto <code>click</code> quanto <code>touchend</code> no botão principal.
+
+### Exemplo base compatível (resumo)
+
+```js
+class LeitorInteligente {
+  constructor() {
+    this.synth = window.speechSynthesis;
+    this.btn = document.getElementById('btn-audio-main');
+    this.texto = '';
+    this.fila = [];
+    this.idx = 0;
+    this.rate = 1;
+
+    if (!this.synth || !this.btn) return;
+    this.init();
+  }
+
+  init() {
+    const start = (e) => {
+      e.preventDefault();
+      if (!this.synth.speaking) this.iniciar();
+      else if (this.synth.paused) this.synth.resume();
+      else this.synth.pause();
+    };
+
+    this.btn.addEventListener('click', start, { passive: false });
+    this.btn.addEventListener('touchend', start, { passive: false });
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && this.synth.speaking) this.synth.pause();
+    });
+  }
+
+  obterTexto() {
+    const blocos = [...document.querySelectorAll('[data-read]')];
+    const bruto = blocos.length
+      ? blocos.map((b) => b.innerText.trim()).join('. ')
+      : (document.querySelector('main')?.innerText || '');
+    return bruto.replace(/\s+/g, ' ').trim();
+  }
+
+  quebrarTexto(texto, max = 180) {
+    const frases = texto.split(/(?<=[.!?])\s+/);
+    const chunks = [];
+    let acc = '';
+    for (const f of frases) {
+      if ((acc + ' ' + f).trim().length > max) {
+        if (acc) chunks.push(acc.trim());
+        acc = f;
+      } else {
+        acc += ' ' + f;
+      }
+    }
+    if (acc) chunks.push(acc.trim());
+    return chunks;
+  }
+
+  iniciar() {
+    this.texto = this.texto || this.obterTexto();
+    if (!this.texto) return;
+
+    this.fila = this.quebrarTexto(this.texto);
+    this.idx = 0;
+    this.synth.cancel();
+    this.falarProximo();
+  }
+
+  falarProximo() {
+    if (this.idx >= this.fila.length) return;
+    const u = new SpeechSynthesisUtterance(this.fila[this.idx]);
+    u.lang = 'pt-BR';
+    u.rate = this.rate;
+    u.onend = () => {
+      this.idx += 1;
+      this.falarProximo();
+    };
+    this.synth.speak(u);
+  }
+}
+```
+
+> Observação: como o projeto é informativo/educativo, mantenha a interface e os textos deixando claro que o site não substitui canais oficiais.

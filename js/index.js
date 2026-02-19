@@ -51,42 +51,58 @@ document.addEventListener('DOMContentLoaded', () => { // Garante que o código s
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() { // Garante que o código seja executado após o carregamento do DOM
+document.addEventListener('DOMContentLoaded', () => { // Garante que o código seja executado após o carregamento do DOM
+    const progressBar = document.getElementById('myBar');
 
-    window.onscroll = function() {
-    updateProgressBar(); // Chama a função para atualizar a barra de progresso ao rolar a página
-    };
+    if (progressBar) {
+        const updateProgressBar = () => { // Função para atualizar a barra de progresso
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop; // Quantidade de rolagem
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight; // Altura total do documento menos a altura da janela
+            const scrolled = height > 0 ? (winScroll / height) * 100 : 0; // Porcentagem rolada
+            progressBar.style.width = `${scrolled}%`; // Atualiza a largura da barra de progresso
+        };
 
-    function updateProgressBar() { // Função para atualizar a barra de progresso
+        updateProgressBar();
+        window.addEventListener('scroll', updateProgressBar);
+        window.addEventListener('resize', updateProgressBar);
+    }
 
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop; // Quantidade de rolagem
+    const scrollBtn = document.getElementById('scroll-to-top-bottom');
 
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight; // Altura total do documento menos a altura da janela
+    if (scrollBtn) {
+        window.addEventListener('scroll', () => {
+            const isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100;
 
-        const scrolled = (winScroll / height) * 100; // Porcentagem rolada 
+            if (isAtBottom){
+                scrollBtn.classList.add('is-at-bottom');
+            } else {
+                scrollBtn.classList.remove('is-at-bottom');
+            }
+        });
 
-        document.getElementById("myBar").style.width = scrolled + "%"; // Atualiza a largura da barra de progresso
+        scrollBtn.addEventListener('click', () => {
+            const isAtBottom = scrollBtn.classList.contains('is-at-bottom');
 
+            window.scrollTo({
+                top: isAtBottom ? 0 : document.body.scrollHeight,
+                behavior: 'smooth' // Roda suavemente
+            });
+        });
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineButtons = document.querySelectorAll('.timeline-toggle');
+    if (!timelineButtons.length) return;
 
-const scrollBtn = document.getElementById('scroll-to-top-bottom');
+    timelineButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            if (!content || !content.classList.contains('timeline-extra')) return;
 
-window.addEventListener('scroll', () => { 
-    const isAtBottom = (window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100;
-
-    if (isAtBottom){
-        scrollBtn.classList.add('is-at-bottom')
-    } else {
-        scrollBtn.classList.remove('is-at-bottom');
-    }
-});
-
-scrollBtn.addEventListener('click', () => {
-    const isAtBottom = scrollBtn.classList.contains('is-at-bottom');
-
-    window.scrollTo({
-        top: isAtBottom ? 0 : document.body.scrollHeight,
-        behavior: 'smooth' // Roda suavemente
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', String(!isExpanded));
+            button.textContent = isExpanded ? 'Ver detalhes' : 'Ocultar detalhes';
+            content.hidden = isExpanded;
+        });
     });
-})
+});

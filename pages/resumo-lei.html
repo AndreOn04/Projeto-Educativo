@@ -95,11 +95,63 @@
       </div>   
     </div>
 
-    <div class="banner-resumo-lei">
+    <section class="banner-resumo-lei">
+      <div class="banner-resumo-lei-content" data-read>
+        <h1>Resumo da Lei Maria da Penha</h1>
+        <p>Conheça, de forma objetiva, os principais pontos dos Títulos I ao V da Lei n.º 11.340/2006 e os direitos que fortalecem a proteção das mulheres.</p>
+        <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" target="_blank" rel="noopener noreferrer" class="btn-lei-resumo">Acessar texto oficial</a>
+      </div>
+    </section>
 
-    </div>
+    <section class="resumo-lei-secao" data-read>
+      <div class="resumo-lei-container">
+        <header class="resumo-lei-header-card">
+          <ion-icon name="scale-outline"></ion-icon>
+          <p>A Lei Maria da Penha estabelece mecanismos para prevenir, punir e erradicar a violência doméstica e familiar contra a mulher, com foco em proteção integral e garantia de direitos.</p>
+        </header>
 
-    <p class="mensagem"> Estamos em construção 🚧 Fique à vontade para fazer testes (botões e navegações), inclusive no computador ou no smartphone </p>
+        <div class="resumo-titulos-lista">
+          <article class="resumo-titulo-card resumo-titulo-card--roxo">
+            <span class="resumo-tag">Título I</span>
+            <h2>Disposições preliminares</h2>
+            <p>Define o objetivo da lei e seu alcance, reafirmando que a violência doméstica é violação de direitos humanos e exige atuação do Estado, da sociedade e da família.</p>
+          </article>
+
+          <article class="resumo-titulo-card resumo-titulo-card--branco">
+            <span class="resumo-tag">Título II</span>
+            <h2>Formas de violência doméstica</h2>
+            <p>Classifica os tipos de violência contra a mulher: física, psicológica, sexual, patrimonial e moral, permitindo identificação mais clara dos abusos.</p>
+          </article>
+
+          <article class="resumo-titulo-card resumo-titulo-card--roxo">
+            <span class="resumo-tag">Título III</span>
+            <h2>Assistência e proteção à mulher</h2>
+            <p>Prevê atendimento articulado entre justiça, saúde, assistência social e segurança pública, com prioridade para acolhimento humanizado e acesso a direitos.</p>
+          </article>
+
+          <article class="resumo-titulo-card resumo-titulo-card--branco">
+            <span class="resumo-tag">Título IV</span>
+            <h2>Procedimentos e medidas protetivas</h2>
+            <p>Estabelece medidas de urgência, como afastamento do agressor, restrição de contato e proteção da vítima, buscando interromper o ciclo de violência.</p>
+          </article>
+
+          <article class="resumo-titulo-card resumo-titulo-card--roxo">
+            <span class="resumo-tag">Título V</span>
+            <h2>Equipe de atendimento multidisciplinar</h2>
+            <p>Reforça a importância de equipes técnicas para apoiar decisões judiciais, acompanhamento psicossocial e fortalecimento da rede de enfrentamento.</p>
+          </article>
+        </div>
+
+        <footer class="resumo-lei-footer-card">
+          <h3>Conheça a lei na íntegra</h3>
+          <p>Para leitura completa e atualizada, consulte o texto oficial da Lei n.º 11.340/2006 no portal do Planalto.</p>
+          <div class="resumo-acoes">
+            <a class="btn-lei-resumo btn-lei-resumo--roxo" href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" target="_blank" rel="noopener noreferrer">Lei Maria da Penha (oficial)</a>
+            <a class="btn-lei-resumo btn-lei-resumo--outline" href="../pages/lei-integra.html">Ver versão no projeto</a>
+          </div>
+        </footer>
+      </div>
+    </section>
 
     <section class="ligue-secao">
       <div class="ligue-container">
@@ -145,6 +197,18 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../js/index.js" defer></script>
     <script src="../js/Acessibility.js" defer></script>
+
+
+    <div vw class="enabled">
+      <div vw-access-button class="active"></div>
+      <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+      </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+      new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 
 </body>
 </html>
