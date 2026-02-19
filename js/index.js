@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         console.error("Erro: Não encontrei a div .content-off-start dentro deste bloco. ");
       }
-    })
-  })
+    });
+  });
 })
 
 document.addEventListener("DOMContentLoaded", () => {

@@ -71,47 +71,82 @@
   </header>
   <!-- Header Principal -->
 
-  <!-- Estatísticas - Teste -->
-
-  <section class="estatisticas-secao" id="secao-estatisticas" aria-labelledby="titulo-estatisticas">
-    <div class="estatisticas-header">
-      <h2 id="titulo-estatisticas" class="titulo-sessao">Painel de Estatísticas</h2>
-      <p class="timeline-subtitulo">Consulta dinâmica de indicadores por ano, estado, cidade, município e tipo de
-        violência. Todos os filtros atuam em conjunto e atualizam automaticamente os resultados.</p>
+  <!-- Teste Estatística -->
+  <section class="dashboard-painel-linha-secao" id="painel-linha">
+    <div class="dashboard-painel-linha-header">
+      <h2 class="-dashboard-titulo-sessao"> Dados sobre Estatística 2020 - 2025 </h2>
     </div>
 
-    <div class="filtros-estatisticas" id="filtros-estatisticas"></div>
+    <article class="dashboard-grafico-card grafico-card--simples">
+      <h3> Brasil - comparação por indicador (gráfico de barras) </h3>
 
-    <div class="kpis-estatisticas" id="kpis-estatisticas"></div>
+      <svg class="grafico-estatico grafico-barras" viewBox="0 0 980 520" role="img"
+        aria-label="Gráfico de barras com indicadores de violência no Brasil em 2023">
+        <line x1="88" y1="50" x2="88" y2="430" class="axis-line"></line>
+        <line x1="88" y1="430" x2="940" y2="430" class="axis-line"></line>
 
-    <div class="estatisticas-grid">
-      <article class="estatisticas-card">
-        <h3>Tipos de Violência (casos)</h3>
-        <div id="ranking-tipos" class="ranking-lista"></div>
-      </article>
-      <article class="estatisticas-card">
-        <h3>Estados com mais registros</h3>
-        <div id="ranking-estados" class="ranking-lista"></div>
-      </article>
-      <article class="estatisticas-card">
-        <h3>Cidades com mais denúncias</h3>
-        <div id="ranking-cidades" class="ranking-lista"></div>
-      </article>
-    </div>
+        <line x1="88" y1="354" x2="940" y2="354" class="grid"></line>
+        <line x1="88" y1="278" x2="940" y2="278" class="grid"></line>
+        <line x1="88" y1="202" x2="940" y2="202" class="grid"></line>
+        <line x1="88" y1="126" x2="940" y2="126" class="grid"></line>
+        <line x1="88" y1="50" x2="940" y2="50" class="grid"></line>
 
-    <div class="tabela-estatisticas-wrap">
-      <h3>Detalhamento por Registros</h3>
-      <div class="tabela-resumo" id="tabela-resumo"></div>
-      <div class="tabela-scroll">
-        <table class="tabela-estatisticas" aria-describedby="tabela-resumo">
-          <thead id="tabela-estatisticas-head"></thead>
-          <tbody id="tabela-estatisticas-body"></tbody>
-        </table>
-      </div>
-      <div class="tabela-paginacao" id="tabela-paginacao"></div>
+        <text x="78" y="434" text-anchor="end" class="axis">0</text>
+        <text x="78" y="358" text-anchor="end" class="axis">150 mil</text>
+        <text x="78" y="282" text-anchor="end" class="axis">300 mil</text>
+        <text x="78" y="206" text-anchor="end" class="axis">450 mil</text>
+        <text x="78" y="130" text-anchor="end" class="axis">500 mil</text>
+
+        <rect x="130" y="266" width="95" height="164" class="bar bar-total"></rect>
+        <rect x="260" y="362" width="95" height="68" class="bar bar-fisica"></rect>
+        <rect x="390" y="385" width="95" height="45" class="bar bar-psico"></rect>
+        <rect x="520" y="425" width="95" height="5" class="bar bar-sexual"></rect>
+        <rect x="650" y="88" width="95" height="342" class="bar bar-medidas"></rect>
+        <rect x="780" y="429" width="95" height="1" class="bar bar-feminicidio"></rect>
+
+        <text x="177" y="255" text-anchor="middle" class="point-label">258.941</text>
+        <text x="307" y="351" text-anchor="middle" class="point-label">107.000</text>
+        <text x="437" y="374" text-anchor="middle" class="point-label">72.000</text>
+        <text x="567" y="414" text-anchor="middle" class="point-label">7.000</text>
+        <text x="697" y="77" text-anchor="middle" class="point-label">540.255</text>
+        <text x="827" y="418" text-anchor="middle" class="point-label">1.467</text>
+
+        <text x="177" y="458" text-anchor="middle" class="axis">Total</text>
+        <text x="307" y="458" text-anchor="middle" class="axis">Física</text>
+        <text x="437" y="458" text-anchor="middle" class="axis">Psicológica</text>
+        <text x="567" y="458" text-anchor="middle" class="axis">Sexual</text>
+        <text x="697" y="458" text-anchor="middle" class="axis">Medidas</text>
+        <text x="827" y="458" text-anchor="middle" class="axis">Feminicídio</text>
+      </svg>
+      <p class="grafico-legenda">Comparativo estático com os indicadores solicitados: Total de Casos, <strong>Violência Física, Violência Psicológica, Violência Sexual</strong>, Medidas Protetivas e Feminicídio (Brasil).</p>
+    </article>
+
+    <div class="painel-grid-infos">
+      <article class="estatistica-card">
+        <h3>Estados</h3>
+        <ul class="listas-destaques">
+          <li><strong>São Paulo (SE):</strong> 194.231 casos (maior número absoluto).</li>
+          <li><strong>Rio Grande do Sul (S):</strong> destaque regional no Sul.</li>
+          <li><strong>Pernambuco (NE):</strong> entre os maiores do Nordeste.</li>
+          <li><strong>Ceará (NE):</strong> presença relevante no recorte regional.</li>
+          <li><strong>Pará (N):</strong> destaque no Norte.</li>
+          <li><strong>Mato Grosso do Sul / Goiás (CO):</strong> destaque no Centro-Oeste.</li>
+        </ul>
+      </article>
+
+      <article class="estatisticas-card">
+        <h3>Indicadores nacionais (visão rápida)</h3>
+        <ul class="lista-destaques">
+          <li><strong>Brasil 2023:</strong> 258.941 casos, 540.255 medidas protetivas, 1.467 feminicídios.</li>
+          <li><strong>Brasil 2024:</strong> 1.492 feminicídios (recorde histórico).</li>
+          <li><strong>Brasil 2025 parcial:</strong> 35.665 (física), 24.021 (psicológica), 3.085 (sexual), 590.000
+            medidas protetivas, ~1.470 feminicídios.</li>
+          <li><strong>2020–2025:</strong> crescimento de +151% em medidas protetivas.</li>
+        </ul>
+      </article>
     </div>
   </section>
-  <!-- Estatísticas - Teste -->
+
 
   <footer class="site-footer">
     <div class="footer-container">
@@ -164,11 +199,16 @@
   </footer>
 
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
   <script src="../js/index.js" defer></script>
+
   <script src="../js/Acessibility.js"></script>
+
   <script src="../js/Pop-up.js"></script>
-  <script src="../js/dados-analiticos.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <div vw class="enabled">
     <div vw-access-button class="active"></div>
