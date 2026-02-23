@@ -87,14 +87,22 @@
     box-sizing: border-box;
 }
 
-html,
+html {
+    overflow-x: hidden; 
+    width: 100%;
+}
+
 body {
     font-family: "Roboto", sans-serif;
-    margin: 0;
-    padding: 0;
+    width: 100%;
+    max-width: 100%; 
+    overflow-x: hidden; 
+    
     background-color: var(--bg-page);
     color: var(--color-black-one);
     line-height: 1.4;
+    
+    position: relative; 
 }
 
 .progress-cont {
@@ -3322,7 +3330,6 @@ main,
 
     .fases-container {
         grid-template-columns: 1fr;
-        /* text-align: center; */
     }
 
     .fase-visual {
@@ -3342,12 +3349,11 @@ main,
 
     .fases-container.fase-invertida .fase-texto,
     .fases-container.fase-invertida .fase-visual {
-        grid-column: auto; /* Reseta as colunas */
+        grid-column: auto;
     }
 
     .fases-container h2 {
         font-size: 2rem;
-        /* margin: 20px auto; */
         display: block;
     }
 
@@ -4020,9 +4026,12 @@ main,
     }
 
     .ciclo-visual-container {
-        min-height: 550px;
+        background-size: clamp(190%, 50vw + 50%, 180%);
+        min-height: 120vw;
 
-        background-size: 160%;
+        /* min-height: 550px;
+
+        background-size: 160%; */
 
         display: flex;
         align-items: center;
@@ -4030,10 +4039,13 @@ main,
     }
 
     .violenc-section {
-        margin: 0;
-        padding: 0;
+        width: 75%;
+        max-width: 280px;
+
+        margin: 0 auto;
+        /* padding: 0;
         z-index: 10;
-        max-width: none;
+        max-width: none; */
     }
 
     .violenc-section h2 {
@@ -4048,19 +4060,21 @@ main,
     }
 
     .fases-container {
-        /* display: grid;
-        grid-template-columns: 1fr;
-        overflow: visible; */
-
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .fase-visual {
-        display: block;
+        /* display: block;
         height: 350px;
-        position: relative;
+        position: relative; */
+        width: 100%;
+        height: auto;
+        min-height: 250px;
+        display: flex;
+        justify-content: center;
+        overflow: visible;
     }
 
     .fase-texto {
@@ -4070,22 +4084,25 @@ main,
     }
 
     .fase-visual img {
-        position: absolute;
+        width: 80vw;
+        max-width: 450px;
+        height: auto;
+
+        /* position: absolute;
         width: 350px; 
         height: 350px;
         max-width: none;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 1;
+        z-index: 1; */
     }
 
     .fases-container:not(.fase-invertida) .fase-visual img {
-        left: -320px;
+        margin-left: -85vw;
     }
 
     .fase-invertida .fase-visual img {
-        right: -320px; 
-        left: auto;
+        margin-right: -85vw;
     }
 
     .fases-container h2 {
