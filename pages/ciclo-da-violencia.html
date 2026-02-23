@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ciclo da Violência</title>
+
+    <link rel="shortcut icon" sizes="60x60" href="../imagens/violent.png" type="image/x-icon">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../imagens/violent.png">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="../imagens/violent.png">
+
+    <link rel="icon" type="image/png" sizes="512x512" href="../imagens/violent.png">
+
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="acessibility-widget" class="acc-widget">
+        <button id="toggle-acc-menu" class="acc-main-btn">
+            <ion-icon name="settings-outline"></ion-icon>
+        </button>
+
+        <div id="acc-menu" class="acc-menu-content">
+            <div class="acc-content">
+                <!-- <p>Tamanho da Fonte</p> -->
+                <div class="acc-arrow">
+                    <button class="acc-action" data-type="size" data-value="-10">A-</button>
+                    <span id="acc-size-label">100%</span>
+                    <button class="acc-action" data-type="size" data-value="10">A+</button>
+                </div>
+            </div>
+
+            <div class="acc-section">
+                <p>Estilos da Fonte "<span id="acc-font-name">Inter</span>" </p>
+                <div class="acc-arrow">
+                    <button class="acc-action" data-type="font" data-value="prev">
+                        <ion-icon name="chevron-back-outline"></ion-icon>
+                    </button>
+                    <button class="acc-action" data-type="font" data-value="next" style="flex-grow: 1;">
+                        Trocar Fonte
+                    </button>
+                    <button class="acc-action" data-type="font" data-value="next">
+                        <ion-icon name="chevron-forward-outline"></ion-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="share-popover" id="share-popover" style="display: none;">
+        <button class="share-btn" id="copy-quote" title="Copiar Citação">
+            <ion-icon name="copy-outline"></ion-icon>
+        </button>
+        <button class="share-btn" id="whatsapp-quote" title="Enviar para WhatsApp">
+            <ion-icon name="logo-whatsapp"></ion-icon>
+        </button>
+        <div class="popover-arrow"></div>
+    </div>
+
+    <div class="progress-cont">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <!-- Header Principal-->
+    <header class="header">
+        <div class="logo">
+            <img src="../imagens/new--logo.png" class="header__logo" alt="Iniciativa ADS - Projeto Educativo." />
+        </div>
+
+        <button class="menu-toggle" aria-label="Abrir Menu">
+            <ion-icon id="menu-icon" name="menu-outline"></ion-icon>
+        </button>
+
+        <div class="menu" id="menuNavegacao">
+            <div class="menu-item-dropdown">
+                <a href="#" class="dropdown-toogle" data-target="submenu-lei">
+                    A Lei
+                    <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+                </a>
+                <div class="submenu" id="submenu-lei">
+                    <a href="../pages/page.html"> tipos de violência </a>
+                    <a href="../pages/lei-integra.html"> A Lei na integra </a>
+                    <a href="../pages/resumo-lei.html"> Resumo da lei </a>
+                </div>
+            </div>
+
+            <div class="menu-item-dropdown">
+                <a href="#" class="dropdown-toogle" data-target="submenu-maria-penha">
+                    Maria da Penha
+                    <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+                </a>
+                <div class="submenu" id="submenu-maria-penha">
+                    <a href="../pages/biografia.html"> biografia </a>
+                    <a href="../pages/dashboard.html"> Estatisticas </a>
+                </div>
+            </div>
+
+            <div class="menu-item-dropdown">
+                <a href="#" class="dropdown-toogle" data-target="submenu-violencia-domestica">
+                    Violência Doméstica
+                    <ion-icon name="chevron-down-outline" class="dropdown-arrow"></ion-icon>
+                </a>
+                <div class="submenu" id="submenu-violencia-domestica">
+                    <a href="../index.html"> O que é violência <br>doméstica? </a>
+                    <a href="../pages/ciclo-da-violencia.html"> Ciclo da Violência </a>
+                </div>
+            </div>
+
+            <a href="../pages/contact.html">Contato</a>
+        </div>
+    </header>
+
+    <section class="ciclo-violenc">
+        <div class="ciclo-visual-container">
+            <div class="violenc-section">
+                <h2>Ciclo da <span>Violência</span></h2>
+                <p>Aprenda a reconhecer as três principais fases do ciclo e compreenda como ele funciona.</p>
+            </div>
+            <div class="violenc-arrow violencia-scroll-cue">
+                <ion-icon name="arrow-down-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="texto-artigo-container">
+            <p>
+                Embora a violência doméstica apresente diferentes formas e particularidades, a psicóloga norte-americana
+                <strong>Lenore Walker</strong> identificou que as agressões ocorridas no contexto conjugal seguem um
+                ciclo que se repete
+                continuamente.
+            </p>
+        </div>
+    </section>
+
+    <section class="fases-violenc">
+        <div class="fases-container">
+            <div class="fase-visual">
+                <div class="circulo-termometro">
+                    <img src="../imagens/fase01.png" alt="">
+                </div>
+            </div>
+
+            <div class="fase-texto">
+                <span class="fase-numero">fase 1</span>
+                <h2 class="fase-titulo">Automento da <br>Tensão</br></h2>
+
+                <div class="fase-descricao">
+                    <p>
+                        Nesse estágio inicial, o agressor passa a demonstrar tensão e irritação por motivos
+                        aparentemente insignificantes, podendo apresentar explosões de raiva. Além disso, humilha a
+                        vítima, profere ameaças e danifica objetos.
+                    </p>
+                    <p>
+                        A mulher procura acalmar o agressor, sente-se angustiada e evita qualquer atitude que possa
+                        “provocá-lo”. Os sentimentos são intensos e variados: tristeza, angústia, ansiedade, medo e
+                        decepção, entre outros.
+                    </p>
+                    <p>
+                        De modo geral, a vítima tende a negar o que está acontecendo, omite os fatos das outras pessoas
+                        e, muitas vezes, acredita ter feito algo errado para justificar o comportamento violento do
+                        agressor ou pensa que “ele apenas teve um dia ruim no trabalho”, por exemplo.
+
+                        Essa tensão pode se prolongar por dias ou até anos; contudo, como se intensifica gradativamente,
+                        é bastante provável que a situação evolua para a Fase 2.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="fases-violenc bg-color-cinza">
+        <div class="fases-container fase-invertida">
+            <div class="fase-visual">
+                <div class="atos-violencia-img">
+                    <img src="../imagens/atos-violenc02.png" alt="">
+                </div>
+            </div>
+
+            <div class="fase-texto">
+                <span class="fase-numero">fase 2</span>
+                <h2 class="fase-titulo">Atos de violência</h2>
+
+                <div class="fase-descricao">
+                    <p>
+                        Essa etapa representa a explosão do agressor, momento em que a perda de controle atinge seu
+                        ápice e resulta no ato violento. Nela, toda a tensão acumulada na fase anterior se concretiza
+                        por meio de agressões que podem ser verbais, físicas, psicológicas, morais ou patrimoniais.
+                    </p>
+                    <p>
+                        Ainda que reconheça que o agressor esteja fora de controle e represente uma ameaça significativa
+                        à sua vida, a mulher frequentemente se sente paralisada e incapaz de reagir. Nesse momento,
+                        vivencia intensa tensão psicológica, manifestada por sintomas como insônia, perda de peso,
+                        fadiga constante e ansiedade, além de experimentar sentimentos de medo, ódio, solidão,
+                        autocompaixão, vergonha, confusão e dor.
+                    </p>
+                    <p>
+                        Nesse contexto, ela pode tomar algumas decisões — as mais frequentes incluem buscar ajuda,
+                        formalizar denúncia, refugiar-se na casa de amigos ou familiares, solicitar a separação e, em
+                        situações extremas, atentar contra a própria vida. Em geral, ocorre um afastamento do agressor.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <button id="scroll-to-top-bottom" class="scroll-btn" aria-label="Navegar na Página">
+        <ion-icon name="arrow-down-outline" class="icon-arrow"></ion-icon>
+    </button>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Projeto Educativo</h3>
+                <p>
+                    Iniciativa do
+                    <strong>curso de Análise e Desenvolvimento de Sistemas</strong> do
+                    Centro Universitário Leonardo da Vinci. Foco na educação e prevenção
+                    da violência contra a mulher.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h3>links oficias</h3>
+                <ul>
+                    <li>
+                        <a href="http://www.planalto.gov.br" target="_blank">Lei Maria da Penha (Lei 11.340)</a>
+                    </li>
+                    <li>
+                        <a href="https://www.cnj.jus.br" target="_blank">Justiça Pela Paz em Casa (CNJ)</a>
+                    </li>
+                    <li>
+                        <a href="https://www.gov.br" target="_blank">Ministério da Mulher, da Família e dos Direitos
+                            Humanos</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contatos de Emergência</h3>
+                <p>Em caso de emergência ou denúncia, ligue:</p>
+                <p class="emergencia-numero">Ligue <span>190</span></p>
+                <p class="emergencia-numero">
+                    Disque 180 - Central de Atendimento à Mulher
+                </p>
+            </div>
+
+            <div class="footer-logo-central">
+                <img src="../imagens/new--logo.png" alt="">
+
+                <img src="../imagens/selo-amigo-do-surdo-roxo-redondo.png" alt="" class="logo-libras">
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                Este site utiliza o plugin oficial Hand Talk para acessibilidade em Libras. <Br></Br>
+                &copy; 2026 Projeto Educativo Lei Maria da Penha. Todos os direitos
+                reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="../js/index.js"></script>
+
+    <script src="../js/Acessibility.js"></script>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>
