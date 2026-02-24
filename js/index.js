@@ -179,3 +179,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }, 100); // Verifica a cada 100ms
 });
+
+const shareBtn = document.getElementById('btn-share-cycle');
+
+shareBtn.addEventListener('click', async () => {
+
+  const shareData = {
+    title: 'Ciclo da Violência - Projeto Basta!',
+    text: 'Ajude outras mulheres a reconhecer e romper as fases do ciclo da violência',
+    url: window.location.href
+  };
+
+  try {
+    if(navigator.share) {
+      await navigator.share(shareData);
+    } else {
+      alert('Copiado para a área de transferência! (Ou implemente seu modal aqui)');
+      navigator.clipboard.writeText(shareData.url);
+    }
+  } catch (err) {
+    console.log('Erro ao compartilhar:', err);
+  }
+})
