@@ -150,37 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const verificarElemento = setInterval(() => {
-    const violenciaScrollCue = document.querySelector(".violencia-scroll-cue");
-
-    if (violenciaScrollCue) {
-      violenciaScrollCue.addEventListener("click", function () {
-        const citacoesSection = document.querySelector(".violencia-citacoes");
-        const topoSection = document.querySelector(".violencia-top");
-
-        const scrollAtual = window.pageYOffset || document.documentElement.scrollTop;
-        const posicaoCitacoes = citacoesSection.offsetTop - 50;
-
-        if (scrollAtual < posicaoCitacoes) {
-          window.scrollTo({
-            top: posicaoCitacoes,
-            behavior: "smooth",
-          });
-        } else {
-          window.scrollTo({
-            top: topoSection.offsetTop,
-            behavior: "smooth",
-          });
-        }
-      });
-      // Para a verificação após encontrar o elemento
-      clearInterval(verificarElemento);
-    }
-  }, 100); // Verifica a cada 100ms
-});
-
-const shareBtn = document.getElementById('btn-share-cycle');
+const shareBtn = document.getElementById('btn-share-cycle'); 
 
 shareBtn.addEventListener('click', async () => {
 
