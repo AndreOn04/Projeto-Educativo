@@ -937,7 +937,7 @@ body {
 }
 
 .tipos-blockquote p::before {
-    /* font-family: 'Georgia', Tahoma, sans-serif; */
+    font-family: 'Georgia', Tahoma, sans-serif;
     font-style: normal;
     font-weight: 400;
     color: #9089f2;
@@ -948,7 +948,7 @@ body {
 }
 
 .tipos-blockquote p::after {
-    /* font-family: 'Georgia', Tahoma, sans-serif; */
+    font-family: 'Georgia', Tahoma, sans-serif;
     font-style: normal;
     font-weight: 400;
     color: #9089f2;
@@ -1007,203 +1007,6 @@ body {
     animation: bounce 2s infinite;
     z-index: 10;
 }
-
-
-/* Estilização Citações */
-
-/* .violencia-secao {
-    position: relative;
-    overflow: hidden;
-
-    min-height: auto;
-
-    padding: 90px 20px 180px;
-
-    background: #f6f6f8;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.violencia-secao::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 60px;
-
-    background-image: url(../imagens/arrow.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    position: absolute;
-    bottom: 390px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    filter: invert(65%) sepia(43%) saturate(3023%) hue-rotate(211deg) brightness(101%) contrast(101%);
-
-    animation: bounce 2s infinite;
-    z-index: 2;
-    pointer-events: none;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateX(-50%) translateY(0);
-    }
-    40% {
-        transform: translateX(-50%) translateY(-10px);
-    }
-    60% {
-        transform: translateX(-50%) translateY(-5px);
-    }
-}
-
-.violencia-topo,
-.violencia-citacoes {
-    position: relative;
-    z-index: 1;
-}
-
-.violencia-topo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 40vh;
-    width: 100%;
-    margin: 0;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.titulo__tipos--violencia {
-    color: #3f2c73;
-    text-transform: uppercase;
-    font-size: clamp(1.3rem, 3.2vw, 6.6rem);
-    letter-spacing: 0.01em;
-    margin-bottom: 32px;
-    text-align: center;
-    font-weight: 800;
-    line-height: 1.08;
-}
-
-.titulo__tipos--violencia span {
-    display: block;
-    margin-top: 10px;
-}
-
-.subtitulo__tipos--violencia {
-    padding-bottom: 0;
-    font-size: 1.2rem;
-    max-width: 599px;
-    color: #16161b;
-    line-height: 1.52;
-    margin: 0 auto;
-}
-
-.subtitulo__tipos--violencia span {
-    font-weight: 800;
-}
-
-.violencia-citacoes {
-    width: 100%;
-    max-width: 1560px;
-    padding: 0 60px;
-    display: grid;
-
-    grid-template-columns: repeat(auto-fit, minmax(300px, 560px));
-    gap: clamp(40px, 7vw, 120px);
-    align-items: start;
-    justify-content: center;
-}
-
-.violencia-texto-base {
-    font-size: clamp(1.1rem, 1.1vw, 1.1rem);
-    color: #1e1d23;
-    line-height: 1.64;
-    margin: 0;
-    max-width: 460px;
-    justify-self: center;
-}
-
-.violencia-citacao-destaque {
-    margin: 0;
-    padding: 0;
-    color: #3f3274;
-    max-width: 560px;
-    justify-self: center;
-    position: relative;
-}
-
-.citacao-aspas-abre,
-.citacao-aspas-fecha {
-    position: relative;
-    margin: 0;
-    color: #847cf2;
-    font-size: clamp(2rem, 2vw, 2rem);
-    font-family: "Georgia", serif !important;
-    line-height: 0.6;
-    font-weight: 700;
-    font-family: "Georgia";
-    z-index: 1;
-}
-
-.citacao-aspas-abre {
-    text-align: left;
-    margin-bottom: 14px;
-    left: -25px;
-}
-
-.citacao-conteudo {
-    margin-top: -40px;
-    font-size: clamp(1.1rem, 1.1vw, 1.1rem);
-    line-height: 1.58;
-    font-weight: 500;
-    font-style: italic;
-    max-width: 400px;
-}
-
-.citacao-aspas-fecha {
-    text-align: right;
-    margin-top: 16px;
-    right: 225px;
-    top: -25px;
-}
-
-.violencia-citacao-destaque cite {
-    margin-top: -10px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    font-size: clamp(1.1rem, 1.1vw, 1.1rem);
-    font-style: italic;
-    color: #3f2f72;
-}
-
-.citacao-linha {
-    display: inline-block;
-    width: 108px;
-    border-top: 3px solid #8d84f3;
-}
-
-.violencia-citacao-destaque cite strong {
-    font-style: italic;
-}
-
-
-.violencia-citacoes {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 1560px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 560px));
-    gap: clamp(40px, 7vw, 120px);
-    justify-content: center;
-} */
 
 /* ==================================================
 SEÇÃO TRILHAS
