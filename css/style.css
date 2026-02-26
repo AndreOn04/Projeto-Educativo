@@ -303,7 +303,7 @@ body {
 .header {
     width: 100%;
     padding: 5px 20px;
-    background-color: var(--color-gray-100);
+    background-color: #fcfcfc;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -416,6 +416,11 @@ body {
 .submenu a:hover {
     padding-left: 30px;
     text-decoration: underline;
+}
+
+.contact:hover {
+    color: var(--color-black);
+    text-decoration: underline 2px;
 }
 
 /* ==================================================
@@ -1382,6 +1387,7 @@ SEÇÃO TRILHAS
     border: 23x solid var(--color-secondary);
     top: 22px;
     border-radius: 50%;
+    text-align: center;
     z-index: 2;
     font-weight: 800;
     color: var(--color-primary);
@@ -1742,23 +1748,50 @@ SEÇÃO TRILHAS
    TEXTO DA BIO
    Estilo para títulos e parágrafos.
 ================================================== */
-.pergunta {
-    color: var(--color-primary);
-    font-size: 3.5rem;
-    margin-bottom: 10px;
+.bio-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    padding-right: 50px;
+}
+
+.titulo-bio {
+    text-align: left;
+    color: #3f2c73;
+    font-size: 2.5rem;
+    
     text-transform: uppercase;
     font-weight: 700;
+    line-height: 1.2;
 }
 
 .selecionado {
     background-color: var(--color-primary);
-    color: white;
+    color: var(--bg-page);
+
+    display: inline;
     padding: 5px 15px;
-    display: inline-block;
-    margin-top: 5px;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
     font-size: 3.5rem;
     font-weight: 600;
     text-transform: uppercase;
+
+    line-height: 1.5;
+
+    white-space: nowrap;
+}
+
+.selecionado:nth-last-of-type(2) {
+    margin-left: 30px;
+}
+
+.selecionado:nth-last-of-type(1) {
+    margin-left: 80px;
 }
 
 /* ==================================================
@@ -2301,7 +2334,7 @@ SEÇÃO TRILHAS
 
 .ciclo-violenc {
     width: 100%;
-    background-color: var(--color-gray-200);
+    background-color: #fcfcfc;
 }
 
 .ciclo-visual-container {
@@ -2312,7 +2345,7 @@ SEÇÃO TRILHAS
     flex-direction: column;
     justify-content: center;
     
-    background-image: url('../imagens/Ciclo-violenc.png');
+    background-image: url('../imagens/Ciclo-violencOne.png');
     background-repeat: no-repeat;
     background-position: center -150px;
     background-size: contain;
@@ -2368,7 +2401,7 @@ SEÇÃO TRILHAS
     text-transform: uppercase;
     color: var(--color-primary);
     font-size: 4rem;
-    font-weight: 900;
+    font-weight: 700;
     text-align: center;
 
     margin-top: -260px;
