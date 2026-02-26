@@ -132,7 +132,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const timelineButtons = document.querySelectorAll(".timeline-toggle");
   if (!timelineButtons.length) return;

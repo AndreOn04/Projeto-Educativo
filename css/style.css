@@ -996,7 +996,7 @@ body {
     background-position: center;
 
     position: absolute;
-    bottom: 340px;
+    bottom: 310px;
     left: 50%;
     transform: translateX(-50%);
 
@@ -1717,20 +1717,10 @@ SEÇÃO TRILHAS
     padding: 80px;
 }
 
-/* ==================================================
-   CONTAINER DA IMAGEM
-   Wrapper para centralização.
-================================================== */
-
 .container-img {
     max-width: 1000px;
     margin: 0 auto;
 }
-
-/* ==================================================
-   CONTEÚDO DA BIO
-   Flex para imagem e texto.
-================================================== */
 
 .bio-content {
     display: flex;
@@ -1739,11 +1729,6 @@ SEÇÃO TRILHAS
     margin-bottom: 40px;
     text-align: right;
 }
-
-/* ==================================================
-   IMAGEM DA BIO
-   Estilo para a foto com borda.
-================================================== */
 
 .bio-imagem img {
     width: 320px;
@@ -1804,6 +1789,8 @@ SEÇÃO TRILHAS
 .ano-lateral {
     font-style: normal;
     font-weight: 900;
+
+    letter-spacing: 3px;
 
     position: relative;
     font-size: 4rem;
@@ -1990,7 +1977,7 @@ SEÇÃO TRILHAS
 ================================================== */
 
 .container-historia {
-    max-width: 450px; /*450px */
+    max-width: 450px;
     margin-left: 18%;
     margin-top: -2%;
     display: flex;
@@ -2082,9 +2069,9 @@ SEÇÃO TRILHAS
     transform: translateX(-50%);
     width: 1350px;
     height: calc(100% + 180px); /* Mantendo sua medida */
-    border-left: 1px solid #f1f1f1;
-    border-right: 1px solid #f1f1f1;
-    border-bottom: 1px solid #f1f1f1; /* A linha que será cortada */
+    border-left: 2px solid #f1f1f1;
+    border-right: 2px solid #f1f1f1;
+    border-bottom: 2px solid #f1f1f1; /* A linha que será cortada */
     z-index: 0;
     pointer-events: none;
 }
@@ -2167,11 +2154,11 @@ SEÇÃO TRILHAS
     margin-bottom: 25px;
 }
 
-.texto-destaque-red {
-    color: #d1565a !important;
+.conteudo-luta .texto-destaque-red{
+    color: #d1565a;
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 1.3rem !important;
+    font-size: 1.3rem;
 }
 
 /* --- Área da Imagem (Ainda no fundo Branco) --- */
@@ -2186,9 +2173,9 @@ SEÇÃO TRILHAS
 
 .linha-vertical-curta {
     width: 1px;
-    height: 60px;
+    height: 80px;
     background-color: var(--color-accent);
-    margin-bottom: -20px;
+    margin-bottom: -10px;
 }
 
 .image-jornais {
@@ -2197,11 +2184,6 @@ SEÇÃO TRILHAS
     z-index: 2;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
     margin-bottom: -50px;
-}
-
-main,
-.secao-internacional {
-    padding-right: 60px;
 }
 
 .secao-internacional {
@@ -2213,14 +2195,99 @@ main,
 .conteudo-informativo {
     max-width: 700px;
     text-align: left;
-    margin-top: -70px;
+
+    margin-top: -80px;
 }
 
 .conteudo-informativo p {
-    font-size: 1rem;
+    font-size: 1.1em;
     line-height: 1.8;
     color: var(--color-black-one);
     margin-bottom: 30px;
+}
+
+.card-roxo-destaque {
+    background-color: #3d2963;
+    max-width: 470px;
+    margin: 0 auto;
+
+    padding: 60px 80px;
+
+    margin-bottom: -210px;
+
+    position: relative;
+    z-index: 10;
+}
+
+.card-roxo-destaque p {
+    color: var(--bg-page);
+    line-height: 1.9;
+    margin: 0;
+    font-weight: 400;
+}
+
+.secao-recomendacoes {
+    background-color: var(--bg-page);
+    padding: 180px 20px 100px;
+    width: 100%;
+}
+
+.container-recomendacoes {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.titulo-recomendacoes {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.titulo-recomendacoes h3 {
+    display: inline;
+    background-color: var(--color-accent);
+    color: var(--color-black);
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    padding: 10px 15px;
+    line-height: 2.5;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+    font-weight: 300;
+}
+
+.grid-recomendacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+    align-items: start;
+}
+
+.item-recomendacao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* text-align: center; */
+}
+
+.number-cycle {
+    width: 80px;
+    height: 80px;
+    background-color: #f6f6f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.item-recomendacao p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--color-black);
+    text-align: left;
 }
 
 #secao-geral {
@@ -3103,13 +3170,17 @@ main,
     background-color: var(--bg-page);
     background-image: url(../imagens/textura.jpg);
     background-size: cover;
+
     width: 100%;
-    padding: 70px 150px;
+    padding: 110px 140px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     max-width: 800px;
-    margin: 0 auto;
+
+    margin: auto;
+
     box-sizing: border-box;
     position: relative;
+
     z-index: 5;
     transform: translate(50px);
 }
@@ -3130,6 +3201,7 @@ main,
     font-size: 1rem;
     line-height: 1.8;
     text-align: left;
+
 }
 
 .title-como-pedir-ajuda {
@@ -3924,6 +3996,7 @@ main,
     .coluna-narrativa,
     .coluna-apoio {
         font-size: 1.05rem;
+        text-align: left;
     }
 }
 
@@ -4137,6 +4210,43 @@ main,
         align-items: center;
         gap: 15px;
         margin-top: 20px;
+    }
+
+    .card-roxo-destaque {
+        width: 90%;
+        max-width: 350px;
+        padding: 40px 25px;
+        margin: -80px auto;
+        text-align: center;
+    }
+
+    .secao-recomendacoes {
+        padding: 120px 20px 60px;
+    }
+
+    .titulo-recomendacoes h3 {
+        font-size: 15px;
+        line-height: 2.8;
+        padding: 5px 10px;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .grid-recomendacoes {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin-top: 50px;
+    }
+
+    .item-recomendacao {
+        align-items: flex-start;
+    }
+
+    .number-cycle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
     }
 
     .banner-resumo-lei-content {
