@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 /* ============ VARIÁVEIS CSS ============ */
 :root {
     /* Cores principais */
@@ -243,6 +245,80 @@ body {
 .acc-action:hover {
     color: var(--color-purple);
     font-weight: 600;
+}
+
+.modal-progresso-container {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 9999;
+}
+
+.modal-progresso-container.active {
+    display: flex;
+}
+
+.modal-progresso-card {
+    background-color: var(--bg-page);
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: modalEntrada 0.3s ease-out;
+}
+
+@keyframes modalEntrada {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); };
+}
+
+.modal-progresso-alert img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+.modal-progresso-card p {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.modal-progresso-btn {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-yes {
+    background-color: #28a745;
+    color: var(--bg-page);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-no {
+    background-color: #d1565a;
+    color: var(--bg-page);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 .share-popover {
@@ -1823,7 +1899,9 @@ SEÇÃO TRILHAS
     font-style: normal;
     font-weight: 900;
 
-    letter-spacing: 3px;
+    font-family: 'Lato', Arial, sans-serif;
+
+    letter-spacing: 2px;
 
     position: relative;
     font-size: 4rem;
@@ -1846,7 +1924,7 @@ SEÇÃO TRILHAS
     content: "";
     position: absolute;
     top: 50%;
-    left: 100%;
+    left: 120%;
     transform: translateY(-50%);
     width: 70px;
     height: 1px;
@@ -1882,10 +1960,14 @@ SEÇÃO TRILHAS
 .conteudo-introdutivo {
     color: var(--color-black);
     font-weight: 400;
-    line-height: 2;
+
+    line-height: 2.1;
     justify-content: center;
+    
     align-items: center;
     margin-left: 60px;
+
+    font-size: 1rem;
 }
 
 /* ==================================================
@@ -1894,7 +1976,7 @@ SEÇÃO TRILHAS
 ================================================== */
 .trajetoria-secao {
     background-color: var(--color-primary);
-    padding: 90px 20px;
+    padding: 140px 20px;
     position: relative;
 
     overflow: hidden;
@@ -1929,7 +2011,7 @@ SEÇÃO TRILHAS
 
     transform: translate(-50%, -50%) rotate(180deg);
     writing-mode: vertical-rl;
-    font-size: 4.2rem;
+    font-size: 5.2rem;
     font-weight: 900;
 
     color: rgba(255, 255, 255, 0.2);

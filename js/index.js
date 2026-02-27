@@ -1,28 +1,31 @@
-document.addEventListener('DOMContentLoaded', function() {
-  const btn = document.querySelectorAll('.btn-ler-mais-text');
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.querySelectorAll(".btn-ler-mais-text");
 
-  btn.forEach(botao => {
-    botao.addEventListener('click', function(e) {
+  btn.forEach((botao) => {
+    botao.addEventListener("click", function (e) {
       e.preventDefault();
 
-      const containerMito = this.closest('.content-body-violence');
+      const containerMito = this.closest(".content-body-violence");
 
-      const textoParaExpandir = containerMito.querySelector('.content-off-start');
+      const textoParaExpandir =
+        containerMito.querySelector(".content-off-start");
 
-      if(textoParaExpandir) {
-        textoParaExpandir.classList.toggle('expandido');
+      if (textoParaExpandir) {
+        textoParaExpandir.classList.toggle("expandido");
 
-        if(textoParaExpandir.classList.contains('expandido')){
+        if (textoParaExpandir.classList.contains("expandido")) {
           this.textContent = "Ler menos";
         } else {
           this.textContent = "Ler mais";
         }
       } else {
-        console.error("Erro: Não encontrei a div .content-off-start dentro deste bloco. ");
+        console.error(
+          "Erro: Não encontrei a div .content-off-start dentro deste bloco. ",
+        );
       }
     });
   });
-})
+});
 
 document.addEventListener("DOMContentLoaded", () => {
   // Garante que o código seja executado após o carregamento do DOM
@@ -149,24 +152,74 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-const shareBtn = document.getElementById('btn-share-cycle'); 
+const shareBtn = document.getElementById("btn-share-cycle");
 
-shareBtn.addEventListener('click', async () => {
+if (shareBtn) {
+  shareBtn.addEventListener("click", async () => {
+    const shareData = {
+      title: "Ciclo da Violência - Projeto Basta!",
+      text: "Ajude outras mulheres a reconhecer e romper as fases do ciclo da violência",
+      url: window.location.href,
+    };
 
-  const shareData = {
-    title: 'Ciclo da Violência - Projeto Basta!',
-    text: 'Ajude outras mulheres a reconhecer e romper as fases do ciclo da violência',
-    url: window.location.href
-  };
-
-  try {
-    if(navigator.share) {
-      await navigator.share(shareData);
-    } else {
-      alert('Copiado para a área de transferência! (Ou implemente seu modal aqui)');
-      navigator.clipboard.writeText(shareData.url);
+    try {
+      if(navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        alert('Link Copiado! 👏');
+        navigator.clipboard.writeText(shareData.url);
+      }
+    } catch (err) {
+      console.log('Erro ao compartilhar: 😪', err);
     }
-  } catch (err) {
-    console.log('Erro ao compartilhar:', err);
-  }
-})
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("modal-leitura");
+    const btnReturn = document.getElementById("btn-return");
+    const btnIgnore = document.getElementById("btn-ignore");
+    
+    // Nome da chave no LocalStorage
+    const STORAGE_KEY = "posicao_leitura_usuario";
+
+    // 1. VERIFICAÇÃO INICIAL
+    const savedPosition = localStorage.getItem(STORAGE_KEY);
+
+    // Só mostra o modal se:
+    // - Existir uma posição salva
+    // - A posição for maior que 300px (evita mostrar o modal se ele leu só o topo)
+    if (savedPosition && parseInt(savedPosition) > 300) {
+        modal.classList.add("active");
+    }
+
+    // 2. AÇÃO: SIM, CONTINUAR
+    btnReturn.addEventListener("click", () => {
+        window.scrollTo({
+            top: parseInt(savedPosition),
+            behavior: "smooth"
+        });
+        fecharModal();
+    });
+
+    // 3. AÇÃO: NÃO, RECOMEÇAR
+    btnIgnore.addEventListener("click", () => {
+        localStorage.removeItem(STORAGE_KEY);
+        fecharModal();
+    });
+
+    function fecharModal() {
+        modal.classList.remove("active");
+    }
+
+    let isScrolling;
+    window.addEventListener("scroll", () => {
+        window.clearTimeout(isScrolling);
+
+        isScrolling = setTimeout(() => {
+            if (!modal.classList.contains("active")) {
+                localStorage.setItem(STORAGE_KEY, window.scrollY);
+            }
+        }, 100);
+    });
+});
