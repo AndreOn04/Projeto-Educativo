@@ -204,8 +204,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // 3. AÇÃO: NÃO, RECOMEÇAR
     btnIgnore.addEventListener("click", () => {
-        localStorage.removeItem(STORAGE_KEY);
-        fecharModal();
+      modal.classList.remove('active');
+
+      localStorage.removeItem(STORAGE_KEY);
+
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
 
     function fecharModal() {
